@@ -38,49 +38,29 @@
         <div class="register-box-body">
             <h5 class="login-box-msg">Registrasi pengguna baru</h5>
             <br />
-            <p style="font-family: bold">Langkah 1</p><br />
+            <?= $this->session->flashdata('message'); ?>
+            <p style="font-family: bold">Langkah 2</p><br />
 
-            <form method="post" action="<?= base_url('user/akses/regis1/registrasi'); ?>">
+            <form method="post" action="<?= base_url('user/akses/regis2'); ?>">
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap">
+                    <input type="text" class="form-control" name="email" placeholder="Email">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" name="username" placeholder="Username">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    <?php echo form_error('nama_lengkap', '<small class="text-danger-pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="tempat_lahir" placeholder="Tempat Lahir">
-                    <span class="fa fa-location-arrow form-control-feedback"></span>
-                    <?php echo form_error('tampat_lahir', '<small class="text-danger-pl-3">', '</small>'); ?>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <span class="fa fa-key form-control-feedback"></span>
                 </div>
-                <div class="form-group has-feedback">
-                    <input type="date" class="form-control" name="tanggal_lahir" placeholder="Tanggal Lahir">
-                    <span class="fa fa-calendar form-control-feedback"></span>
-                    <?php echo form_error('tanggal_lahir', '<small class="text-danger-pl-3">', '</small>'); ?>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Registrasi</button>
+                    </div>
+                    <!-- /.col -->
                 </div>
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="alamat" placeholder="Alamat">
-                    <span class="glyphicon glyphicon-home form-control-feedback"></span>
-                    <?php echo form_error('alamat', '<small class="text-danger-pl-3">', '</small>'); ?>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="no_telepon" placeholder="No Telepon">
-                    <span class="fa fa-phone form-control-feedback"></span>
-                    <?php echo form_error('no_telepon', '<small class="text-danger-pl-3">', '</small>'); ?>
-                </div>
-                <div class="form-group">
-                    <select class="form-control" name="jenis_kelamin">
-                        <option>jenis kelamin</option>
-                        <option value="laki-laki">Laki-laki</option>
-                        <option value="perempuan">Perempuan</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select class="form-control" name="status">
-                        <option>Status</option>
-                        <option value="kawin">Kawin</option>
-                        <option value="belumkawin">Belum Kawin</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Lanjut</button>
             </form>
         </div>
         <!-- /.form-box -->
