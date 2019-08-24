@@ -50,6 +50,6 @@ class regis1 extends CI_Controller
 
         $this->db->insert('pengguna', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">data tersimpan lanjutkan ke tahap 2</div>');
-        redirect('admin/akses/regis2');
+        redirect('user/akses/regis2');
     }
 }
