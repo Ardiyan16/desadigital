@@ -1,239 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <title>Home</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="<?= base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?= base_url('assets/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="<?= base_url('assets/bower_components/Ionicons/css/ionicons.min.css'); ?>">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/AdminLTE.min.css'); ?>">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/skins/_all-skins.min.css'); ?>">
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CLato:300,400" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets2/engine1/style.css'); ?>" />
-    <script type="text/javascript" src="<?= base_url('assets/engine1/jquery.js'); ?>"></script>
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="<?= base_url('assets2/css/bootstrap.min.css') ?>" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-    <!-- Owl Carousel -->
-    <link type="text/css" rel="stylesheet" href="<?= base_url('assets2/css/owl.carousel.css'); ?>" />
-    <link type="text/css" rel="stylesheet" href="<?= base_url('assets2/css/owl.theme.default.css'); ?>" />
-
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-    <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="<?= base_url('assets2/css/style.css'); ?>" />
-
-    <link rel="stylesheet" href="<?= base_url('assets2/css/bootstrap.min.css'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets2/homestyle.css'); ?>">
-    <link rel="shortcut icon" href="img/bondowoso.png">
-
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body>
+<body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
 
-    <!-- Header -->
-    <!doctype html>
-    <html lang="en">
+        <header class="main-header">
+            <nav class="navbar navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="../../index2.html" class="navbar-brand"><b>Village</b>Developer</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-
-
-        <title>Berita</title>
-    </head>
-
-    <body>
-        <div class="wrap">
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-                <div class="logo">
-                    <img src="img/Bondowoso.png" width="70" height="70">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                            <li class="divider"></li>
+                            <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Informasi Desa<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="">Berita Desa</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="">Event Desa</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="">Kegiatan Desa</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hasil Desa<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Makanan Tradisional</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Kerajinan Desa</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Usaha Desa</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Oleh-oleh desa</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pariwisata Desa<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="">Wisata Desa</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="">Wisata Kuliner Desa</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account Menu -->
+                            <li class="dropdown user user-menu">
+                                <!-- Menu Toggle Button -->
+                                <a href="<?= base_url('user/Login'); ?>" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="<?= base_url('img/profile.png'); ?> " class="user-image" alt="User Image">
+                                    <span class="hidden-xs"><?= $this->session->userdata('username'); ?></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- The user image in the menu -->
+                                    <li class="user-header">
+                                        <img src="<?= base_url('img/profile.png'); ?>" class="img-circle" alt="User Image">
+                                        <p><?= $this->session->userdata('username'); ?></p>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="text-center">
+                                            <a href="<?= base_url('Home'); ?>" class="btn btn-danger">Logout</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-custom-menu -->
                 </div>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ml-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="home.php">Home<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Profil
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="visimisi.php">Visi Misi</a>
-                                <a class="dropdown-item" href="strukturorganisasi.php">Struktur Organisasi</a>
-                                <a class="dropdown-item" href="pejabatdinas.php">Pejabat Dinas</a>
-                                <a class="dropdown-item" href="tugaspokok.php">Tugas Pokok</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="berita.php">Berita</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Wisata
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="Obyekwisata.php">Objek Wisata</a>
-                                <a class="dropdown-item" href="datawisata.php">Data Wisata</a>
-                                <a class="dropdown-item" href="wisatakuliner.php">Wisata Kuliner</a>
-                                <a class="dropdown-item" href="penginapan.php">Penginapan</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Event.php">Event</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Informasi
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="informasi.php">Informasi Dinas</a>
-                                <a class="dropdown-item" href="dokumen.php">Dokumen</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Gallery
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="galleryfoto.php">Gallery Foto</a>
-                                <a class="dropdown-item" href="galleryvideo.php">Gallery Video</a>
-                            </div>
-                        <li class="nav-item">
-                            <a class="nav-link" href="kontak.php">Kontak</a>
-                        </li>
-
-
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0" style="margin-left: 30%;">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>
+                <!-- /.container-fluid -->
             </nav>
-            <div id="wowslider-container1">
-                <div class="ws_images">
-                    <ul>
-                        <li><img src="data1/images/kawahijen1.jpg" alt="Kawah-ijen-1" title="Kawah-ijen-1" id="wows1_0" /></li>
-                        <li><a href="http://wowslider.net"><img src="data1/images/gerbongmaut23.jpg" alt="bootstrap image slider" title="gerbong-maut23" id="wows1_1" /></a></li>
-                        <li><img src="data1/images/kawahwurungbondowosojawatimur_1.jpg" alt="Kawah-wurung-bondowoso-jawa-timur (1)" title="Kawah-wurung-bondowoso-jawa-timur (1)" id="wows1_2" /></li>
-                    </ul>
-                </div>
-                <div class="ws_bullets">
-                    <div>
-                        <a href="#" title="Kawah-ijen-1"><span><img src="<?= base_url('assets/data1/tooltips/kawahijen1.jpg'); ?>" alt="Kawah-ijen-1" />1</span></a>
-                        <a href="#" title="gerbong-maut23"><span><img src="<?= base_url('assets/data1/tooltips/gerbongmaut23.jpg'); ?>" alt="gerbong-maut23" />2</span></a>
-                        <a href="#" title="Kawah-wurung-bondowoso-jawa-timur (1)"><span><img src="<?= base_url('assets/data1/tooltips/kawahwurungbondowosojawatimur_1.jpg'); ?>" alt="Kawah-wurung-bondowoso-jawa-timur (1)" />3</span></a>
+        </header>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="<?= base_url('img/KaIj.png'); ?>" alt="First slide">
+
+                    <div class="carousel-caption">
+                        First Slide
                     </div>
                 </div>
-                <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">html5 slideshow</a> by WOWSlider.com v8.8</div>
-                <div class="ws_shadow"></div>
-            </div>
-            </header>
+                <div class="item">
+                    <img src="<?= base_url('img/GeMa.png'); ?>" alt="Second slide">
 
-            <div class="content-wrapper">
-                <div class="container">
-                    <!-- Content Header (Page header) -->
-                    <section class="content-header">
-                        <h1>
-                            Top Navigation
-                            <small>Example 2.0</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                            <li><a href="#">Layout</a></li>
-                            <li class="active">Top Navigation</li>
-                        </ol>
-                    </section>
-
-                    <!-- Main content -->
-                    <section class="content">
-                        <div class="callout callout-info">
-                            <h4>Tip!</h4>
-
-                            <p>Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a
-                                sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular
-                                links instead.</p>
-                        </div>
-                        <div class="callout callout-danger">
-                            <h4>Warning!</h4>
-
-                            <p>The construction of this layout differs from the normal one. In other words, the HTML markup of the navbar
-                                and the content will slightly differ than that of the normal layout.</p>
-                        </div>
-                        <div class="box box-default">
-                            <div class="box-header with-border">
-                                <h3 class="box-title">Blank Box</h3>
-                            </div>
-                            <div class="box-body">
-                                The great content goes here
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-                        <!-- /.box -->
-                    </section>
-                    <!-- /.content -->
+                    <div class="carousel-caption">
+                        Second Slide
+                    </div>
                 </div>
-                <!-- /.container -->
-            </div>
+                <div class="item">
+                    <img src="<?= base_url('img/KaWu.png'); ?>" alt="Third slide">
 
+                    <div class="carousel-caption">
+                        Third Slide
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="fa fa-angle-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="fa fa-angle-right"></span>
+            </a>
+        </div>
+        <div class="content-wrapper">
+            <div class="container">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Top Navigation
+                        <small>Example 2.0</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="#">Layout</a></li>
+                        <li class="active">Top Navigation</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="callout callout-info">
+                        <h4>Tip!</h4>
+
+                        <p>Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a
+                            sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular
+                            links instead.</p>
+                    </div>
+                    <div class="callout callout-danger">
+                        <h4>Warning!</h4>
+
+                        <p>The construction of this layout differs from the normal one. In other words, the HTML markup of the navbar
+                            and the content will slightly differ than that of the normal layout.</p>
+                    </div>
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Blank Box</h3>
+                        </div>
+                        <div class="box-body">
+                            The great content goes here
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.container -->
         </div>
 
-
-        <footer class="bg-dark text-white mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col mt-2">
-                        <div class="card text-white bg-primary mb-3">
-                            <div class="card-body">
-                                <h5 class="title">Alamat</h5>
-                                <p class="card-text">Jl. Achmad Yani No.64 Lumbung, Badean, Kec.Bondowoso, Kabupaten Bondowoso, Provinsi Jawa Timur (68211)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <p class="ml-4">Follow US</p>
-                        <a href="https://www.facebook.com/ardiyan.ardiyan.5030927"><img src="img/fb.png" width="50" height="50"></a>
-                        <a href="https://www.instagram.com/Ardiyan_Ramadhan/"><img src="img/insta.png" width="40" height="40"></a>
-                        <a href=""><img src="img/twitter.png" width="50" height="50"></a>
-                        <a href=""><img src="img/Gmail_Icon.png" width="40" height="40"></a>
-                    </div>
+    </div>
 
 
-
-                    <div class="col text-center mt-6s">
-                        <img src="img/pesonaindonesia.png" width="200" height="100" style="margin-left: 20%; margin-top: 3%;">
-                        <p class="copy ml-5 mt-4">Copyright@Kelompok1.2018</p>
-                    </div>
-                </div>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.4.13
             </div>
-        </footer>
-        <!-- ./wrapper -->
+            <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+            reserved.
+        </div>
+        <!-- /.container -->
+    </footer>
 
-        <!-- jQuery 3 -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/main.js"></script>
-        <script type="text/javascript" src="engine1/wowslider.js"></script>
-        <script type="text/javascript" src="engine1/script.js"></script>
-        <!-- WOW js -->
-        <script type="text/javascript" src="<?= base_url('assets/engine1/jquery.js'); ?>"></script>
-        <script type="text/javascript" src="<?= base_url('assets/engine1/wowslider.js'); ?>"></script>
-        <script type="text/javascript" src="<?= base_url('assets/engine1/script.js'); ?>"></script>
-    </body>
+    <!-- jQuery 3 -->
+    <script src="<?= base_url('assets/bower_components/jquery/dist/jquery.min.js') ?>"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="<?= base_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
+    <!-- SlimScroll -->
+    <script src="<?= base_url('assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') ?>"></script>
+    <!-- FastClick -->
+    <script src="<?= base_url('assets/bower_components/fastclick/lib/fastclick.js') ?>"></script>
+    <!-- AdminLTE App -->
+    <script src="<?= base_url('assets/dist/js/adminlte.min.js') ?>"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="<?= base_url('assets/dist/js/demo.js') ?>"></script>
+</body>
 
-    </html>
+</html>
