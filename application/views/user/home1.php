@@ -78,11 +78,6 @@
                                 </ul>
                             </li>
                         </ul>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
-                            </div>
-                        </form>
                     </div>
                     <!-- /.navbar-collapse -->
                     <!-- Navbar Right Menu -->
@@ -91,9 +86,26 @@
                             <!-- User Account Menu -->
                             <li class="dropdown user user-menu">
                                 <!-- Menu Toggle Button -->
-                                <a href="<?= base_url('user/Login'); ?>">
-                                    <span class="hidden-xs">Login</span>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <!-- The user image in the navbar-->
+                                    <img src="<?= base_url('img/profile.png'); ?>" class="user-image" alt="User Image">
+                                    <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                    <span class="hidden-xs"><?= $this->session->userdata('username'); ?></span>
                                 </a>
+                                <ul class="dropdown-menu">
+                                    <!-- The user image in the menu -->
+                                    <li class="user-header">
+                                        <img src="<?= base_url('img/profile.png'); ?>" class="img-circle" alt="User Image">
+
+                                        <p><?= $this->session->userdata('username'); ?></p>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="text-center">
+                                            <a href="#" class="btn btn-danger">Logout</a>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>

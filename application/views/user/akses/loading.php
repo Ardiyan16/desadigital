@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
+    <title>Registrasi</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -29,43 +29,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="../../index2.html"><b>Login</b></a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body">
-            <p class="login-box-msg">Silahkan Login untuk mendapatkan akses</p>
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="register-box-body">
             <?= $this->session->flashdata('message'); ?>
-
-            <form action="<?= base_url('user/Login'); ?>" method="post">
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="username" name="username" value="<?= set_value('username'); ?>">
-                    <span class="fa fa-id-card form-control-feedback"></span>
-                    <?php echo form_error('username', '<small class="text-danger-pl-3">', '</small>'); ?>
+            <h5 class="login-box-msg">Akun anda telah terdaftar tunggu verifikasi admin</h5>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <button type="button" class="btn btn-default btn-lrg ajax" title="Ajax Request">
+                        <i class="fa fa-spin fa-refresh"></i>&nbsp; Tunggu admin menyetujui akun anda
+                    </button>
                 </div>
-                <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password" name="password">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    <?php echo form_error('password', '<small class="text-danger-pl-3">', '</small>', '<br/>'); ?>
-                    <a href="forgotpassword.php">lupa password ?</a><br />
-                </div>
-
-                <div class="row">
-                    <!-- /.col -->
-                    <div class="col-xs-4-center">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
-                    </div>
-                    <!-- /.col -->
-                </div>
-            </form>
-
-            <a href="Registrasi" class="text-center">membuat akun baru</a>
-
+            </div>
+            <br />
+            <a href="Login" class="text-center">Anda sudah memiliki akun ?</a>
         </div>
-        <!-- /.login-box-body -->
     </div>
+
     <script src="<?= base_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
     <!-- Bootstrap 3.3.7 -->
     <script src="<?= base_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>

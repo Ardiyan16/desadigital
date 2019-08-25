@@ -41,18 +41,21 @@
             <?= $this->session->flashdata('message'); ?>
             <p style="font-family: bold">Langkah 2</p><br />
 
-            <form method="post" action="<?= base_url('user/akses/regis2'); ?>">
+            <form method="post" action="<?= base_url('user/akses/Registrasi1/registrasi'); ?>">
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="email" placeholder="Email">
+                    <input type="text" class="form-control" name="email" placeholder="Email" value="<?= set_value('email'); ?>">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="username" placeholder="Username">
+                    <input type="text" class="form-control" name="username" placeholder="Username" value="<?= set_value('username'); ?>">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
                     <span class="fa fa-key form-control-feedback"></span>
+                    <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="row">
                     <!-- /.col -->
