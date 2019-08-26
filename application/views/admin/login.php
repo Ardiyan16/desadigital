@@ -3,65 +3,54 @@
 
 <head>
 
-	<?php $this->load->view("admin/_partials/sb_head.php") ?>
-	<style>
-		body {
+	<?php $this->load->view("admin/_partials/head.php") ?>
 
-			background-image: linear-gradient(to right, red, yellow);
-
-		}
-	</style>
 </head>
 
 
 
 
-<body>
-	<div class="container">
+<body class="hold-transition login-page">
+	<div class="login-box">
+		<?= $this->session->flashdata('message'); ?>
+		<div class="login-logo">
+			<a href="../../index2.html"><b>Login</b></a>
+		</div>
+		<!-- /.login-logo -->
+		<div class="login-box-body">
+			<p class="login-box-msg">Silahkan Login untuk mendapatkan akses</p>
 
-		<!-- Outer Row -->
-		<div class="row justify-content-center">
-
-			<div class="col-lg-5">
-
-				<div class="card o-hidden border-0 shadow-lg my-5">
-					<div class="card-body p-0">
-						<!-- Nested Row within Card Body -->
-						<div class="row">
-							<div class="col-lg">
-								<div class="p-5">
-									<div class="text-center">
-										<h1 class="h4 text-gray-900 mb-4">Silahkan Login</h1>
-									</div>
-									<?= $this->session->flashdata('message'); ?>
-									<form action="<?php echo base_url('admin/Login/aksi_login'); ?>" method="post">
-										<div class="form-group">
-											<input type="username" name="username" class="form-control form-control-user" id="exampleInputUsername" placeholder="Username">
-										</div>
-										<div class="form-group">
-											<input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-										</div>
-
-										<td><input type="submit" class="btn btn-primary btn-user btn-block" value="Login"></td>
-
-
-									</form>
-									<hr>
-									<div class="text-center">
-										<a class="small" href="<?php echo site_url('forgot-password') ?>">Forgot Password?</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			<form action="<?= base_url('admin/Login/aksi_login'); ?>" method="post">
+				<div class="form-group has-feedback">
+					<input type="text" class="form-control" placeholder="email" name="email" value="<?= set_value('email'); ?>">
+					<span class="fa fa-id-card form-control-feedback"></span>
+					<?php echo form_error('username', '<small class="text-danger-pl-3">', '</small>'); ?>
+				</div>
+				<div class="form-group has-feedback">
+					<input type="password" class="form-control" placeholder="Password" name="password">
+					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					<?php echo form_error('password', '<small class="text-danger-pl-3">', '</small>', '<br/>'); ?>
 
 				</div>
 
+				<div class="row">
+					<!-- /.col -->
+					<div class="col-xs-4-center">
+						<button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+					</div>
+					<!-- /.col -->
+				</div>
+			</form>
+			<div class="text-center">
+				<a class="small" href="<?php echo site_url('forgot-password') ?>">Forgot Password?</a>
 			</div>
 
+
 		</div>
-		<!-- JavaScript-->
-		<?php $this->load->view("admin/_partials/sb_js.php") ?>
+		<!-- /.login-box-body -->
+	</div>
+	<!-- JavaScript-->
+	<?php $this->load->view("admin/_partials/js.php") ?>
 
 </body>
 
