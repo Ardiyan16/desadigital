@@ -43,6 +43,7 @@ class Registrasi extends CI_Controller
             'no_telepon' => $this->input->post('no_telepon'),
             'jenis_kelamin' => $this->input->post('jenis_kelamin'),
             'status' => $this->input->post('status'),
+            'foto' => 'default.jpg',
             'email' =>  htmlspecialchars($this->input->post('email', true)),
             'username' => htmlspecialchars($this->input->post('username', true)),
             'password' => $this->input->post('password1'),

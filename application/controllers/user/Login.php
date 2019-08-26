@@ -41,7 +41,8 @@ class Login extends CI_Controller
                 if ($cekpass->num_rows() > 0) {
 
                     $data = [
-                        'username' => $pengguna['username']
+                        'username' => $pengguna['username'],
+                        'foto' => $pengguna['foto']
                     ];
                     $data['logged_in'] = TRUE;
                     $this->session->set_userdata($data);

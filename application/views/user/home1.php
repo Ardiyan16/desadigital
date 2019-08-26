@@ -18,6 +18,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/skins/_all-skins.min.css'); ?>">
+    <link rel="shortcut icon" href="<?= base_url('img/bwi.png'); ?>">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,84 +35,76 @@
     <div class="wrapper">
 
         <header class="main-header">
-            <nav class="navbar navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a href="../../index2.html" class="navbar-brand"><b>Village</b>Developer</a>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
+            <nav class="navbar fixed-top navbar-static-top">
+                <div class="navbar-header ml-3">
+                    <img src="<?= base_url('img/bwi.png'); ?>" width="45" height="45">
+                </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                            <li class="divider"></li>
-                            <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Informasi Desa<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="">Berita Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="">Event Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="">Kegiatan Desa</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hasil Desa<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Makanan Tradisional</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Kerajinan Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Usaha Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Oleh-oleh desa</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pariwisata Desa<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="">Wisata Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="">Wisata Kuliner Desa</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
-                            </div>
-                        </form>
-                    </div>
-                    <!-- /.navbar-collapse -->
-                    <!-- Navbar Right Menu -->
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
-                            <!-- User Account Menu -->
-                            <li class="dropdown user user-menu">
-                                <!-- Menu Toggle Button -->
-                                <a href="<?= base_url('user/Login'); ?>" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="<?= base_url('img/profile.png'); ?> " class="user-image" alt="User Image">
-                                    <span class="hidden-xs"><?= $this->session->userdata('username'); ?></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- The user image in the menu -->
-                                    <li class="user-header">
-                                        <img src="<?= base_url('img/profile.png'); ?>" class="img-circle" alt="User Image">
-                                        <p><?= $this->session->userdata('username'); ?></p>
-                                    </li>
-                                    <!-- Menu Footer-->
-                                    <li class="user-footer">
-                                        <div class="text-center">
-                                            <a href="<?= base_url('Home'); ?>" class="btn btn-danger">Logout</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.navbar-custom-menu -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                        <li class="divider"></li>
+                        <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Informasi Desa<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="">Berita Desa</a></li>
+                                <li class="divider"></li>
+                                <li><a href="">Event Desa</a></li>
+                                <li class="divider"></li>
+                                <li><a href="">Kegiatan Desa</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hasil Desa<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Makanan Tradisional</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Kerajinan Desa</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Usaha Desa</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Oleh-oleh desa</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pariwisata Desa<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="">Wisata Desa</a></li>
+                                <li class="divider"></li>
+                                <li><a href="">Wisata Kuliner Desa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="<?= base_url('user/Login'); ?>" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="<?= $this->session->userdata('foto'); ?>" class="user-image" alt="User Image">
+                                <span class="hidden-xs"><?= $this->session->userdata('username'); ?></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="<?= $this->session->userdata('foto'); ?>" class="img-circle" alt="User Image">
+                                    <p><?= $this->session->userdata('username'); ?></p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="<?= base_url('Home'); ?>" class="btn btn-danger">Logout</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="<?= base_url('Home'); ?>" class="btn btn-success">Edit Profile</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
                 <!-- /.container-fluid -->
             </nav>
@@ -131,14 +124,14 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="<?= base_url('img/GeMa.png'); ?>" alt="Second slide">
+                    <img src="<?= base_url('img/Telukijo.png'); ?>" alt="Second slide">
 
                     <div class="carousel-caption">
                         Second Slide
                     </div>
                 </div>
                 <div class="item">
-                    <img src="<?= base_url('img/KaWu.png'); ?>" alt="Third slide">
+                    <img src="<?= base_url('img/watudodol.png'); ?>" alt="Third slide">
 
                     <div class="carousel-caption">
                         Third Slide

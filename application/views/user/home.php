@@ -1,216 +1,246 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="<?= base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?= base_url('assets/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="<?= base_url('assets/bower_components/Ionicons/css/ionicons.min.css'); ?>">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url('assets/dist/css/AdminLTE.min.css'); ?>">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="<?= base_url('assets/dist/css/skins/_all-skins.min.css'); ?>">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="<?= base_url('img/bwi.png'); ?>">
 
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="<?= base_url('assets/biz/lib/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="<?= base_url('assets/biz/lib/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/biz/lib/animate/animate.min.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/biz/lib/ionicons/css/ionicons.min.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/biz/lib/owlcarousel/assets/owl.carousel.min.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/biz/lib/lightbox/css/lightbox.min.css'); ?>" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="<?= base_url('assets/biz/css/style.css'); ?>" rel="stylesheet">
+
+    <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
 </head>
 
 <body class="hold-transition skin-blue layout-top-nav">
-    <div class="wrapper">
+    <header id="header">
+        <div class="container-fluid">
 
-        <header class="main-header">
-            <nav class="navbar navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a href="../../index2.html" class="navbar-brand"><b>Village</b>Developer</a>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
+            <div id="logo" class="pull-left">
+                <h1><a href="#intro" class="scrollto">VilDev</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="#intro">Home</a></li>
+                    <li class="menu-has-children"><a href="">Informasi Desa</a>
+                        <ul>
+                            <li><a href="#">Berita Desa</a></li>
+                            <li><a href="#">Event Desa</a></li>
+                            <li><a href="#">Kegiatan Desa</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li class="menu-has-children"><a href="">Drop Down</a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#">Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </header><!-- #header -->
+
+    <section id="intro">
+        <div class="intro-container">
+            <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+                <ol class="carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="carousel-item active">
+                        <div class="carousel-background"><img src="img/intro-carousel/1.jpg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>We are professional</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                            <li class="divider"></li>
-                            <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Informasi Desa<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="">Berita Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="">Event Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="">Kegiatan Desa</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hasil Desa<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Makanan Tradisional</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Kerajinan Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Usaha Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Oleh-oleh desa</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pariwisata Desa<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="">Wisata Desa</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="">Wisata Kuliner Desa</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img src="img/intro-carousel/2.jpg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>At vero eos et accusamus</h2>
+                                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
+                                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img src="img/intro-carousel/3.jpg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Temporibus autem quibusdam</h2>
+                                <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
+                                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img src="img/intro-carousel/4.jpg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Nam libero tempore</h2>
+                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
+                                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img src="img/intro-carousel/5.jpg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Magnam aliquam quaerat</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+        </div>
+    </section><!-- #intro -->
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>BizPage</h3>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+
+                        <div class="social-links">
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
                         </form>
                     </div>
-                    <!-- /.navbar-collapse -->
-                    <!-- Navbar Right Menu -->
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
-                            <!-- User Account Menu -->
-                            <li class="dropdown user user-menu">
-                                <!-- Menu Toggle Button -->
-                                <a href="<?= base_url('user/Login'); ?>">
-                                    <span class="hidden-xs">Login</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.navbar-custom-menu -->
-                </div>
-                <!-- /.container-fluid -->
-            </nav>
-        </header>
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="<?= base_url('img/KaIj.png'); ?>" alt="First slide">
 
-                    <div class="carousel-caption">
-                        First Slide
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="<?= base_url('img/GeMa.png'); ?>" alt="Second slide">
-
-                    <div class="carousel-caption">
-                        Second Slide
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="<?= base_url('img/KaWu.png'); ?>" alt="Third slide">
-
-                    <div class="carousel-caption">
-                        Third Slide
-                    </div>
                 </div>
             </div>
-            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                <span class="fa fa-angle-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                <span class="fa fa-angle-right"></span>
-            </a>
-        </div>
-        <div class="content-wrapper">
-            <div class="container">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Top Navigation
-                        <small>Example 2.0</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Layout</a></li>
-                        <li class="active">Top Navigation</li>
-                    </ol>
-                </section>
-
-                <!-- Main content -->
-                <section class="content">
-                    <div class="callout callout-info">
-                        <h4>Tip!</h4>
-
-                        <p>Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a
-                            sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular
-                            links instead.</p>
-                    </div>
-                    <div class="callout callout-danger">
-                        <h4>Warning!</h4>
-
-                        <p>The construction of this layout differs from the normal one. In other words, the HTML markup of the navbar
-                            and the content will slightly differ than that of the normal layout.</p>
-                    </div>
-                    <div class="box box-default">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Blank Box</h3>
-                        </div>
-                        <div class="box-body">
-                            The great content goes here
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </section>
-                <!-- /.content -->
-            </div>
-            <!-- /.container -->
         </div>
 
-    </div>
-
-
-    <footer class="main-footer">
         <div class="container">
-            <div class="pull-right hidden-xs">
-                <b>Version</b> 2.4.13
+            <div class="copyright">
+                &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
             </div>
-            <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-            reserved.
+            <div class="credits">
+                <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+        -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
         </div>
-        <!-- /.container -->
-    </footer>
-    <!-- ./wrapper -->
+    </footer><!-- #footer -->
 
     <!-- jQuery 3 -->
-    <script src="<?= base_url('assets/bower_components/jquery/dist/jquery.min.js') ?>"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="<?= base_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
-    <!-- SlimScroll -->
-    <script src="<?= base_url('assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') ?>"></script>
-    <!-- FastClick -->
-    <script src="<?= base_url('assets/bower_components/fastclick/lib/fastclick.js') ?>"></script>
-    <!-- AdminLTE App -->
-    <script src="<?= base_url('assets/dist/js/adminlte.min.js') ?>"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="<?= base_url('assets/dist/js/demo.js') ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/jquery/jquery.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/jquery/jquery-migrate.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/easing/easing.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/superfish/hoverIntent.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/superfish/superfish.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/wow/wow.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/waypoints/waypoints.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/counterup/counterup.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/owlcarousel/owl.carousel.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/isotope/isotope.pkgd.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/lightbox/js/lightbox.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/biz/lib/touchSwipe/jquery.touchSwipe.min.js'); ?>"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="<?= base_url('assets/biz/contactform/contactform.js'); ?>"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="<?= base_url('assets/biz/js/main.js'); ?>"></script>
 </body>
 
 </html>
