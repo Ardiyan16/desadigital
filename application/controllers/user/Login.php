@@ -46,7 +46,7 @@ class Login extends CI_Controller
                     ];
                     $data['logged_in'] = TRUE;
                     $this->session->set_userdata($data);
-                    redirect('Home/homeuser');
+                    redirect('user/Homeuser');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf password yang anda masukkan salah!</div>');
                     redirect('user/Login');
@@ -65,7 +65,7 @@ class Login extends CI_Controller
     {
         $this->session->unset_userdata('username');
 
-        $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">anda telah logout</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">anda telah logout</div>');
         redirect('Home');
     }
 }
