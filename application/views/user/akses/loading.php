@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/AdminLTE.min.css'); ?>">
     <!-- iCheck -->
     <link rel="stylesheet" href="<?= base_url('assets/plugins/iCheck/square/blue.css'); ?>">
+    <link rel="shortcut icon" href="<?= base_url('img/bwi.png'); ?>">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,11 +34,11 @@
     <div class="register-box">
         <div class="register-box-body">
             <?= $this->session->flashdata('message'); ?>
-            <h5 class="login-box-msg">Akun anda telah terdaftar tunggu verifikasi admin</h5>
+            <h5 class="login-box-msg">Akun anda telah terdaftar tunggu verifikasi email</h5>
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <button type="button" class="btn btn-default btn-lrg ajax" title="Ajax Request">
-                        <i class="fa fa-spin fa-refresh"></i>&nbsp; Tunggu admin menyetujui akun anda
+                        <i class="fa fa-spin fa-refresh"></i>&nbsp; silahkan cek email anda
                     </button>
                 </div>
             </div>
