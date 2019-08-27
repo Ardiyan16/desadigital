@@ -45,21 +45,33 @@ class M_admin extends CI_Model
     public function cek_akses_adm($email, $id_akses)
     {
 
-        $periksa = $this->db->get_where('pengguna', array('email' =>
+        $periksa_adm = $this->db->get_where('pengguna', array('email' =>
         $this->session->userdata('email'), 'id_akses' => ('adm')));
-        if ($periksa->num_rows() > 0) {
+        if ($periksa_adm->num_rows() > 0) {
             return 1;
         } else {
             return 0;
         }
     }
 
-    public function cek_akses_su($email, $id_akses)
+    public function cek_akses_kpl($email, $id_akses)
     {
 
-        $periksa = $this->db->get_where('pengguna', array('email' =>
-        $this->session->userdata('email'), 'id_akses' => ('su')));
-        if ($periksa->num_rows() > 0) {
+        $periksa_kpl = $this->db->get_where('pengguna', array('email' =>
+        $this->session->userdata('email'), 'id_akses' => ('kpl')));
+        if ($periksa_kpl->num_rows() > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function cek_akses_stf($email, $id_akses)
+    {
+
+        $periksa_stf = $this->db->get_where('pengguna', array('email' =>
+        $this->session->userdata('email'), 'id_akses' => ('stf')));
+        if ($periksa_stf->num_rows() > 0) {
             return 1;
         } else {
             return 0;

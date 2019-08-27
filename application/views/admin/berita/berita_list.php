@@ -1,6 +1,3 @@
-<!-- ---------------------------BERISI HEAD, NAVBAR, DAN 1/2 dari SIDEBAR ------------------------------->
-
-
 <?php $this->load->view('admin/_partials/head') ?>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -11,16 +8,14 @@
     <!-- Left side column. contains the logo and sidebar -->
     <?php $this->load->view('admin/_partials/sidebar') ?>
 
-    <?php $this->load->view('admin/_partials/navbar/kepala_navbar') ?>
-
     <!-- Content Wrapper. Contains page content -->
-
-
-    <!-- ----------------------------------------------------isi atas---------------------------------- -->
-
-
-    <!-- Content Header (Page header) -->
     <div class="content-wrapper">
+
+
+      <!-- ----------------------------------------------------isi atas---------------------------------- -->
+
+
+      <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
           Dashboard

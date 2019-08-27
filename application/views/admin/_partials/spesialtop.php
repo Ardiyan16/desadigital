@@ -1,26 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- ---------------------------BERISI HEAD, NAVBAR, DAN 1/2 dari SIDEBAR ------------------------------->
 
-<head>
 
-    <?php $this->load->view("admin/_partials/head.php") ?>
+<?php $this->load->view('admin/_partials/head') ?>
 
-</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
 
-<body id="page-top">
+        <?php $this->load->view('admin/_partials/navbar') ?>
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+        <!-- Left side column. contains the logo and sidebar -->
+        <?php $this->load->view('admin/_partials/sidebar') ?>
 
-        <!-- Sidebar -->
-        <?php $this->load->view("admin/_partials/sidebar.php") ?>
-        <!-- End of Sidebar -->
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                <?php $this->load->view("admin/_partials/navbar.php") ?>
+        <!-- Content Wrapper. Contains page content -->
