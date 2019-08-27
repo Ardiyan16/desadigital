@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
+    <title>Ganti password</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -33,36 +33,33 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Login</b></a>
+            <a href="../../index2.html"><b>Ganti Password</b></a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            <p class="login-box-msg">Silahkan Login untuk mendapatkan akses</p>
             <?= $this->session->flashdata('message'); ?>
-
-            <form action="<?= base_url('user/Login'); ?>" method="post">
+            <?= $this->session->set_userdata('ganti_email'); ?>
+            <p class="login-box-msg">Silahkan isi data</p>
+            <form action="<?= base_url('user/Registrasi/ubahpassword'); ?>" method="post">
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="username" name="username" value="<?= set_value('username'); ?>">
+                    <input type="password" class="form-control" placeholder="Password" name="password1">
                     <span class="fa fa-id-card form-control-feedback"></span>
-                    <?php echo form_error('username', '<small class="text-danger-pl-3">', '</small>'); ?>
+                    <?php echo form_error('email', '<small class="text-danger-pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password" name="password">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    <?php echo form_error('password', '<small class="text-danger-pl-3">', '</small>', '<br/>'); ?>
-                    <a href="Registrasi/Forgotpassword">lupa password ?</a><br />
+                    <input type="password" class="form-control" placeholder="Konfirmasi Password" name="password2">
+                    <span class="fa fa-id-card form-control-feedback"></span>
+                    <?php echo form_error('email', '<small class="text-danger-pl-3">', '</small>'); ?>
                 </div>
 
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-xs-4-center">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Ubah Password</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
-
-            <a href="Registrasi" class="text-center">membuat akun baru</a>
 
         </div>
         <!-- /.login-box-body -->
