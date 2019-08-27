@@ -24,6 +24,7 @@
     <link href="<?= base_url('assets/biz/lib/ionicons/css/ionicons.min.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/biz/lib/owlcarousel/assets/owl.carousel.min.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/biz/lib/lightbox/css/lightbox.min.css'); ?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Main Stylesheet File -->
     <link href="<?= base_url('assets/biz/css/style.css'); ?>" rel="stylesheet">
@@ -69,7 +70,7 @@
                             <li><a href="#">Wisata Kuliner Desa</a></li>
                         </ul>
                     </li>
-                    <li class="menu-has-children"><a href="" style="color: white;"><?= $this->session->userdata('username'); ?> <img class="img-circle" src="<?= $this->session->userdata('foto'); ?>"></a>
+                    <li class="menu-has-children"><a href="" style="color: white;"><?= $this->session->userdata('username'); ?> <img class="img-circle ml-3" src="<?= base_url('assets/img/foto_profil/') . $pengguna['foto']; ?>" width="30" height="30"></a>
                         <ul>
                             <li><a href="Homeuser/editprofile">Edit Profile</a></li>
                         </ul>

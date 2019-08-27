@@ -101,6 +101,8 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Registrasi</button>
             </form>
+            <br />
+            <a href="Login" class="text-center">Sudah memiliki akun ?</a>
         </div>
         <!-- /.form-box -->
     </div>
