@@ -21,50 +21,102 @@ class Login extends CI_Controller
     }
     function aksi_login()
     {
-        $username = htmlspecialchars($this->input->post('username', TRUE), ENT_QUOTES);
+        $email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
         $password = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
 
 
-        $user = $this->db->get_where('admin', ['username' => $username])->row_array();
+        $user = $this->db->get_where('pengguna', ['email' => $email])->row_array();
 
         if ($user) {
             if ($password == $user['password']) {
                 $datas = [
-                    'username' => $user['username']
-
+                    'email' => $user['email'],
+                    'id_akses' => $user['id_akses']
                 ];
                 $this->session->set_userdata($datas);
-                redirect('admin/Template');
+                if ($user['id_akses'] == 'kpl') {
+                    redirect('admin/kepala');
+                }
+                if ($user['id_akses'] == 'adm') {
+                    redirect('admin/Admin');
+                }
+                if ($user['id_akses'] == 'stf') {
+                    redirect('admin/staff');
+                } else {
+                    $this->session->unset_userdata('email');
+                    $this->session->unset_userdata('id_akses');
+
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not registered!</div>');
+                    redirect('admin/login');
+                }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
-                redirect('admin/Login');
+                redirect('admin/login');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not registered!</div>');
-            redirect('admin/Login');
+            redirect('admin/login');
         }
     }
-
-
-    // function aksi_login()
-    // {
-    // 	// if(isset($_POST['submit'])){
-    // 	$username = $this->input->post('username');
-    // 	$password = $this->input->post('password');
-    // 	$berhasil = $this->m_login->cek_login($username, $password);
-    // 	if ($berhasil == 1) {
-    // 		redirect('admin/Produk');
-    // 	} else {
-    // 		$this->load->view("admin/login");
-    // 	}
-    // }
-
-
-    function logout()
+    public function logout()
     {
-        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('id_akses');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logout</div>');
-        redirect('admin/Login');
+        redirect('admin/login');
     }
 }
+
+
+
+
+
+//     {
+//         $username = htmlspecialchars($this->input->post('username', TRUE), ENT_QUOTES);
+//         $password = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
+
+
+//         $user = $this->db->get_where('admin', ['username' => $username])->row_array();
+
+//         if ($user) {
+//             if ($password == $user['password']) {
+//                 $datas = [
+//                     'username' => $user['username']
+
+//                 ];
+//                 $this->session->set_userdata($datas);
+//                 redirect('admin/Template');
+//             } else {
+//                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
+//                 redirect('admin/Login');
+//             }
+//         } else {
+//             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Username is not registered!</div>');
+//             redirect('admin/Login');
+//         }
+//     }
+
+
+//     // function aksi_login()
+//     // {
+//     // 	// if(isset($_POST['submit'])){
+//     // 	$username = $this->input->post('username');
+//     // 	$password = $this->input->post('password');
+//     // 	$berhasil = $this->m_login->cek_login($username, $password);
+//     // 	if ($berhasil == 1) {
+//     // 		redirect('admin/Produk');
+//     // 	} else {
+//     // 		$this->load->view("admin/login");
+//     // 	}
+//     // }
+
+
+//     function logout()
+//     {
+//         $this->session->unset_userdata('username');
+
+//         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logout</div>');
+//         redirect('admin/Login');
+//     }
+// }
