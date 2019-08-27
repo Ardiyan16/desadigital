@@ -63,7 +63,7 @@ class Registrasi extends CI_Controller
         $this->db->insert('token', $user_token);
 
         $this->kirimemail($token, 'verify');
-        $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">Data Anda berhasil di simpan</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Anda berhasil di simpan</div>');
         redirect('user/Loading');
     }
 
@@ -125,7 +125,7 @@ class Registrasi extends CI_Controller
 
                     $this->db->delete('token', ['email' => $email]);
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">' . $email . ' telah terverifikasi</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">' . $email . ' telah terverifikasi</div>');
                     redirect('user/Login');
                 } else {
 
@@ -201,9 +201,6 @@ class Registrasi extends CI_Controller
 
     public function ubahpassword()
     {
-        if (!$this->session->userdata('ganti_email')) {
-            redirect('user/Login');
-        }
 
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|matches[password2]');
         $this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|trim|matches[password1]');
@@ -214,7 +211,7 @@ class Registrasi extends CI_Controller
         } else {
 
             $password = $this->input->post('password1');
-            $email = $this->session->set_userdata('ganti_email');
+            $email = $this->session->userdata('ganti_email');
 
             $this->db->set('password', $password);
             $this->db->where('email', $email);
@@ -222,7 +219,9 @@ class Registrasi extends CI_Controller
 
             $this->session->unset_userdata('ganti_email');
 
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password anda berhasil di ubah</div>');
+            $this->db->delete('token', ['email' => $email]);
+
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Password anda berhasil di ubah</div>');
             redirect('user/Login');
         }
     }

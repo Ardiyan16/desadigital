@@ -37,19 +37,19 @@
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            <?= $this->session->flashdata('message'); ?>
-            <?= $this->session->set_userdata('ganti_email'); ?>
+            <h5><?= $this->session->flashdata('message'); ?></h5>
+            <h5><?= $this->session->userdata('ganti_email'); ?></h5>
             <p class="login-box-msg">Silahkan isi data</p>
             <form action="<?= base_url('user/Registrasi/ubahpassword'); ?>" method="post">
                 <div class="form-group has-feedback">
                     <input type="password" class="form-control" placeholder="Password" name="password1">
                     <span class="fa fa-id-card form-control-feedback"></span>
-                    <?php echo form_error('email', '<small class="text-danger-pl-3">', '</small>'); ?>
+                    <?php echo form_error('password1', '<small class="text-danger-pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="password" class="form-control" placeholder="Konfirmasi Password" name="password2">
                     <span class="fa fa-id-card form-control-feedback"></span>
-                    <?php echo form_error('email', '<small class="text-danger-pl-3">', '</small>'); ?>
+                    <?php echo form_error('password2', '<small class="text-danger-pl-3">', '</small>'); ?>
                 </div>
 
                 <div class="row">
