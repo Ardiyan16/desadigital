@@ -49,7 +49,8 @@ class Registrasi extends CI_Controller
             'username' => htmlspecialchars($this->input->post('username', true)),
             'password' => $this->input->post('password1'),
             'aktif' => 0,
-            'date_created' => time()
+            'date_created' => time(),
+            'role_id' => 1
         ];
 
         $token = base64_encode(random_bytes(30));

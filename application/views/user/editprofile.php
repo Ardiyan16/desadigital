@@ -149,10 +149,10 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="name" class="col-sm-2 col-form-label">Full name</label>
+                        <label for="name" class="col-sm-2 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" name="name_lengkap" value="<?= $pengguna['nama_lengkap']; ?>">
-                            <?= form_error('name_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <input type="text" class="form-control" id="name" name="nama_lengkap" value="<?= $pengguna['nama_lengkap']; ?>">
+                            <?= form_error('nama_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
                     <div class="form-group row">

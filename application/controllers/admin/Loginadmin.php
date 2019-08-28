@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login extends CI_Controller
+class Loginadmin extends CI_Controller
 {
     public function __construct()
     {
@@ -16,8 +16,8 @@ class Login extends CI_Controller
     public function index()
     {
         // load view admin/overview.php
-
-        $this->load->view("admin/login");
+        $data['title'] = 'Login';
+        $this->load->view("admin/login", $data);
     }
     function aksi_login()
     {
@@ -25,43 +25,41 @@ class Login extends CI_Controller
         $password = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
 
 
-        $user = $this->db->get_where('pengguna', ['email' => $email])->row_array();
+        $admin = $this->db->get_where('admin', ['email' => $email])->row_array();
 
-        if ($user) {
-            if ($password == $user['password']) {
-                $datas = [
-                    'email' => $user['email'],
-                    'id_akses' => $user['id_akses']
+        if ($admin) {
+            if ($password == $admin['password']) {
+                $data = [
+                    'email' => $admin['email'],
+                    'role_id' => $admin['role_id']
                 ];
-                $this->session->set_userdata($datas);
-                if ($user['id_akses'] == 'kpl') {
-                    redirect('admin/kepala');
-                }
-                if ($user['id_akses'] == 'adm') {
-                    redirect('admin/Admin');
-                }
-                if ($user['id_akses'] == 'stf') {
-                    redirect('admin/staff');
+                $this->session->set_userdata($data);
+                if ($admin['role_id'] == '1') {
+                    redirect('admin/Datauser');
+                } else if ($admin['role_id'] == '2') {
+                    redirect('admin/Dashboard');
+                } else if ($admin['role_id'] == '3') {
+                    redirect('admin/Dataadministrator');
                 } else {
                     $this->session->unset_userdata('email');
-                    $this->session->unset_userdata('id_akses');
+                    $this->session->unset_userdata('role_id');
 
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not registered!</div>');
-                    redirect('admin/login');
+                    redirect('admin/Loginadmin');
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
-                redirect('admin/login');
+                redirect('admin/Loginadmin');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not registered!</div>');
-            redirect('admin/login');
+            redirect('admin/Loginadmin');
         }
     }
     public function logout()
     {
         $this->session->unset_userdata('email');
-        $this->session->unset_userdata('id_akses');
+        $this->session->unset_userdata('role_id');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logout</div>');
         redirect('admin/login');

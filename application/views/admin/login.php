@@ -20,7 +20,7 @@
 		<div class="login-box-body">
 			<p class="login-box-msg">Silahkan Login untuk mendapatkan akses</p>
 
-			<form action="<?= base_url('admin/Login/aksi_login'); ?>" method="post">
+			<form action="<?= base_url('admin/Loginadmin/aksi_login'); ?>" method="post">
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="email" name="email" value="<?= set_value('email'); ?>">
 					<span class="fa fa-id-card form-control-feedback"></span>
@@ -42,7 +42,7 @@
 				</div>
 			</form>
 			<div class="text-center">
-				<a class="small" href="<?php echo site_url('forgot-password') ?>">Forgot Password?</a>
+				<a class="small" href="<?= base_url('admin/Loginadmin/Forgotpassword'); ?>">Lupa password?</a>
 			</div>
 
 
