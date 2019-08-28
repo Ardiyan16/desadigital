@@ -5,12 +5,17 @@ class M_superuser extends CI_Model
     private $_table = "pengguna";
 
     public $id_pengguna;
-    public $nama_pengguna;
+    public $nama_lengkap;
+    public $tempat_lahir;
     public $tanggal_lahir;
-    public $id_akses;
+    public $alamat;
+    public $no_telepon;
+    public $jenis_kelamin;
+    public $status;
     public $email;
+    public $username;
     public $password;
-    public $nomor_telp;
+    public $foto = "default.jpg";
 
 
     public function rules()
@@ -18,8 +23,8 @@ class M_superuser extends CI_Model
         return [
 
             [
-                'field' => 'nama_pengguna',
-                'label' => 'nama_pengguna',
+                'field' => 'nama_lengkap',
+                'label' => 'nama_lengkap',
                 'rules' => 'required'
             ],
 
@@ -38,7 +43,7 @@ class M_superuser extends CI_Model
 
     public function getUserId()
     {
-        $query = $this->db->query("SELECT * FROM pengguna WHERE role_id =2");
+        $query = $this->db->query("SELECT * FROM pengguna WHERE role_id =3");
         return $query->result();
     }
 
@@ -67,53 +72,37 @@ class M_superuser extends CI_Model
     }
 
 
+
     public function save()
     {
         $post = $this->input->post();
         if (isset($_POST['id_pengguna'])) { }
 
+        $this->role_id = 3;
         $this->nama_lengkap = $post["nama_lengkap"];
-        $this->username = $post["username"];
+        $this->tempat_lahir = $post["tempat_lahir"];
+        $this->tanggal_lahir = $post["tanggal_lahir"];
+        $this->alamat = $post["alamat"];
+        $this->no_telepon = $post["no_telepon"];
+        $this->jenis_kelamin = $post["jenis_kelamin"];
+        $this->status = $post["status"];
         $this->email = $post["email"];
+        $this->username = $post["username"];
         $this->password = $post["password"];
-        $this->no_hp = $post["no_hp"];
+        $this->foto = $this->_uploadImage();
+
 
         $this->db->insert($this->_table, $this);
     }
 
-    public function update()
-    {
-        $post = $this->input->post();
-        $this->id_pengguna = $post["id_pengguna"];
-        $this->nama_pengguna = $post["nama_pengguna"];
-        $this->tanggal_lahir = $post["tanggal_lahir"];
-        $this->id_akses = $post["id_akses"];
-        $this->email = $post["email"];
-        $this->password = $post["password"];
-        $this->nomor_telp = $post["nomor_telp"];
-        if (!empty($_FILES["foto"]["name"])) {
-            $this->foto = $this->_uploadImage();
-        } else {
-            $this->foto = $post["old_image"];
-        }
-        $this->db->update($this->_table, $this, array('id_pengguna' => $post['id_pengguna']));
-    }
-
-    public function delete($id_pengguna)
-    {
-        $this->_deleteImage($id_pengguna);
-        return $this->db->delete($this->_table, array("id_pengguna" => $id_pengguna));
-    }
-
     private function _uploadImage()
     {
-        $config['upload_path']          = './upload/profil/';
+        $config['upload_path']          = './assets/img/foto_profil/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['file_name']            = $this->id_pengguna;
+        $nama_lengkap = $_FILES['foto']['name'];
+        $config['file_name']            = $nama_lengkap;
         $config['overwrite']            = true;
-        $config['max_size']             = 1024; // 1MB
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 768;
+        $config['max_size']             = 3024;
 
         $this->load->library('upload', $config);
 
@@ -123,6 +112,17 @@ class M_superuser extends CI_Model
 
         print_r($this->upload->display_errors());
     }
+
+
+
+
+    public function delete($id_pengguna)
+    {
+        $this->_deleteImage($id_pengguna);
+        return $this->db->delete($this->_table, array("id_pengguna" => $id_pengguna));
+    }
+
+
 
     private function _deleteImage($id_pengguna)
     {

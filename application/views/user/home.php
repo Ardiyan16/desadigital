@@ -93,7 +93,7 @@
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <p>Teluk Ijo</p>
-                                <a href="user/Login" class="btn-get-started scrollto">Login</a>
+                                <a href="<?php echo site_url('admin/loginadmin/') ?>" class="btn-get-started scrollto">Login</a>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <p>Kawah Ijen</p>
-                                <a href="user/Login" class="btn-get-started scrollto">Login</a>
+                                <a href="<?php echo site_url('admin/loginadmin/') ?>" class="btn-get-started scrollto">Login</a>
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <p>Watu Dodol</p>
-                                <a href="user/Login" class="btn-get-started scrollto">Login</a>
+                                <a href="<?php echo site_url('admin/loginadmin/') ?>" class="btn-get-started scrollto">Login</a>
                             </div>
                         </div>
                     </div>

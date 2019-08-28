@@ -7,20 +7,13 @@
 
 </head>
 
-<body id="page-top">
+<body class="hold-transition skin-blue sidebar-mini">
+    <?php $this->load->view("admin/_partials/topbar/topbar.php") ?>
+
+    <!-- <body id="page-top"> -->
 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view("admin/_partials/sidebar.php") ?>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                <?php $this->load->view("admin/_partials/navbar.php") ?>
+        <?php $this->load->view("admin/_partials/sidebaradmin/sidebar_su") ?>

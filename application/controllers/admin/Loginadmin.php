@@ -16,7 +16,7 @@ class Loginadmin extends CI_Controller
     public function index()
     {
         // load view admin/overview.php
-        $data['title'] = 'Login';
+        $data['judul'] = 'Login';
         $this->load->view("admin/login", $data);
     }
     function aksi_login()
@@ -59,10 +59,11 @@ class Loginadmin extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('email');
+        $this->session->unset_userdata('username');
         $this->session->unset_userdata('role_id');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logout</div>');
-        redirect('admin/login');
+        redirect('Home');
     }
 }
 
