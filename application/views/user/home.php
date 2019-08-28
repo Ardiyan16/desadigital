@@ -238,7 +238,7 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong>BizPage</strong>. Web By SansDev
+                &copy; Copyright <strong>Village Developer</strong>. Web By SansDev
             </div>
             <div class="credits">
                 <!--

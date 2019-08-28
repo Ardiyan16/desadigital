@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Mregis1 extends CI_Model
+class M_registrasi extends CI_Model
 {
     private $_table = "pengguna";
 
@@ -88,5 +88,12 @@ class Mregis1 extends CI_Model
         $this->status = $post["status"];
 
         $this->db->insert($this->_table, $this);
+    }
+
+    public function jumlahuser()
+    {
+        $user = "SELECT count(id_pengguna) as count FROM pengguna WHERE role_id=1 ";
+        $result = $this->db->query($user);
+        return $result->row()->count;
     }
 }
