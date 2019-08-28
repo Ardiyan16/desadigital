@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class M_admin extends CI_Model
+class M_superuser extends CI_Model
 {
     private $_table = "pengguna";
 
@@ -38,7 +38,7 @@ class M_admin extends CI_Model
 
     public function getUserId()
     {
-        $query = $this->db->query("SELECT * FROM v_pengguna WHERE id_akses !='cus'");
+        $query = $this->db->query("SELECT * FROM pengguna WHERE role_id =2");
         return $query->result();
     }
 
@@ -54,11 +54,11 @@ class M_admin extends CI_Model
         }
     }
 
-    public function cek_akses_su($email, $id_akses)
+    public function cek_akses_3($email, $id_akses)
     {
 
         $periksa = $this->db->get_where('pengguna', array('email' =>
-        $this->session->userdata('email'), 'id_akses' => ('su')));
+        $this->session->userdata('email'), 'role_id' => ('3')));
         if ($periksa->num_rows() > 0) {
             return 1;
         } else {
@@ -70,17 +70,14 @@ class M_admin extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        if (isset($_POST['id_akses'])) {
-            $id_pengguna = $_POST['id_akses'];
-        }
-        $this->id_pengguna = uniqid($id_pengguna);
-        $this->nama_pengguna = $post["nama_pengguna"];
-        $this->tanggal_lahir = $post["tanggal_lahir"];
-        $this->id_akses = $post["id_akses"];
+        if (isset($_POST['id_pengguna'])) { }
+
+        $this->nama_lengkap = $post["nama_lengkap"];
+        $this->username = $post["username"];
         $this->email = $post["email"];
-        $this->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $this->nomor_telp = $post["nomor_telp"];
-        $this->foto = $this->_uploadImage();
+        $this->password = $post["password"];
+        $this->no_hp = $post["no_hp"];
+
         $this->db->insert($this->_table, $this);
     }
 

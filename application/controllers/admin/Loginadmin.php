@@ -25,7 +25,7 @@ class Loginadmin extends CI_Controller
         $password = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
 
 
-        $admin = $this->db->get_where('admin', ['email' => $email])->row_array();
+        $admin = $this->db->get_where('pengguna', ['email' => $email])->row_array();
 
         if ($admin) {
             if ($password == $admin['password']) {
@@ -39,7 +39,7 @@ class Loginadmin extends CI_Controller
                 } else if ($admin['role_id'] == '2') {
                     redirect('admin/Dashboard');
                 } else if ($admin['role_id'] == '3') {
-                    redirect('admin/Dataadministrator');
+                    redirect('admin/register');
                 } else {
                     $this->session->unset_userdata('email');
                     $this->session->unset_userdata('role_id');

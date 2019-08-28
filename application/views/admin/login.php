@@ -52,7 +52,7 @@
 		<!-- /.login-box-body -->
 	</div>
 	<!-- JavaScript-->
-	<?php $this->load->view("admin/_partials/js.php") ?>
+	<?php $this->load->view("admin/_partials/footer/js.php") ?>
 
 </body>
 
