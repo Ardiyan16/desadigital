@@ -14,16 +14,33 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Menu</li>
+            <li>
+                <a href="Dashboard">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-dashboard"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="Datauser">
+                    <i class="fa fa-file-text-o"></i> <span>Data User</span>
+                    <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                    </span>
+                </a>
+            </li>
             <li class="active treeview">
                 <a href="#">
-                    <i class="fa fa-file-text-o"></i> <span>Data Siswa</span>
+                    <i class="fa fa-newspaper-o"></i> <span>Berita</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="inputdatasiswa.php"><i class="fa fa-file-text-o"></i> Input Data Siswa</a></li>
-                    <li><a href="tabeldatasiswa.php"><i class="fa fa-tv"></i> View Data Siswa</a></li>
+                    <li><a href="inputdatasiswa.php"><i class="fa fa-pencil-square-o"></i>Tambah Berita</a></li>
+                    <li><a href="tabeldatasiswa.php"><i class="fa fa-table "></i>Data Berita</a></li>
+                    <li><a href="tabeldatasiswa.php"><i class="fa fa-edit"></i>Edit Berita</a></li>
                 </ul>
             </li>
         </ul>

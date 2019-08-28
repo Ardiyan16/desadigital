@@ -33,7 +33,7 @@ class Dashboard extends CI_Controller
         } else {
 
             $nama = $this->input->post('nama_lengkap');
-            $username = $this->input->post('username');
+            $alamat = $this->input->post('alamat');
 
             // cek jika ada gambar yang akan diupload
             $upload_image = $_FILES['foto']['name'];

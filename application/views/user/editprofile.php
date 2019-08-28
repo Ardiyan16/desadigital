@@ -69,6 +69,13 @@
                             <li><a href="#">Wisata Kuliner Desa</a></li>
                         </ul>
                     </li>
+                    <li class="menu-has-children"><a href="">Kependudukan</a>
+                        <ul>
+                            <li><a href="#">Data Warga Desa</a></li>
+                            <li><a href="#">Pendaftaran PP</a></li>
+                            <li><a href="#">Data Pemenerima Bantuan</a></li>
+                        </ul>
+                    </li>
                     <li class="menu-has-children"><a href="" style="color: white;"><?= $this->session->userdata('username'); ?> <img class="img-circle" src="<?= $this->session->userdata('foto'); ?>"></a>
                         <ul>
                             <li><a href="#">Edit Profile</a></li>

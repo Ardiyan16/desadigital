@@ -28,7 +28,8 @@ class M_admin extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        $datauser = $this->db->query("SELECT * FROM pengguna WHERE role_id = 1")->result();
+        return $datauser;
     }
 
     public function getById($id)
@@ -116,7 +117,6 @@ class M_admin extends CI_Model
 
     public function delete($id_pengguna)
     {
-        $this->_deleteImage($id_pengguna);
         return $this->db->delete($this->_table, array("id_pengguna" => $id_pengguna));
     }
 
