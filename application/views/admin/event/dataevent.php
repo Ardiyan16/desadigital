@@ -41,13 +41,14 @@
                                         <tr>
                                             <th><?= $ev->judul_event ?></th>
                                             <th><?= $ev->isi_event ?></th>
-                                            <th><?= $ev->foto ?></th>
+                                            <th><img src="<?php echo base_url('assets/img/foto_event/' . $ev->foto) ?>" width="64" /></th>
                                             <th><?= $ev->tanggal_mulai ?></th>
-                                            <th><?= $ev->Tanggal_selesai ?></th>
-                                            <th><?= $ev->dusun ?></th>
+                                            <th><?= $ev->tanggal_selesai ?></th>
+                                            <th><?= $ev->nama_dusun ?></th>
                                             <th><?= $ev->rt ?></th>
+                                            <th><?= $ev->rw ?></th>
                                             <th>
-                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datapengguna/hapus/' . $pengguna->id_pengguna) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/Event/hapus/' . $ev->judul_event) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                                             </th>
                                         </tr>
                                         <?php endforeach; ?>
