@@ -18,16 +18,17 @@
                     <div class="col-md-12">
                         <div class="box box-info">
                             <div class="box-header">
-                                <h3 class="box-title">Tambah Event
+                                <h3><?= $this->session->flashdata('error'); ?></h3>
+                                <h3 class="box-title" style="margin-bottom: 20px;">Tambah Event
                                     <small>Tambahkan Event Desa</small>
                                 </h3>
                                 <div class="box-body">
                                     <form action="#" method="post">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="judul_event" placeholder="Judul Event...">
+                                            judul event<input type="text" class="form-control" name="judul_event" placeholder="Judul Event...">
                                         </div>
                                         <div>
-                                            <textarea id="editor1" name="editor1" rows="10" cols="80" placeholder="Isi Berita..."></textarea>
+                                            isi event<textarea id="editor1" name="editor1" rows="10" cols="80" placeholder="Isi Berita..."></textarea>
                                         </div>
                                         <br />
                                         <div class="form-group">

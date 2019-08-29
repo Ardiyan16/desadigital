@@ -60,11 +60,11 @@ class M_superuser extends CI_Model
         }
     }
 
-    public function cek_akses_3($email, $id_akses)
+    public function cek_akses_3($username, $id_akses)
     {
 
-        $periksa = $this->db->get_where('pengguna', array('email' =>
-        $this->session->userdata('email'), 'role_id' => ('3')));
+        $periksa = $this->db->get_where('pengguna', array('username' =>
+        $this->session->userdata('username'), 'role_id' => ('3')));
         if ($periksa->num_rows() > 0) {
             return 1;
         } else {

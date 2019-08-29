@@ -78,7 +78,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Datauser">
+                    <a href="<?= site_url('admin/Register'); ?>">
                         <i class="fa fa-file-text-o"></i> <span>Tambah Admin</span>
                         <span class="pull-right-container">
                             <i class="glyphicon glyphicon-list-alt"></i>
