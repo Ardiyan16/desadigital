@@ -70,7 +70,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Menu</li>
                 <li>
-                    <a href="Dashboard">
+                    <a href="<?= site_url('superuser/Superuser'); ?>">
                         <i class="fa fa-dashboard"></i> <span>Data Admin</span>
                         <span class="pull-right-container">
                             <i class="glyphicon glyphicon-dashboard"></i>
@@ -78,7 +78,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?= site_url('admin/Register'); ?>">
+                    <a href="<?= site_url('admin/Register/add'); ?>">
                         <i class="fa fa-file-text-o"></i> <span>Tambah Admin</span>
                         <span class="pull-right-container">
                             <i class="glyphicon glyphicon-list-alt"></i>
