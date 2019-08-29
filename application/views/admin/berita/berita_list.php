@@ -49,7 +49,7 @@
                       <th><?= $berita->id_rw ?></th>
                       <th><?= $berita->id_rt ?></th>
                       <td>
-                        <img src="<?php echo base_url('assets/img/foto_profil/' . $berita->foto) ?>" width="64" />
+                        <img src="<?php echo base_url('assets/img/foto_berita/' . $berita->foto) ?>" width="64" />
                       </td>
                       <th>
                         <a href="<?php echo site_url('admin/berita/edit/' . $berita->id_berita) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>

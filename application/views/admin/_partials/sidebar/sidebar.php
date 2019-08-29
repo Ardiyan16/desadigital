@@ -40,7 +40,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo site_url('admin/Berita/add') ?>"><i class="fa fa-pencil-square-o"></i>Tambah Berita</a></li>
                     <li><a href="<?php echo site_url('admin/Berita/') ?>"><i class="fa fa-table "></i>Data Berita</a></li>
-                    <li><a href="<?php echo site_url('admin/Berita/edit') ?>"><i class="fa fa-edit"></i>Edit Berita</a></li>
+             
                 </ul>
             </li>
             <li class="active treeview">
@@ -53,7 +53,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?= site_url('admin/Event/'); ?>"><i class="fa fa-pencil-square-o"></i>Tambah Event</a></li>
                     <li><a href="<?= site_url('admin/Event/dataevent'); ?>"><i class="fa fa-table "></i>Data Event</a></li>
-                    <li><a href="Event/editevent"><i class="fa fa-edit"></i>Edit Event</a></li>
+           
                 </ul>
             </li>
         </ul>

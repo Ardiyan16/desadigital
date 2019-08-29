@@ -9,10 +9,12 @@ class M_berita extends CI_Model
     public $tanggal;
     public $lokasi;
     public $isi_berita;
-    public $id_wilayah;
     public $penulis;
-    public $foto = "default.jpg";
+    public $id_dusun;
+    public $id_rt;
+    public $id_rw;
 
+    public $foto = "default.jpg";
 
     public function rules()
     {
@@ -33,9 +35,9 @@ class M_berita extends CI_Model
         return $dataadmin;
     }
 
-    public function getById($id)
+    public function getById($id_berita)
     {
-        return $this->db->get_where($this->_table, ["id_pengguna" => $id])->row();
+        return $this->db->get_where($this->_table, ["id_berita" => $id_berita])->row();
     }
 
     public function getUserId()
@@ -73,29 +75,27 @@ class M_berita extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        if (isset($_POST['id_pengguna'])) { }
+        if (isset($_POST['id_berita'])) { }
 
-        $this->role_id = 2;
-        $this->aktif = 1;
-        $this->nama_lengkap = $post["nama_lengkap"];
-        $this->tempat_lahir = $post["tempat_lahir"];
-        $this->tanggal_lahir = $post["tanggal_lahir"];
-        $this->alamat = $post["alamat"];
-        $this->no_telepon = $post["no_telepon"];
-        $this->jenis_kelamin = $post["jenis_kelamin"];
-        $this->status = $post["status"];
-        $this->email = $post["email"];
-        $this->username = $post["username"];
-        $this->password = $post["password"];
+
+
+
+        $this->judul_berita = $post["judul_berita"];
+        $this->tanggal = $post["tanggal"];
+        $this->lokasi = $post["lokasi"];
+        $this->isi_berita = $post["isi_berita"];
+        $this->penulis = $post["penulis"];
+        $this->id_dusun = $post["id_dusun"];
+        $this->id_rt = $post["id_rt"];
+        $this->id_rw = $post["id_rw"];
         $this->foto = $this->_uploadImage();
-
 
         $this->db->insert($this->_table, $this);
     }
 
     private function _uploadImage()
     {
-        $config['upload_path']          = './assets/img/foto_profil/';
+        $config['upload_path']          = './assets/img/foto_Berita/';
         $config['allowed_types']        = 'gif|jpg|png';
         $nama_lengkap = $_FILES['foto']['name'];
         $config['file_name']            = $nama_lengkap;
@@ -111,13 +111,31 @@ class M_berita extends CI_Model
         print_r($this->upload->display_errors());
     }
 
-
-
-
-    public function delete($id_pengguna)
+    public function update()
     {
-        $this->_deleteImage($id_pengguna);
-        return $this->db->delete($this->_table, array("id_pengguna" => $id_pengguna));
+        $post = $this->input->post();
+        $this->id_berita = $post["id_berita"];
+        $this->judul_berita = $post["judul_berita"];
+        $this->tanggal = $post["tanggal"];
+        $this->lokasi = $post["lokasi"];
+        $this->isi_berita = $post["isi_berita"];
+        $this->penulis = $post["penulis"];
+        $this->id_dusun = $post["id_dusun"];
+        $this->id_rt = $post["id_rt"];
+        $this->id_rw = $post["id_rw"];
+        if (!empty($_FILES["foto"]["name"])) {
+            $this->foto = $this->_uploadImage();
+        } else {
+            $this->foto = $post["old_image"];
+        }
+        $this->db->update($this->_table, $this, array('id_berita' => $post['id_berita']));
+    }
+
+
+    public function delete($id_berita)
+    {
+        $this->_deleteImage($id_berita);
+        return $this->db->delete($this->_table, array("id_berita" => $id_berita));
     }
 
 

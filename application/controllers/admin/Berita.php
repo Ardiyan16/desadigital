@@ -48,26 +48,57 @@ class Berita extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
         $this->session->userdata('username')])->row_array();
-        $data['judul'] = 'SUPERUSER';
+        $data['judul'] = 'Tambah Berita';
 
 
-        $admin = $this->M_superuser;
+        $berita = $this->M_berita;
         $validation = $this->form_validation;
-        $validation->set_rules($admin->rules());
+        $validation->set_rules($berita->rules());
 
         if ($validation->run()) {
-            $admin->save();
+            $berita->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $this->load->view("admin/superuser/new_form", $data);
+        $this->load->view("admin/berita/berita_new", $data);
     }
-    public function delete($id_pengguna = null)
-    {
-        if (!isset($id_pengguna)) show_404();
 
-        if ($this->M_superuser->delete($id_pengguna)) {
-            redirect(site_url('admin/register/'));
+    public function edit($id_berita = null)
+    {
+        if (!isset($id_berita)) redirect('admin/berita/');
+
+        $berita = $this->M_berita;
+        $validation = $this->form_validation;
+        $validation->set_rules($berita->rules());
+
+        if ($validation->run()) {
+            $berita->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $data["berita"] = $berita->getById($id_berita);
+        if (!$data["berita"]) show_404();
+
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        $this->load->view("admin/berita/berita_edit", $data);
+    }
+
+    public function editan()
+    {
+        $berita = $this->M_berita;
+        $berita->update();
+        $this->session->set_flashdata('success', 'Berhasil disimpan');
+        redirect('admin/berita/');
+    }
+
+    public function delete($id_berita = null)
+    {
+        if (!isset($id_berita)) show_404();
+
+        if ($this->M_berita->delete($id_berita)) {
+            redirect(site_url('admin/Berita/'));
         }
     }
 }
