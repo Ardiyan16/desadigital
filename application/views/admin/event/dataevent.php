@@ -48,6 +48,7 @@
                                             <th><?= $ev->rt ?></th>
                                             <th><?= $ev->rw ?></th>
                                             <th>
+                                                <a href="<?php echo site_url('admin/datapasien/edit/' . $pasien->no_rm) ?>" class="btn btn-small"><i class="fas fa-edit"></i></a>
                                                 <a onclick="deleteConfirm" href="<?php echo site_url('admin/Event/hapus/' . $ev->judul_event) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                                             </th>
                                         </tr>
