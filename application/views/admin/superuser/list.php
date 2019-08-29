@@ -42,7 +42,7 @@
                                     <a href="<?= base_url('superuser/Superuser/editpp'); ?>" class="btn btn-primary">Edit Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="<?= base_url('user/Login'); ?>" class="btn btn-danger">Log out</a>
+                                    <a href="<?= base_url('user/Login/logout'); ?>" class="btn btn-danger">Log out</a>
                                 </div>
                             </li>
                         </ul>

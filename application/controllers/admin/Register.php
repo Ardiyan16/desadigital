@@ -7,6 +7,7 @@ class Register extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        cek_akses();
         $this->load->model("M_superuser");
         $this->load->library('form_validation');
         $this->load->helper('url');
