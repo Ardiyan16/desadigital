@@ -27,9 +27,15 @@
                                         <div class="form-group">
                                             judul event<input type="text" class="form-control" name="judul_event" placeholder="Judul Event...">
                                         </div>
-                                        <div>
-                                            isi event<textarea id="editor1" name="isi_berita" rows="10" cols="80" placeholder="Isi Berita..."></textarea>
+                                        <div class="form-group">
+                                            <label>Isi Evenet</label>
+                                            <div class="box-body pad">
+                                                <textarea id="editor1" rows="10" cols="150" name="isi_event"></textarea>
+                                            </div>
                                         </div>
+                                        <!-- <div>
+                                            isi event<textarea id="editor1" name="isi_event" rows="10" cols="80" placeholder="Isi Berita..."></textarea>
+                                        </div> -->
                                         <br />
                                         <div class="form-group">
                                             foto<input type="file" name="foto" class="form-control">
