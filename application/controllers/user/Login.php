@@ -57,7 +57,7 @@ class Login extends CI_Controller
                         redirect('user/Login');
                     }
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf Akun anda belum di verifikasi!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf Akun anda belum di verifikasi atau password salah!</div>');
                     redirect('user/Login');
                 }
             } else {

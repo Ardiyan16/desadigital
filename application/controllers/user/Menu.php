@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Menu extends CI_Controller
 {
     public function __construct()
     {
@@ -10,19 +10,14 @@ class Home extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->helper('form');
-        $this->load->model('M_event');
         $this->load->model('M_berita');
+        $this->load->model('M_event');
     }
 
     public function index()
     {
-        $data["event"] = $this->M_event->ui();
-        $data["berita"] = $this->M_berita->ui_berita();
-        $this->load->view('user/home', $data);
-    }
 
-    public function homeuser()
-    {
-        $this->load->view('user/home1');
+        $data["berita"] = $this->M_berita->ui_berita();
+        $this->load->view('user/berita', $data);
     }
 }

@@ -72,7 +72,7 @@
                     </li>
                     <li class="menu-has-children"><a href="">Kependudukan</a>
                         <ul>
-                            <li><a href="#">Data Warga Desa</a></li>
+                            <li><a href="#">Permintaan surat</a></li>
                             <li><a href="#">Pendaftaran PP</a></li>
                             <li><a href="#">Data Pemenerima Bantuan</a></li>
                         </ul>
@@ -169,36 +169,43 @@
         <div class="container">
 
             <header class="section-header">
-                <h3>About Us</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3>Tentang</h3>
+                <p>Web ini berisikan tentang sistem informasi untuk warga desa sehingga warga desa mudah dalam menerima
+                    informasi dari pihak pemerintahan desa serta mempermudah dalam pendaftaran kewargaan
+                </p>
             </header>
 
             <div class="row about-cols">
 
                 <div class="col-md-4 wow fadeInUp">
                     <div class="about-col">
+                        <?php foreach ($event as $ev) : ?>
                         <div class="img">
-                            <img src="img/about-mission.jpg" alt="" class="img-fluid">
-                            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                            <img src="<?php echo base_url('assets/img/foto_event/' . $ev->foto) ?>" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-book-outline"></i></div>
+
                         </div>
-                        <h2 class="title"><a href="#">Our Mission</a></h2>
+                        <h2 class="title"><a href="">Event</a></h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <?= substr($ev->isi_event, 0, 300); ?>
                         </p>
                     </div>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="about-col">
+                        <?php foreach ($berita as $ber) : ?>
                         <div class="img">
-                            <img src="img/about-plan.jpg" alt="" class="img-fluid">
+                            <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" alt="" class="img-fluid">
                             <div class="icon"><i class="ion-ios-list-outline"></i></div>
                         </div>
-                        <h2 class="title"><a href="#">Our Plan</a></h2>
+                        <h2 class="title"><a href="#">Berita</a></h2>
                         <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                            <?= substr($ber->isi_berita, 0, 300); ?>
                         </p>
                     </div>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
@@ -218,6 +225,59 @@
 
         </div>
     </section><!-- #about -->
+
+    <section id="pelayanan" style="margin-bottom: 20px;">
+        <div class="container">
+
+            <header class="section-header">
+                <h3>Pelayanan</h3>
+                <p>Pegawai kami akan melayani anda dengan sepenuh hati dan silahkan komplain jika terjadi permasalahan terhadap
+                    pelayanan dari kepegawaian kami
+                </p>
+            </header>
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+                    <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+                    <h4 class="title"><a href="">Pendaftaran Perpajakan</a></h4>
+                    <p class="description">menu ini digunakan untuk pengguna untuk mengetahui info nilai perpajakan yang harus di bayarkan</p>
+                </div>
+                <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+                    <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
+                    <h4 class="title"><a href="">Permintaan surat</a></h4>
+                    <p class="description">menu ini di gunakan pengguna untuk meminta surat kepada pemerintah desa seperti surat rekomendasi,dll</p>
+                </div>
+                <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+                    <div class="icon"><i class="ion-ios-paper-outline"></i></div>
+                    <h4 class="title"><a href="">Info penerimaan bantuan desa</a></h4>
+                    <p class="description">menu ini di gunakan untuk mengetahui data warga miskin yang menerima bantuan desa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-bg">
+        <div class="container">
+
+            <header class="section-header">
+                <h3 class="section-title" style="margin-bootom: 20px;"><a href="">Galeri</a></h3>
+            </header>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                <div class="portfolio-wrap">
+                    <figure>
+                        <img src="img/portfolio/app1.jpg" class="img-fluid" alt="">
+                        <a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                        <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                    </figure>
+
+                    <div class="portfolio-info">
+                        <h4><a href="#">App 1</a></h4>
+                        <p>App</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer id="footer">
         <div class="footer-top">

@@ -148,4 +148,9 @@ class M_berita extends CI_Model
             return array_map('unlink', glob(FCPATH . "upload/profil/$filename.*"));
         }
     }
+
+    public function ui_berita()
+    {
+        return $this->db->get($this->_table)->result();
+    }
 }

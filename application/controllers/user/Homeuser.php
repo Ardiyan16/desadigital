@@ -11,11 +11,15 @@ class Homeuser extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->helper('form');
+        $this->load->model('M_berita');
+        $this->load->model('M_event');
     }
 
     public function index()
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data["berita"] = $this->M_berita->ui_berita();
+        $data["event"] = $this->M_event->ui();
         $this->load->view('user/home1', $data);
     }
 
