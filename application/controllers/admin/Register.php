@@ -23,8 +23,8 @@ class Register extends CI_Controller
 
 
 
-        $email = $this->db->get_where('pengguna', ['email' =>
-        $this->session->userdata('email')]);
+        $email = $this->db->get_where('pengguna', ['username' =>
+        $this->session->userdata('username')]);
         $role_id = $this->db->get_where('pengguna', ['role_id' =>
         $this->session->userdata('role_id')]);
 
