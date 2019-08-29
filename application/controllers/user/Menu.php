@@ -20,4 +20,10 @@ class Menu extends CI_Controller
         $data["berita"] = $this->M_berita->ui_berita();
         $this->load->view('user/berita', $data);
     }
+
+    public function event()
+    {
+        $data["event"] = $this->M_event->ui();
+        $this->load->view('user/event', $data);
+    }
 }

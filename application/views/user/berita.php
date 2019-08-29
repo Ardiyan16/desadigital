@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Berita</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -47,11 +47,11 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#intro">Home</a></li>
+                    <li class="menu-active"><a href="<?= site_url('Home'); ?>">Home</a></li>
                     <li class="menu-has-children"><a href="">Informasi Desa</a>
                         <ul>
-                            <li><a href="#">Berita Desa</a></li>
-                            <li><a href="#">Event Desa</a></li>
+                            <li><a href="<?= site_url('user/Menu'); ?>">Berita Desa</a></li>
+                            <li><a href="<?= site_url('user/Menu/event'); ?>">Event Desa</a></li>
                             <li><a href="#">Kegiatan Desa</a></li>
                         </ul>
                     </li>
@@ -165,36 +165,32 @@
             <h3 class="mt-4">Berita Desa</h3>
 
             <div class="row">
-                <div class="col">
+                <div class="col-md-7">
                     <?php foreach ($berita as $ber) : ?>
-                    <article>
-                        <div class="article-img">
-                            <a href="">
-                                <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" height="250" width="250">
-                            </a>
-                        </div>
-                        <div class="article-body">
-                            <ul class="article-info">
-                                <li class="article-category"><a href="#" name="kategori">berita</a></li>
-                            </ul>
-                            <h3 class="article-title"><a href="" name="judulberita"><?= $ber->judul_berita ?></a></h3>
-                            <ul class="article-meta">
-                                <li><i class="fa fa-clock-o" name="tanggalberita"><?= $ber->tanggal ?></i></li>
-                            </ul>
-                            <p class="desber" name="deskripsiberita"><?= substr($ber->isi_berita, 0, 300); ?></p>
-                            <a href="">
-                                <button class="btn btn-primary mb-4">baca selengkapnya</button>
-                            </a>
-                        </div>
-                    </article>
+                        <article>
+                            <div class="article-img">
+                                <a href="">
+                                    <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" height="200" width="300">
+                                </a>
+                            </div>
+                            <div class="article-body">
+                                <ul class="article-info">
+                                    <li class="article-category"><a href="#" name="kategori">berita</a></li>
+                                </ul>
+                                <h5 class="article-title"><a href="" name="judulberita"><?= $ber->judul_berita ?></a></h5>
+                                <ul class="article-meta">
+                                    <li><i class="fa fa-clock-o" name="tanggalberita"><?= $ber->tanggal ?></i></li>
+                                </ul>
+                                <p class="desber" name="deskripsiberita"><?= substr($ber->isi_berita, 0, 300); ?><a href="">
+                                        baca selengkapnya</a></p>
+                            </div>
+                        </article>
+
                     <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </section>
-
-
-
     <footer id="footer">
         <div class="footer-top">
             <div class="container">
