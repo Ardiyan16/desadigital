@@ -23,12 +23,12 @@
                                     <small>Tambahkan Event Desa</small>
                                 </h3>
                                 <div class="box-body">
-                                    <form action="#" method="post">
+                                    <form action="<?= site_url('admin/Event/addevent'); ?>" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             judul event<input type="text" class="form-control" name="judul_event" placeholder="Judul Event...">
                                         </div>
                                         <div>
-                                            isi event<textarea id="editor1" name="editor1" rows="10" cols="80" placeholder="Isi Berita..."></textarea>
+                                            isi event<textarea id="editor1" name="isi_berita" rows="10" cols="80" placeholder="Isi Berita..."></textarea>
                                         </div>
                                         <br />
                                         <div class="form-group">
@@ -80,11 +80,8 @@
                                                 <option value="10">RW 10</option>
                                             </select>
                                         </div>
+                                        <button type="submit" value="save" class="btn btn-primary">Simpan</button>
                                     </form>
-                                </div>
-                                <div class="box-footer clearfix">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-save"></i> Simpan</button>
                                 </div>
                             </div>
                         </div>

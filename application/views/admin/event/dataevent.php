@@ -37,15 +37,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($user as $pengguna) : ?>
+                                        <?php foreach ($event as $ev) : ?>
                                         <tr>
-                                            <th><?= $pengguna->nama_lengkap ?></th>
-                                            <th><?= $pengguna->tempat_lahir ?></th>
-                                            <th><?= $pengguna->tanggal_lahir ?></th>
-                                            <th><?= $pengguna->alamat ?></th>
-                                            <th><?= $pengguna->jenis_kelamin ?></th>
-                                            <th><?= $pengguna->status ?></th>
-                                            <th><?= $pengguna->email ?></th>
+                                            <th><?= $ev->judul_event ?></th>
+                                            <th><?= $ev->isi_event ?></th>
+                                            <th><?= $ev->foto ?></th>
+                                            <th><?= $ev->tanggal_mulai ?></th>
+                                            <th><?= $ev->Tanggal_selesai ?></th>
+                                            <th><?= $ev->dusun ?></th>
+                                            <th><?= $ev->rt ?></th>
                                             <th>
                                                 <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datapengguna/hapus/' . $pengguna->id_pengguna) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                                             </th>

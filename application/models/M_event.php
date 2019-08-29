@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class M_registrasi extends CI_Model
+class M_event extends CI_Model
 {
     private $_table = "event_desa";
 
@@ -18,11 +18,7 @@ class M_registrasi extends CI_Model
     public function rules()
     {
         return [
-            [
-                'field' => 'id_event',
-                'label' => 'id_event',
-                'rules' => 'required'
-            ],
+
 
             [
                 'field' => 'judul_event',
@@ -70,8 +66,7 @@ class M_registrasi extends CI_Model
 
     public function getAll()
     {
-        $dataevent = $this->db->query("SELECT event_desa.id_event, event_desa.judul_event, event_desa.isi_event, event_desa.foto, event_desa.tanggal_mulai, event_desa.tanggal_selesai, event_desa.id_dusun, dusun.nama_dusun, event_desa.id_rt, rt.rw, event_desa.id_rw, rw.rw FROM event_desa, dusun, rt, rw WHERE event_desa.id_dusun=dusun.id_dusun AND event_desa.id_rt=rt.id_rt AND event_desa.id_rw=rw.id_rw")->result();
-        return $dataevent;
+        return $this->db->get($this->_table)->result();
     }
 
     public function getById($id_event)
@@ -101,7 +96,7 @@ class M_registrasi extends CI_Model
         $this->id_event = $post["id_event"];
         $this->judul_event = $post["judul_event"];
         $this->isi_event = $post["isi_event"];
-        $this->foto = $this->uploadfoto();
+        $this->foto;
         $this->tangal_mulai = $post["tangal_mulai"];
         $this->tanggal_selesai = $post["tanggal_selesai"];
         $this->id_dusun = $post["id_dusun"];
@@ -119,16 +114,19 @@ class M_registrasi extends CI_Model
 
     private function uploadfoto()
     {
-        $config['upload_path']          = '.assets/img/foto_event/';
-        $config['allowed_types']        = 'gif|png|jpg';
-        $config['max_size']             = '2048';
+        $config['upload_path']          = './assets/img/foto_event/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $nama_lengkap = $_FILES['foto']['name'];
+        $config['file_name']            = $nama_lengkap;
+        $config['overwrite']            = true;
+        $config['max_size']             = 3024;
 
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('foto')) {
-            return $this->upload->data('file_name');
-        } else {
-            return "default.jpg";
+            return $this->upload->data("file_name");
         }
+
+        print_r($this->upload->display_errors());
     }
 }

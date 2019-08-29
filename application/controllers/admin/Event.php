@@ -17,27 +17,29 @@ class Event extends CI_Controller
     public function index()
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
-        $data['event'] = $this->M_event->getAll();
-        $data['judul'] = 'Data Event';
-        $this->load->view('admin/event/dataevent.php', $data);
+        $data["event"] = $this->M_event->getAll();
+        $data['judul'] = 'Tambah Event';
+        $this->load->view('admin/event/tambahevent.php', $data);
     }
 
     public function addevent()
     {
-        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
-        $data['judul'] = 'Tambah Event';
         $event = $this->M_event;
         $validation = $this->form_validation;
         $validation->set_rules($event->rules());
 
         if ($validation->run()) {
             $event->save();
-            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Tersimpan</div>');
-            redirect("admin/Event");
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan!</div>');
+            redirect('admin/Event/dataevent');
         } else {
-            $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Data gagal tersimpan!</div>');
-            redirect("admin/Event/addevent");
+            $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Data Gagal Disimpan!</div>');
+            redirect('admin/Event');
         }
-        $this->load->view('admin/event/tambahevent.php', $data);
+
+        $this->load->view("admin/event/tambahevent");
     }
+
+    public function tambah()
+    { }
 }
