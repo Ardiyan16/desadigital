@@ -32,7 +32,7 @@ class M_event extends CI_Model
 
     public function getAll()
     {
-        $event = $this->db->query("SELECT * FROM view_event")->result();
+        $event = $this->db->query("SELECT event_desa.id_event, view_event.judul_event, view_event.isi_event, view_event.foto, view_event.tanggal_mulai, view_event.tanggal_selesai, view_event.nama_dusun, view_event.rt, view_event.rw FROM event_desa, view_event")->result();
         return $event;
     }
 
@@ -76,11 +76,14 @@ class M_event extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->id_event = $post["id_event"];
         $this->judul_event = $post["judul_event"];
         $this->isi_event = $post["isi_event"];
-        $this->foto;
-        $this->tangal_mulai = $post["tangal_mulai"];
+        if (!empty($_FILES["foto"]["name"])) {
+            $this->foto = $this->uploadfoto();
+        } else {
+            $this->foto = $post["old_image"];
+        }
+        $this->tanggal_mulai = $post["tanggal_mulai"];
         $this->tanggal_selesai = $post["tanggal_selesai"];
         $this->id_dusun = $post["id_dusun"];
         $this->id_rt = $post["id_rt"];
@@ -90,8 +93,13 @@ class M_event extends CI_Model
         $this->db->update($this->_table, $this, array('id_event' => $post['id_event']));
     }
 
-    public function delete($judul_event)
+    public function delete($id_event)
     {
-        return $this->db->delete($this->_table, array("judul_event" => $judul_event));
+        return $this->db->delete($this->_table, array("id_event" => $id_event));
+    }
+
+    public function ui()
+    {
+        return $this->db->get($this->_table)->result();
     }
 }

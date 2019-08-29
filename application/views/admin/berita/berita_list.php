@@ -43,7 +43,7 @@
                       <th><?= $berita->judul_berita ?></th>
                       <th><?= $berita->tanggal ?></th>
                       <th><?= $berita->lokasi ?></th>
-                      <th><?= $berita->isi_berita ?></th>
+                      <th><?= substr($berita->isi_berita, 0, 200); ?></th>
                       <th><?= $berita->penulis ?></th>
                       <th><?= $berita->id_dusun ?></th>
                       <th><?= $berita->id_rw ?></th>
@@ -52,7 +52,7 @@
                         <img src="<?php echo base_url('assets/img/foto_berita/' . $berita->foto) ?>" width="64" />
                       </td>
                       <th>
-                        <a href="<?php echo site_url('admin/berita/edit/' . $berita->id_berita) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="<?php echo site_url('admin/berita/edit/' . $berita->id_berita) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
                         <a onclick="deleteConfirm" href="<?php echo site_url('admin/berita/delete/' . $berita->id_berita) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                       </th>
                     </tr>

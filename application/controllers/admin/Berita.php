@@ -57,10 +57,11 @@ class Berita extends CI_Controller
 
         if ($validation->run()) {
             $berita->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan :)</div>');
+            redirect('admin/Berita');
         }
 
-        $this->load->view("admin/berita/berita_new", $data);
+        $this->load->view("admin/berita/berita_list", $data);
     }
 
     public function edit($id_berita = null)

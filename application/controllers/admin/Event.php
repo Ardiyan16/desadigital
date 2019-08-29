@@ -30,7 +30,7 @@ class Event extends CI_Controller
 
         if ($validation->run()) {
             $event->save();
-            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan!</div>');
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan :)</div>');
             redirect('admin/Event/dataevent');
         } else {
             $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Data Gagal Disimpan!</div>');
@@ -48,12 +48,45 @@ class Event extends CI_Controller
         $this->load->view('admin/event/dataevent', $data);
     }
 
-    public function hapus($judul_event = null)
+    public function hapus($id_event = null)
     {
-        if (!isset($judul_event)) show_404($judul_event);
+        if (!isset($id_event)) show_404($id_event);
 
-        if ($this->M_event->delete($judul_event)) {
+        if ($this->M_event->delete($id_event)) {
             redirect(site_url('admin/Event/dataevent'));
         }
+    }
+
+
+
+    public function editevent($id_event = null)
+    {
+        if (!isset($id_event)) redirect('admin/Event/dataevent');
+
+        $editevent = $this->M_event;
+        $validation = $this->form_validation;
+        $validation->set_rules($editevent->rules());
+
+        if ($validation->run()) {
+            $editevent->update();
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan :)</div>');
+            redirect('admin/Event/dataevent');
+        }
+
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data['judul'] = 'Edit Event';
+        $data["event"] = $editevent->getById($id_event);
+        if (!$data["event"]) {
+            show_404();
+        }
+
+        $this->load->view("admin/event/editevent", $data);
+    }
+    public function editan()
+    {
+        $event = $this->M_event;
+        $event->update();
+        $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan :)</div>');
+        redirect('admin/Event/dataevent');
     }
 }

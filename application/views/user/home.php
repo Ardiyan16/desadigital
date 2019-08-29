@@ -163,8 +163,10 @@
         <div class="container">
 
             <header class="section-header">
-                <h3>About Us</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3>Tentang</h3>
+                <p>Web ini berisikan tentang sistem informasi untuk warga desa sehingga warga desa mudah dalam menerima
+                    informasi dari pihak pemerintahan desa serta mempermudah dalam pendaftaran kewargaan
+                </p>
             </header>
 
             <div class="row about-cols">
@@ -173,13 +175,15 @@
                     <div class="about-col">
                         <div class="img">
                             <img src="img/about-mission.jpg" alt="" class="img-fluid">
-                            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                            <div class="icon"><i class="fa fa-newspaper"></i></div>
+                            <?php foreach ($event as $ev) : ?>
                         </div>
-                        <h2 class="title"><a href="#">Our Mission</a></h2>
+                        <h2 class="title"><a href="">Event</a></h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <?= substr($ev->isi_event, 0, 300); ?>
                         </p>
                     </div>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">

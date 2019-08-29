@@ -10,11 +10,13 @@ class Home extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->helper('form');
+        $this->load->model('M_event');
     }
 
     public function index()
     {
-        $this->load->view('user/home');
+        $data["event"] = $this->M_event->ui();
+        $this->load->view('user/home', $data);
     }
 
     public function homeuser()
