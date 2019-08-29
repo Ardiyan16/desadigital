@@ -38,9 +38,9 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="inputdatasiswa.php"><i class="fa fa-pencil-square-o"></i>Tambah Berita</a></li>
-                    <li><a href="tabeldatasiswa.php"><i class="fa fa-table "></i>Data Berita</a></li>
-                    <li><a href="tabeldatasiswa.php"><i class="fa fa-edit"></i>Edit Berita</a></li>
+                    <li><a href="<?php echo site_url('admin/Berita/add') ?>"><i class="fa fa-pencil-square-o"></i>Tambah Berita</a></li>
+                    <li><a href="<?php echo site_url('admin/Berita/') ?>"><i class="fa fa-table "></i>Data Berita</a></li>
+                    <li><a href="<?php echo site_url('admin/Berita/edit') ?>"><i class="fa fa-edit"></i>Edit Berita</a></li>
                 </ul>
             </li>
             <li class="active treeview">
