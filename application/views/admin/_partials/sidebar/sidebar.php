@@ -15,7 +15,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Menu</li>
             <li>
-                <a href="Dashboard">
+                <a href="<?= site_url('admin/Dashboard'); ?>">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     <span class="pull-right-container">
                         <i class="glyphicon glyphicon-dashboard"></i>
