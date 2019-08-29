@@ -30,6 +30,9 @@
                       <th>Lokasi</th>
                       <th>Isi Berita</th>
                       <th>Penulis</th>
+                      <th>ID Dusun</th>
+                      <th>ID RW</th>
+                      <th>ID RT</th>
                       <th>Foto</th>
                       <th>Opsi</th>
                     </tr>
@@ -42,6 +45,9 @@
                       <th><?= $berita->lokasi ?></th>
                       <th><?= $berita->isi_berita ?></th>
                       <th><?= $berita->penulis ?></th>
+                      <th><?= $berita->id_dusun ?></th>
+                      <th><?= $berita->id_rw ?></th>
+                      <th><?= $berita->id_rt ?></th>
                       <td>
                         <img src="<?php echo base_url('assets/img/foto_profil/' . $berita->foto) ?>" width="64" />
                       </td>
