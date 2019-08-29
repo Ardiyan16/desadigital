@@ -79,7 +79,7 @@ class M_superuser extends CI_Model
         $post = $this->input->post();
         if (isset($_POST['id_pengguna'])) { }
 
-        $this->role_id = 3;
+        $this->role_id = 2;
         $this->nama_lengkap = $post["nama_lengkap"];
         $this->tempat_lahir = $post["tempat_lahir"];
         $this->tanggal_lahir = $post["tanggal_lahir"];
