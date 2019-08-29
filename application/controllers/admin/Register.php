@@ -7,6 +7,7 @@ class Register extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        cek_akses();
         $this->load->model("M_superuser");
         $this->load->library('form_validation');
         $this->load->helper('url');
@@ -31,7 +32,7 @@ class Register extends CI_Controller
         $cek_id_akses3 = $this->M_superuser->cek_akses_3($email, $role_id);
         if ($cek_id_akses3 == 1) {
             $data['admin'] = $this->M_superuser->getUserId();
-            $this->load->view("admin/superuser/list", $data);
+            $this->load->view("admin/superuser/new_form", $data);
         } else {
             $this->session->unset_userdata('email');
             $this->session->unset_userdata('role_id');
