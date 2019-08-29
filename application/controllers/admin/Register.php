@@ -15,10 +15,10 @@ class Register extends CI_Controller
 
     public function index()
     {
-        $datas['pengguna'] = $this->db->get_where('pengguna', ['email' =>
-        $this->session->userdata('email')])->row_array();
-        $datas['judul'] = 'SUPERUSER';
-        $this->load->view("admin/_partials/spesialtop", $datas);
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
+        $this->session->userdata('username')])->row_array();
+        $data['judul'] = 'SUPERUSER';
+
 
 
 
@@ -43,10 +43,10 @@ class Register extends CI_Controller
 
     public function add()
     {
-        $datas['pengguna'] = $this->db->get_where('pengguna', ['email' =>
-        $this->session->userdata('email')])->row_array();
-        $datas['judul'] = 'SUPERUSER';
-        $this->load->view("admin/_partials/spesialtop", $datas);
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
+        $this->session->userdata('username')])->row_array();
+        $data['judul'] = 'SUPERUSER';
+
 
         $admin = $this->M_superuser;
         $validation = $this->form_validation;
@@ -57,7 +57,7 @@ class Register extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $this->load->view("admin/superuser/new_form");
+        $this->load->view("admin/superuser/new_form", $data);
     }
     public function delete($id_pengguna = null)
     {
