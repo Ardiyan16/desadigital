@@ -15,7 +15,8 @@ class Register extends CI_Controller
 
     public function index()
     {
-
+        $datas['pengguna'] = $this->db->get_where('pengguna', ['email' =>
+        $this->session->userdata('email')])->row_array();
         $datas['judul'] = 'SUPERUSER';
         $this->load->view("admin/_partials/spesialtop", $datas);
 
