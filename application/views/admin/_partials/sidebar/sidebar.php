@@ -51,8 +51,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="Event/addevent"><i class="fa fa-pencil-square-o"></i>Tambah Event</a></li>
-                    <li><a href="Event"><i class="fa fa-table "></i>Data Event</a></li>
+                    <li><a href="<?= site_url('admin/Event/'); ?>"><i class="fa fa-pencil-square-o"></i>Tambah Event</a></li>
+                    <li><a href="<?= site_url('admin/Event/dataevent'); ?>"><i class="fa fa-table "></i>Data Event</a></li>
                     <li><a href="Event/editevent"><i class="fa fa-edit"></i>Edit Event</a></li>
                 </ul>
             </li>

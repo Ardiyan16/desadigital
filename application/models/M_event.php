@@ -32,7 +32,8 @@ class M_event extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        $event = $this->db->query("SELECT * FROM view_event")->result();
+        return $event;
     }
 
     public function getById($id_event)
@@ -89,8 +90,8 @@ class M_event extends CI_Model
         $this->db->update($this->_table, $this, array('id_event' => $post['id_event']));
     }
 
-    public function delete($id_event)
+    public function delete($judul_event)
     {
-        return $this->db->delete($this->_table, array("id_event" => $id_event));
+        return $this->db->delete($this->_table, array("judul_event" => $judul_event));
     }
 }

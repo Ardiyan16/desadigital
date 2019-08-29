@@ -40,6 +40,20 @@ class Event extends CI_Controller
         $this->load->view("admin/event/tambahevent");
     }
 
-    public function tambah()
-    { }
+    public function dataevent()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data["event"] = $this->M_event->getAll();
+        $data['judul'] = 'Data Event';
+        $this->load->view('admin/event/dataevent', $data);
+    }
+
+    public function hapus($judul_event = null)
+    {
+        if (!isset($judul_event)) show_404($judul_event);
+
+        if ($this->M_event->delete($judul_event)) {
+            redirect(site_url('admin/Event/dataevent'));
+        }
+    }
 }
