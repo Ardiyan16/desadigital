@@ -7,9 +7,6 @@ class Register extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if (!$this->session->userdata('email')) {
-            redirect('admin/loginadmin');
-        }
         $this->load->model("M_superuser");
         $this->load->library('form_validation');
         $this->load->helper('url');
@@ -19,8 +16,6 @@ class Register extends CI_Controller
     public function index()
     {
 
-        $datas['pengguna'] = $this->db->get_where('pengguna', ['email' =>
-        $this->session->userdata('email')])->row_array();
         $datas['judul'] = 'SUPERUSER';
         $this->load->view("admin/_partials/spesialtop", $datas);
 
@@ -41,7 +36,7 @@ class Register extends CI_Controller
             $this->session->unset_userdata('role_id');
 
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kesalahan Tidak Di Ketahui</div>');
-            redirect('admin/Loginadmin');
+            redirect('user/Login');
         }
     }
 

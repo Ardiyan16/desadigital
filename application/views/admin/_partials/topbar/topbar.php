@@ -32,7 +32,7 @@
                                 <a href="<?= base_url('admin/Dashboard/editprofile'); ?>" class="btn btn-primary">Edit Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="<?= base_url('admin/loginadmin/logout'); ?>" class="btn btn-danger">Log out</a>
+                                <a href="<?= base_url('user/Login'); ?>" class="btn btn-danger">Log out</a>
                             </div>
                         </li>
                     </ul>

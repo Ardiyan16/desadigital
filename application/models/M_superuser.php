@@ -33,7 +33,8 @@ class M_superuser extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        $dataadmin = $this->db->query("SELECT * FROM pengguna WHERE role_id = 2")->result();
+        return $dataadmin;
     }
 
     public function getById($id)

@@ -51,7 +51,7 @@ class Login extends CI_Controller
                     } else if ($pengguna['role_id'] == '2') {
                         redirect('admin/Dashboard');
                     } else if ($pengguna['role_id'] == '3') {
-                        redirect('admin/Dataadministrator');
+                        redirect('superuser/Superuser');
                     } else {
                         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf password yang anda masukkan salah!</div>');
                         redirect('user/Login');

@@ -43,6 +43,19 @@
                     <li><a href="tabeldatasiswa.php"><i class="fa fa-edit"></i>Edit Berita</a></li>
                 </ul>
             </li>
+            <li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-calendar"></i> <span>Event</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="Event/addevent"><i class="fa fa-pencil-square-o"></i>Tambah Event</a></li>
+                    <li><a href="Event"><i class="fa fa-table "></i>Data Event</a></li>
+                    <li><a href="Event/editevent"><i class="fa fa-edit"></i>Edit Event</a></li>
+                </ul>
+            </li>
         </ul>
     </section>
 </aside>

@@ -39,7 +39,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="<?= base_url('superuser/Superuser/editpp'); ?>" class="btn btn-primary">Edit Profile</a>
+                                    <a href="<?= base_url('superuser/Superuser/editprofile'); ?>" class="btn btn-primary">Edit Profile</a>
                                 </div>
                                 <div class="pull-right">
                                     <a href="<?= base_url('user/Login'); ?>" class="btn btn-danger">Log out</a>
@@ -70,7 +70,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Menu</li>
                 <li>
-                    <a href="Dashboard">
+                    <a href="<?= base_url('superuser/Superuser'); ?>">
                         <i class="fa fa-dashboard"></i> <span>Data Admin</span>
                         <span class="pull-right-container">
                             <i class="glyphicon glyphicon-dashboard"></i>
@@ -78,7 +78,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Datauser">
+                    <a href="Superuser/add">
                         <i class="fa fa-file-text-o"></i> <span>Tambah Admin</span>
                         <span class="pull-right-container">
                             <i class="glyphicon glyphicon-list-alt"></i>
@@ -89,63 +89,53 @@
         </section>
     </aside>
 
-
     <div class="content-wrapper">
-        <section class="content">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="box">
-                        <div class="box-header">
-                            <h3><?= $this->session->flashdata('message'); ?></h3>
-                            <h3 class="box-title">View Tabel Data Admin</h3>
-                        </div>
-                        <div class="box-body">
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Nama Lengkap</th>
-                                        <th>Tempat Lahir</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>No Telepon</th>
-                                        <th>Alamat</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Status</th>
-                                        <th>Email</th>
-                                        <th>Foto</th>
-                                        <th>Opsi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($admin as $admin) : ?>
-                                    <tr>
-                                        <th><?= $admin->nama_lengkap ?></th>
-                                        <th><?= $admin->tempat_lahir ?></th>
-                                        <th><?= $admin->tanggal_lahir ?></th>
-                                        <th><?= $admin->no_telepon ?></th>
-                                        <th><?= $admin->alamat ?></th>
-                                        <th><?= $admin->jenis_kelamin ?></th>
-                                        <th><?= $admin->status ?></th>
-                                        <th><?= $admin->email ?></th>
-                                        <td>
-                                            <img src="<?php echo base_url('assets/img/foto_profil/' . $admin->foto) ?>" width="64" />
-                                        </td>
-                                        <th>
-                                            <a onclick="deleteConfirm" href="<?php echo site_url('admin/register/delete/' . $admin->id_pengguna) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
-                                        </th>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
+        <!-- Content Header (Page header) -->
+        <section class="content-header connectedSortable">
+            <div class="idp mb-5">
+                <h3 class="mb-5">
+                    Edit Profile
+                </h3>
+            </div>
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Silahkan edit data</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <?= form_open_multipart('superuser/Superuser/editpp'); ?>
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" name="nama_lengkap" class="form-control" value="<?= $pengguna['nama_lengkap']; ?>" placeholder="Enter ...">
+                        <?= form_error('nama_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <input type="text" name="alamat" class="form-control" value="<?= $pengguna['alamat']; ?>" placeholder="Enter ...">
+                    </div>
+
+                    <!-- textarea -->
+                    <div class="form-group">
+                        <label>Foto</label>
+                        <input type="file" name="foto" class="form-control" placeholder="Enter ...">
+                    </div>
+                    <div class="form-group row justify-content-end">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Edit</button>
                         </div>
                     </div>
+                    </form>
                 </div>
+            </div>
         </section>
     </div>
-
-
 
 
     <?php $this->load->view("admin/_partials/footer/footer.php"); ?>
     </div>
 
     <?php $this->load->view("admin/_partials/footer/js.php"); ?>
+</body>
+
+</html>
