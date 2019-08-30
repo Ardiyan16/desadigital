@@ -16,41 +16,38 @@
       <section class="content">
         <div class="row">
           <div class="link" style="margin-top: 20px; margin-left: 12px; margin-bottom: 10px;">
-            <a href="<?= site_url('admin/Wisata/add'); ?>" class="btn btn-primary">Tambah Wisata</a>
+            <a href="<?= site_url('admin/Kerajinan/add'); ?>" class="btn btn-primary">Tambah Kerajinan Desa</a>
           </div>
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
                 <h3><?= $this->session->flashdata('success'); ?></h3>
-                <h3 class="box-title">View Tabel Data Wisata</h3>
+                <h3 class="box-title">View Tabel Data Kerajina Desa</h3>
               </div>
               <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th>ID Kategori</th>
-                      <th>Nama Wisata</th>
-                      <th>Deskripsi</th>
-                      <th>Lokasi</th>
-                      <th>ID Dusun</th>
+                      <th>Nama Kerajina Desa</th>
+                      <th>Tempat Pembuatan</th>
+                      <th>Harga</th>
                       <th>Foto</th>
                       <th>Opsi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php foreach ($wisata as $wisata) : ?>
+                    <?php foreach ($kerajinan as $kerajinan) : ?>
                       <tr>
-                        <th><?= $wisata->id_kategori ?></th>
-                        <th><?= $wisata->nama_wisata ?></th>
-                        <th><?= substr($wisata->deskripsi, 0, 200); ?></th>
-                        <th><?= $wisata->lokasi ?></th>
-                        <th><?= $wisata->id_dusun ?></th>
+                        <th><?= $kerajinan->nama_kerajinan ?></th>
+                        <th><?= $kerajinan->lokasi_pembuatan ?></th>
+                        <th><?= $kerajinan->harga ?></th>
+
                         <td>
-                          <img src="<?php echo base_url('assets/img/foto_wisata/' . $wisata->foto) ?>" width="64" />
+                          <img src="<?php echo base_url('assets/img/foto_kerajinan/' . $kerajinan->foto) ?>" width="64" />
                         </td>
                         <th>
-                          <a href="<?php echo site_url('admin/wisata/edit/' . $wisata->id_wisata) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
-                          <a onclick="deleteConfirm" href="<?php echo site_url('admin/wisata/delete/' . $wisata->id_wisata) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
+                          <a href="<?php echo site_url('admin/kerajinan/edit/' . $kerajinan->id) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
+                          <a onclick="deleteConfirm" href="<?php echo site_url('admin/kerajinan/delete/' . $kerajinan->id) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                         </th>
                       </tr>
                     <?php endforeach; ?>

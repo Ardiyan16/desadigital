@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Berita extends CI_Controller
+class Oleh extends CI_Controller
 {
     public function __construct()
     {
@@ -10,14 +10,14 @@ class Berita extends CI_Controller
         cek_akses();
         $this->load->library('form_validation');
         $this->load->helper('url');
-        $this->load->model('M_berita');
+        $this->load->model('M_oleh');
         $this->load->helper('form');
     }
 
     public function index()
     {
 
-        $data['judul'] = 'Admin - Berita';
+        $data['judul'] = 'Admin - Oleh Oleh';
 
 
 
@@ -28,12 +28,12 @@ class Berita extends CI_Controller
         $role_id = $this->db->get_where('pengguna', ['role_id' =>
         $this->session->userdata('role_id')]);
 
-        $cek_id_akses2 = $this->M_berita->cek_akses_2($email, $role_id);
+        $cek_id_akses2 = $this->M_oleh->cek_akses_2($email, $role_id);
         if ($cek_id_akses2 == 1) {
-            $data['berita'] = $this->M_berita->getUserId();
+            $data['oleh'] = $this->M_oleh->getUserId();
             $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
             $this->session->userdata('username')])->row_array();
-            $this->load->view("admin/berita/berita_list", $data);
+            $this->load->view("admin/oleh/list", $data);
         } else {
             $this->session->unset_userdata('email');
             $this->session->unset_userdata('username');
@@ -48,58 +48,58 @@ class Berita extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
         $this->session->userdata('username')])->row_array();
-        $data['judul'] = 'Tambah Berita';
+        $data['judul'] = 'Tambah Oleh Oleh';
 
 
-        $berita = $this->M_berita;
+        $oleh = $this->M_oleh;
         $validation = $this->form_validation;
-        $validation->set_rules($berita->rules());
+        $validation->set_rules($oleh->rules());
 
         if ($validation->run()) {
-            $berita->save();
+            $oleh->save();
             $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan :)</div>');
-            redirect('admin/Berita');
+            redirect('admin/Oleh');
         }
 
-        $this->load->view("admin/berita/berita_new", $data);
+        $this->load->view("admin/oleh/new", $data);
     }
 
-    public function edit($id_berita = null)
+    public function edit($id = null)
     {
-        if (!isset($id_berita)) redirect('admin/berita/');
+        if (!isset($id)) redirect('admin/oleh/');
 
-        $berita = $this->M_berita;
+        $oleh = $this->M_oleh;
         $validation = $this->form_validation;
-        $validation->set_rules($berita->rules());
+        $validation->set_rules($oleh->rules());
 
         if ($validation->run()) {
-            $berita->update();
+            $oleh->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $data["berita"] = $berita->getById($id_berita);
-        if (!$data["berita"]) show_404();
+        $data["oleh"] = $oleh->getById($id);
+        if (!$data["oleh"]) show_404();
 
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
         $this->session->userdata('username')])->row_array();
 
-        $this->load->view("admin/berita/berita_edit", $data);
+        $this->load->view("admin/oleh/edit", $data);
     }
 
     public function editan()
     {
-        $berita = $this->M_berita;
-        $berita->update();
+        $oleh = $this->M_oleh;
+        $oleh->update();
         $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Diubah :)</div>');
-        redirect('admin/berita/');
+        redirect('admin/oleh/');
     }
 
-    public function delete($id_berita = null)
+    public function delete($id = null)
     {
-        if (!isset($id_berita)) show_404();
+        if (!isset($id)) show_404();
 
-        if ($this->M_berita->delete($id_berita)) {
-            redirect(site_url('admin/Berita/'));
+        if ($this->M_oleh->delete($id)) {
+            redirect(site_url('admin/Oleh/'));
         }
     }
 }

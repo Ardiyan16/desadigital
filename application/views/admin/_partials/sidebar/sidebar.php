@@ -69,6 +69,32 @@
 
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-calendar"></i> <span>Oleh Oleh</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= site_url('admin/Oleh/add'); ?>"><i class="fa fa-pencil-square-o"></i>Tambah Oleh Oleh</a></li>
+                    <li><a href="<?= site_url('admin/Oleh/'); ?>"><i class="fa fa-table "></i>Data Oleh Oleh</a></li>
+
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-calendar"></i> <span>Kerajinan Desa</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= site_url('admin/Kerajinan/add'); ?>"><i class="fa fa-pencil-square-o"></i>Tambah Kerajinan Desa</a></li>
+                    <li><a href="<?= site_url('admin/Kerajinan/'); ?>"><i class="fa fa-table "></i>Data Kerajinan Desa</a></li>
+
+                </ul>
+            </li>
         </ul>
     </section>
 </aside>
