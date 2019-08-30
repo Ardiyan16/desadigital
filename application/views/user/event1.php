@@ -72,7 +72,7 @@
                     <li class="menu-has-children"><a href="">Kependudukan</a>
                         <ul>
                             <li><a href="#">Permintaan surat</a></li>
-                            <li><a href="#">Pendaftaran PP</a></li>
+                            <li><a href="<?= site_url('user/Homeuser/pendaftaranpjk'); ?>">Pendaftaran Perpajakan</a></li>
                             <li><a href="#">Data Pemenerima Bantuan</a></li>
                         </ul>
                     </li>

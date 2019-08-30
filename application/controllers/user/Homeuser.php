@@ -77,4 +77,10 @@ class Homeuser extends CI_Controller
         $data["event"] = $this->M_event->ui();
         $this->load->view('user/event1', $data);
     }
+
+    public function pendaftaranpjk()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('user/pendaftaranpajak', $data);
+    }
 }

@@ -53,20 +53,23 @@ class Login extends CI_Controller
                     } else if ($pengguna['role_id'] == '3') {
                         redirect('superuser/Superuser');
                     } else {
-                        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf password yang anda masukkan salah!</div>');
+                        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">role anda tidak di temukan!</div>');
                         redirect('user/Login');
                     }
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf Akun anda belum di verifikasi atau password salah!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf password salah!</div>');
                     redirect('user/Login');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf username yang anda masukkan salah!</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf Akun anda belum di verifikasi!</div>');
                 redirect('user/Login');
-            }
+            } 
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf username yang anda masukkan salah!</div>');
+            redirect('user/Login');
         }
+ 
     }
-
     public function logout()
     {
         $this->session->unset_userdata('username');
