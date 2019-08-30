@@ -17,7 +17,7 @@ class Surat extends CI_Controller
     public function index()
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
-        $data['judul'] = 'pendaftaran pajak';
+        $data['judul'] = 'Permintaan Surat';
         $this->load->view('user/permintaansurat', $data);
     }
 
@@ -28,20 +28,20 @@ class Surat extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
         $this->session->userdata('username')])->row_array();
-        $data['judul'] = 'Tambah Wisata';
+        $data['judul'] = 'Permintaan Surat';
 
 
-        $wisata = $this->M_wisata;
+        $surat = $this->M_surat;
         $validation = $this->form_validation;
-        $validation->set_rules($wisata->rules());
+        $validation->set_rules($surat->rules());
 
         if ($validation->run()) {
-            $wisata->save();
+            $surat->save();
             $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan :)</div>');
-            redirect('admin/Wisata');
+            redirect('user/Surat');
         }
 
-        $this->load->view("admin/wisata/new", $data);
+        $this->load->view('user/permintaansurat', $data);
     }
 
 
