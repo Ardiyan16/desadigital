@@ -47,4 +47,11 @@ class Menu extends CI_Controller
         $data['judul'] = 'fp event';
         $this->load->view('user/fpevent', $data);
     }
+
+    public function fpwisata()
+    {
+        $data["wisata"] = $this->M_wisata->ui_wisata();
+        $data['judul'] = 'fp wisata';
+        $this->load->view('user/fpwisata', $data);
+    }
 }

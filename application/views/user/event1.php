@@ -22,7 +22,7 @@
                                 <li><i class="fa fa-clock-o" name="tanggalberita"> <?= $ev->tanggal_mulai ?></i></li>sampai<li><i class="fa fa-clock-o" name="tanggalberita"> <?= $ev->tanggal_selesai ?></i></li>
 
                             </ul>
-                            <p class="desber" name="deskripsiberita"><?= substr($ev->isi_event, 0, 300); ?><a href="">
+                            <p class="desber" name="deskripsiberita"><?= substr($ev->isi_event, 0, 300); ?><a href="<?php echo site_url('user/Homeuser/fpeventuser/' . $ev->id_event) ?>">
                                     baca selengkapnya</a></p>
                         </div>
                     </article>

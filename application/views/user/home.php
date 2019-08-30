@@ -15,7 +15,7 @@
                 <div class="about-col">
                     <?php foreach ($event as $ev) : ?>
                         <div class="img">
-                            <img src="<?php echo base_url('assets/img/foto_event/' . $ev->foto) ?>" alt="" class="img-fluid">
+                            <img src="<?php echo base_url('assets/img/foto_event/' . $ev->foto) ?>" alt="" class="img-fluid" width="300" height="200">
                             <div class="icon"><i class="ion-ios-book-outline"></i></div>
 
                         </div>
@@ -31,7 +31,7 @@
                 <div class="about-col">
                     <?php foreach ($berita as $ber) : ?>
                         <div class="img">
-                            <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" alt="" class="img-fluid">
+                            <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" alt="" class="img-fluid" width="300" height="200">
                             <div class="icon"><i class="ion-ios-list-outline"></i></div>
                         </div>
                         <h2 class="title"><a href="<?php echo site_url('user/Menu/fpberita/' . $ber->id_berita) ?>">Berita</a></h2>
@@ -44,17 +44,18 @@
 
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="about-col">
-                    <div class="img">
-                        <img src="img/about-vision.jpg" alt="" class="img-fluid">
-                        <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-                    </div>
-                    <h2 class="title"><a href="#">Our Vision</a></h2>
-                    <p>
-                        Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-                    </p>
+                    <?php foreach ($wisata as $wis) : ?>
+                        <div class="img">
+                            <img src="<?php echo base_url('assets/img/foto_wisata/' . $wis->foto) ?>" alt="" class="img-fluid" width="300" height="200">
+                            <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                        </div>
+                        <h2 class="title"><a href="<?php echo site_url('user/Menu/fpwisata/' . $wis->id_wisata) ?>">Wisata</a></h2>
+                        <p>
+                            <?= substr($wis->deskripsi, 0, 300); ?>
+                        </p>
                 </div>
             </div>
-
+        <?php endforeach; ?>
         </div>
 
     </div>

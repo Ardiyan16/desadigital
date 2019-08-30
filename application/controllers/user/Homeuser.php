@@ -22,6 +22,7 @@ class Homeuser extends CI_Controller
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $data["berita"] = $this->M_berita->ui_berita();
         $data["event"] = $this->M_event->ui();
+        $data["wisata"] = $this->M_wisata->ui_wisata();
         $data['judul'] = 'home';
         $this->load->view('user/home1', $data);
     }
@@ -118,5 +119,13 @@ class Homeuser extends CI_Controller
         $data["event"] = $this->M_event->ui();
         $data['judul'] = 'fp';
         $this->load->view('user/fpevent1', $data);
+    }
+
+    public function fpwisatauser()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data["wisata"] = $this->M_wisata->ui_wisata();
+        $data['judul'] = 'fp wisata';
+        $this->load->view('user/fpwisata1', $data);
     }
 }

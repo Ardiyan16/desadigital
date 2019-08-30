@@ -8,15 +8,15 @@
                 <?php foreach ($wisata as $wis) : ?>
                     <article>
                         <div class="article-img">
-                            <a href="">
+                            <a href="<?php echo site_url('user/Menu/fpwisata/' . $wis->id_wisata) ?>">
                                 <img src="<?php echo base_url('assets/img/foto_wisata/' . $wis->foto) ?>" height="200" width="300">
                             </a>
                         </div>
                         <div class="article-body">
                             <ul class="article-info">
                             </ul>
-                            <h5 class="article-title"><a href=""><?= $wis->nama_wisata ?></a></h5>
-                            <p class="desber" name="deskripsiberita" style="font-family: venada; font-size: 10px;"><?= substr($wis->deskripsi, 0, 300); ?><a href="">
+                            <h5 class="article-title"><a href="<?php echo site_url('user/Menu/fpwisata/' . $wis->id_wisata) ?>"><?= $wis->nama_wisata ?></a></h5>
+                            <p class="desber" name="deskripsiberita" style="font-family: venada; font-size: 10px;"><?= substr($wis->deskripsi, 0, 300); ?><a href="<?php echo site_url('user/Menu/fpwisata/' . $wis->id_wisata) ?>">
                                     baca selengkapnya</a></p>
                         </div>
                     </article>

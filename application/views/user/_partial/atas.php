@@ -47,7 +47,7 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="<?= site_url('user/Homeuser'); ?>">Home</a></li>
+                    <li class=""><a href="<?= site_url('user/Homeuser'); ?>">Home</a></li>
                     <li class="menu-has-children"><a href="">Informasi Desa</a>
                         <ul>
                             <li><a href="<?= site_url('user/Homeuser/beritauser'); ?>">Berita Desa</a></li>

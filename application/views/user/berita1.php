@@ -21,7 +21,7 @@
                             <ul class="article-meta">
                                 <li><i class="fa fa-clock-o" name="tanggalberita"><?= $ber->tanggal ?></i></li>
                             </ul>
-                            <p class="desber" name="deskripsiberita"><?= substr($ber->isi_berita, 0, 300); ?><a href="">
+                            <p class="desber" name="deskripsiberita"><?= substr($ber->isi_berita, 0, 300); ?><a href="<?php echo site_url('user/Homeuser/fpberitauser/' . $ber->id_berita) ?>">
                                     baca selengkapnya</a></p>
                         </div>
                     </article>
