@@ -51,7 +51,7 @@
                     <li class="menu-has-children"><a href="">Informasi Desa</a>
                         <ul>
                             <li><a href="<?= site_url('user/Menu'); ?>">Berita Desa</a></li>
-                            <li><a href="#">Event Desa</a></li>
+                            <li><a href="<?= site_url('user/Menu/event'); ?>">Event Desa</a></li>
                             <li><a href="#">Kegiatan Desa</a></li>
                         </ul>
                     </li>
@@ -174,32 +174,32 @@
                 <div class="col-md-4 wow fadeInUp">
                     <div class="about-col">
                         <?php foreach ($event as $ev) : ?>
-                        <div class="img">
-                            <img src="<?php echo base_url('assets/img/foto_event/' . $ev->foto) ?>" alt="" class="img-fluid">
-                            <div class="icon"><i class="ion-ios-book-outline"></i></div>
+                            <div class="img">
+                                <img src="<?php echo base_url('assets/img/foto_event/' . $ev->foto) ?>" alt="" class="img-fluid">
+                                <div class="icon"><i class="ion-ios-book-outline"></i></div>
 
-                        </div>
-                        <h2 class="title"><a href="">Event</a></h2>
-                        <p>
-                            <?= substr($ev->isi_event, 0, 300); ?>
-                        </p>
+                            </div>
+                            <h2 class="title"><a href="">Event</a></h2>
+                            <p>
+                                <?= substr($ev->isi_event, 0, 300); ?>
+                            </p>
                     </div>
-                    <?php endforeach; ?>
+                <?php endforeach; ?>
                 </div>
 
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="about-col">
                         <?php foreach ($berita as $ber) : ?>
-                        <div class="img">
-                            <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" alt="" class="img-fluid">
-                            <div class="icon"><i class="ion-ios-list-outline"></i></div>
-                        </div>
-                        <h2 class="title"><a href="#">Berita</a></h2>
-                        <p>
-                            <?= substr($ber->isi_berita, 0, 300); ?>
-                        </p>
+                            <div class="img">
+                                <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" alt="" class="img-fluid">
+                                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+                            </div>
+                            <h2 class="title"><a href="#">Berita</a></h2>
+                            <p>
+                                <?= substr($ber->isi_berita, 0, 300); ?>
+                            </p>
                     </div>
-                    <?php endforeach; ?>
+                <?php endforeach; ?>
                 </div>
 
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">

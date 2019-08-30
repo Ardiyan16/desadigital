@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Berita</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -24,7 +24,6 @@
     <link href="<?= base_url('assets/biz/lib/ionicons/css/ionicons.min.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/biz/lib/owlcarousel/assets/owl.carousel.min.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/biz/lib/lightbox/css/lightbox.min.css'); ?>" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Main Stylesheet File -->
     <link href="<?= base_url('assets/biz/css/style.css'); ?>" rel="stylesheet">
@@ -86,6 +85,7 @@
             </nav> <!-- #nav-menu-container -->
         </div>
     </header><!-- #header -->
+
 
     <section id="intro">
         <div class="intro-container">
@@ -165,120 +165,37 @@
         </div>
     </section><!-- #featured-services -->
 
-    <section id="about">
+    <section class="Berita">
         <div class="container">
+            <h3 class="mt-4">Berita Desa</h3>
 
-            <header class="section-header">
-                <h3>Tentang</h3>
-                <p>Web ini berisikan tentang sistem informasi untuk warga desa sehingga warga desa mudah dalam menerima
-                    informasi dari pihak pemerintahan desa serta mempermudah dalam pendaftaran kewargaan
-                </p>
-            </header>
-
-            <div class="row about-cols">
-
-                <div class="col-md-4 wow fadeInUp">
-                    <div class="about-col">
-                        <?php foreach ($event as $ev) : ?>
-                            <div class="img">
-                                <img src="<?php echo base_url('assets/img/foto_event/' . $ev->foto) ?>" alt="" class="img-fluid">
-                                <div class="icon"><i class="ion-ios-book-outline"></i></div>
-
-                            </div>
-                            <h2 class="title"><a href="">Event</a></h2>
-                            <p>
-                                <?= substr($ev->isi_event, 0, 300); ?>
-                            </p>
-                    </div>
-                <?php endforeach; ?>
-                </div>
-
-                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="about-col">
-                        <?php foreach ($berita as $ber) : ?>
-                            <div class="img">
-                                <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" alt="" class="img-fluid">
-                                <div class="icon"><i class="ion-ios-list-outline"></i></div>
-                            </div>
-                            <h2 class="title"><a href="#">Berita</a></h2>
-                            <p>
-                                <?= substr($ber->isi_berita, 0, 300); ?>
-                            </p>
-                    </div>
-                <?php endforeach; ?>
-                </div>
-
-                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="about-col">
-                        <div class="img">
-                            <img src="img/about-vision.jpg" alt="" class="img-fluid">
-                            <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-                        </div>
-                        <h2 class="title"><a href="#">Our Vision</a></h2>
-                        <p>
-                            Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- #about -->
-
-    <section id="pelayanan" style="margin-bottom: 20px;">
-        <div class="container">
-
-            <header class="section-header">
-                <h3>Pelayanan</h3>
-                <p>Pegawai kami akan melayani anda dengan sepenuh hati dan silahkan komplain jika terjadi permasalahan terhadap
-                    pelayanan dari kepegawaian kami
-                </p>
-            </header>
             <div class="row">
+                <div class="col-md-7">
+                    <?php foreach ($berita as $ber) : ?>
+                        <article>
+                            <div class="article-img">
+                                <a href="">
+                                    <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" height="200" width="300">
+                                </a>
+                            </div>
+                            <div class="article-body">
+                                <ul class="article-info">
+                                    <li class="article-category"><a href="#" name="kategori">berita</a></li>
+                                </ul>
+                                <h5 class="article-title"><a href="" name="judulberita"><?= $ber->judul_berita ?></a></h5>
+                                <ul class="article-meta">
+                                    <li><i class="fa fa-clock-o" name="tanggalberita"><?= $ber->tanggal ?></i></li>
+                                </ul>
+                                <p class="desber" name="deskripsiberita"><?= substr($ber->isi_berita, 0, 300); ?><a href="">
+                                        baca selengkapnya</a></p>
+                            </div>
+                        </article>
 
-                <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-                    <h4 class="title"><a href="">Pendaftaran Perpajakan</a></h4>
-                    <p class="description">menu ini digunakan untuk pengguna untuk mengetahui info nilai perpajakan yang harus di bayarkan</p>
-                </div>
-                <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
-                    <h4 class="title"><a href="">Permintaan surat</a></h4>
-                    <p class="description">menu ini di gunakan pengguna untuk meminta surat kepada pemerintah desa seperti surat rekomendasi,dll</p>
-                </div>
-                <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="icon"><i class="ion-ios-paper-outline"></i></div>
-                    <h4 class="title"><a href="">Info penerimaan bantuan desa</a></h4>
-                    <p class="description">menu ini di gunakan untuk mengetahui data warga miskin yang menerima bantuan desa</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section-bg">
-        <div class="container">
-
-            <header class="section-header">
-                <h3 class="section-title" style="margin-bootom: 20px;"><a href="">Galeri</a></h3>
-            </header>
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-                <div class="portfolio-wrap">
-                    <figure>
-                        <img src="img/portfolio/app1.jpg" class="img-fluid" alt="">
-                        <a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                        <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                    </figure>
-
-                    <div class="portfolio-info">
-                        <h4><a href="#">App 1</a></h4>
-                        <p>App</p>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </section>
-
     <footer id="footer">
         <div class="footer-top">
             <div class="container">
