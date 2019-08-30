@@ -13,6 +13,7 @@ class Dashboard extends CI_Controller
         $this->load->model('M_registrasi');
         $this->load->model('M_pajak');
         $this->load->helper('form');
+        $this->load->model('M_surat');
     }
 
     public function index()
@@ -94,5 +95,12 @@ class Dashboard extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Profil anda telah di update!</div>');
             redirect('admin/Dashboard');
         }
+    }
+
+    public function surat()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data["surat"] = $this->M_surat->getUserId();
+        $this->load->view('user/surat', $data);
     }
 }
