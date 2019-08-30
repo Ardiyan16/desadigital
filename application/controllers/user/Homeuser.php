@@ -15,8 +15,12 @@ class Homeuser extends CI_Controller
         $this->load->model('M_event');
         $this->load->model('M_registrasi');
         $this->load->model('M_wisata');
+<<<<<<< HEAD
         $this->load->model('M_oleh');
         $this->load->model('M_kerajinan');
+=======
+        $this->load->model('M_pajak');
+>>>>>>> 7b847ee48ae9e9ade043429065f4ffa02a2945b6
     }
 
     public function index()
@@ -90,6 +94,27 @@ class Homeuser extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $data['judul'] = 'pendaftaran pajak';
+        $this->load->view('user/pendaftaranpajak', $data);
+    }
+
+    public function pajakadd()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
+        $this->session->userdata('username')])->row_array();
+        $data['judul'] = 'Pendaftaran pajak';
+
+
+        $pajak = $this->M_pajak;
+        $validation = $this->form_validation;
+        $validation->set_rules($pajak->rules());
+
+        if ($validation->run()) {
+            $pajak->save();
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Dikirim :)</div>');
+            $this->session->set_flashdata('success2', '<div class="alert alert-success" role="alert">Konfirmasi Akan Dikirim Di Email Anda Max 1x24jam</div>');
+            redirect('user/Homeuser/pendaftaranpjk');
+        }
+
         $this->load->view('user/pendaftaranpajak', $data);
     }
 
