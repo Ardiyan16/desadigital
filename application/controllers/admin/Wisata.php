@@ -48,58 +48,85 @@ class Wisata extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
         $this->session->userdata('username')])->row_array();
-        $data['judul'] = 'Tambah Berita';
+        $data['judul'] = 'Tambah Wisata';
 
 
-        $berita = $this->M_berita;
+        $wisata = $this->M_wisata;
         $validation = $this->form_validation;
-        $validation->set_rules($berita->rules());
+        $validation->set_rules($wisata->rules());
 
         if ($validation->run()) {
-            $berita->save();
+            $wisata->save();
             $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan :)</div>');
-            redirect('admin/Berita');
+            redirect('admin/Wisata');
         }
 
-        $this->load->view("admin/berita/berita_list", $data);
+        $this->load->view("admin/wisata/new", $data);
     }
 
-    public function edit($id_berita = null)
-    {
-        if (!isset($id_berita)) redirect('admin/berita/');
 
-        $berita = $this->M_berita;
+
+    // public function edit($id_wisata = null)
+    // {
+    //     if (!isset($id_wisata)) redirect('admin/wisata');
+
+    //     $wisata = $this->M_wisata;
+    //     $validation = $this->form_validation;
+    //     $validation->set_rules($wisata->rules());
+
+    //     if ($validation->run()) {
+    //         $wisata->update();
+    //         $this->session->set_flashdata('success', 'Berhasil disimpan');
+    //     }
+
+    //     $data["wisata"] = $wisata->getById($id_wisata);
+    //     if (!$data["wisata"]) show_404();
+
+    //     $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
+    //     $this->session->userdata('username')])->row_array();
+
+    //     $this->load->view("admin/wisata/edit", $data);
+    // }
+
+
+
+
+    public function edit($id_wisata = null)
+    {
+        if (!isset($id_wisata)) redirect('admin/wisata/');
+
+        $wisata = $this->M_wisata;
         $validation = $this->form_validation;
-        $validation->set_rules($berita->rules());
+        $validation->set_rules($wisata->rules());
 
         if ($validation->run()) {
-            $berita->update();
+            $wisata->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $data["berita"] = $berita->getById($id_berita);
-        if (!$data["berita"]) show_404();
+        $data["wisata"] = $wisata->getById($id_wisata);
+        if (!$data["wisata"]) show_404();
 
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
         $this->session->userdata('username')])->row_array();
 
-        $this->load->view("admin/berita/berita_edit", $data);
+        $this->load->view("admin/wisata/edit", $data);
     }
 
     public function editan()
     {
-        $berita = $this->M_berita;
-        $berita->update();
-        $this->session->set_flashdata('success', 'Berhasil disimpan');
-        redirect('admin/berita/');
+        $wisata = $this->M_wisata;
+        $wisata->update();
+        $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Diubah :)</div>');
+        redirect('admin/wisata/');
     }
 
-    public function delete($id_berita = null)
+    public function delete($id_wisata = null)
     {
-        if (!isset($id_berita)) show_404();
+        if (!isset($id_wisata)) show_404();
 
-        if ($this->M_berita->delete($id_berita)) {
-            redirect(site_url('admin/Berita/'));
+        if ($this->M_wisata->delete($id_wisata)) {
+            redirect(site_url('admin/Wisata/'));
         }
     }
 }

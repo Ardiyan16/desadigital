@@ -90,7 +90,7 @@ class Berita extends CI_Controller
     {
         $berita = $this->M_berita;
         $berita->update();
-        $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Diubah :)</div>');
         redirect('admin/berita/');
     }
 

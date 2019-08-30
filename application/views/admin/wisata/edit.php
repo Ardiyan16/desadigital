@@ -20,20 +20,26 @@
                             <div class="box-header">
                                 <h3><?= $this->session->flashdata('error'); ?></h3>
                                 <h3><?= $this->session->flashdata('success'); ?></h3>
-                                <h3 class="box-title" style="margin-bottom: 20px;">Edit Berita
-                                    <small>Edit Berita Desa</small>
+                                <h3 class="box-title" style="margin-bottom: 20px;">Edit Wisata
+                                    <small>Edit Wisata Desa</small>
                                 </h3>
                                 <div class="box-body">
-                                    <form action="<?= site_url('admin/Berita/editan'); ?>" method="post" enctype="multipart/form-data">
-                                        <input type="hidden" name="id_berita" value="<?php echo $berita->id_berita ?>" />
-
+                                    <form action="<?= site_url('admin/Wisata/editan'); ?>" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="id_wisata" value="<?php echo $wisata->id_wisata ?>" />
                                         <div class="form-group">
-                                            Judul Berita<input type="text" class="form-control" value="<?php echo $berita->judul_berita ?>" name="judul_berita" placeholder="Judul Berita...">
+                                            Kategori
+                                            <select class="form-control" name="id_kategori">
+                                                <option value="1">Wisata</option>
+                                                <option value="2">Kuliner</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Isi Berita</label>
+                                            Nama Wisata<input type="text" class="form-control" value="<?php echo $wisata->id_wisata ?>" name="nama_wisata" placeholder="Nama Wisata...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Deskripsi</label>
                                             <div class="box-body pad">
-                                                <textarea id="editor1" rows="10" cols="150" name="isi_berita"><?php echo $berita->isi_berita ?>"</textarea>
+                                                <textarea id="editor1" rows="10" cols="150" name="deskripsi"> <?php echo $wisata->deskripsi ?></textarea>
                                             </div>
                                         </div>
                                         <!-- <div>
@@ -41,16 +47,11 @@
                                         </div> -->
                                         <br />
                                         <div class="form-group">
-                                            foto<input type="file" name="foto" class="form-control">
+                                            Foto<input type="file" name="foto" class="form-control">
                                         </div>
+
                                         <div class="form-group">
-                                            tanggal<input type="date" value="<?php echo $berita->tanggal ?>" class="form-control" name="tanggal" placeholder="Subject">
-                                        </div>
-                                        <div class="form-group">
-                                            lokasi<input type="text" value="<?php echo $berita->lokasi ?>" class="form-control" name="lokasi" placeholder="Subject">
-                                        </div>
-                                        <div class="form-group">
-                                            Penulis<input type="text" value="<?php echo $berita->penulis ?>" class="form-control" name="penulis" placeholder="Subject">
+                                            Lokasi<input type="text" value="<?php echo $wisata->lokasi ?>" class="form-control" name="lokasi" placeholder="Subject">
                                         </div>
 
                                         <div class="form-group">
@@ -63,37 +64,9 @@
                                                 <option value="5">Dusun Sawahan</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            RT
-                                            <select class="form-control" name="id_rt">
-                                                <option value="1">RT 01</option>
-                                                <option value="2">RT 02</option>
-                                                <option value="3">RT 03</option>
-                                                <option value="4">RT 04</option>
-                                                <option value="5">RT 05</option>
-                                                <option value="6">RT 06</option>
-                                                <option value="7">RT 07</option>
-                                                <option value="8">RT 08</option>
-                                                <option value="9">RT 09</option>
-                                                <option value="10">RT 10</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            RW
-                                            <select class="form-control" name="id_rw">
-                                                <option value="1">RW 01</option>
-                                                <option value="2">RW 02</option>
-                                                <option value="3">RW 03</option>
-                                                <option value="4">RW 04</option>
-                                                <option value="5">RW 05</option>
-                                                <option value="6">RW 06</option>
-                                                <option value="7">RW 07</option>
-                                                <option value="8">RW 08</option>
-                                                <option value="9">RW 09</option>
-                                                <option value="10">RW 10</option>
-                                            </select>
-                                        </div>
-                                        <input type="submit" value="save" class="btn btn-primary">Simpan</input>
+
+
+                                        <button type="submit" value="save" class="btn btn-primary">Simpan</button>
                                     </form>
                                 </div>
                             </div>

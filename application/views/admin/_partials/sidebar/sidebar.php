@@ -30,7 +30,7 @@
                     </span>
                 </a>
             </li>
-            <li class="active treeview">
+            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-newspaper-o"></i> <span>Berita</span>
                     <span class="pull-right-container">
@@ -43,7 +43,7 @@
 
                 </ul>
             </li>
-            <li class="active treeview">
+            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-calendar"></i> <span>Event</span>
                     <span class="pull-right-container">
@@ -56,7 +56,7 @@
 
                 </ul>
             </li>
-            <li class="active treeview">
+            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-calendar"></i> <span>Wisata</span>
                     <span class="pull-right-container">

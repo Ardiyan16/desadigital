@@ -19,43 +19,37 @@
             <div class="box">
               <div class="box-header">
                 <h3><?= $this->session->flashdata('success'); ?></h3>
-                <h3 class="box-title">View Tabel Data Berita</h3>
+                <h3 class="box-title">View Tabel Data Wisata</h3>
               </div>
               <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th>Judul Berita</th>
-                      <th>Tanggal</th>
+                      <th>ID Kategori</th>
+                      <th>Nama Wisata</th>
+                      <th>Deskripsi</th>
                       <th>Lokasi</th>
-                      <th>Isi Berita</th>
-                      <th>Penulis</th>
                       <th>ID Dusun</th>
-                      <th>ID RW</th>
-                      <th>ID RT</th>
                       <th>Foto</th>
                       <th>Opsi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php foreach ($berita as $berita) : ?>
-                    <tr>
-                      <th><?= $berita->judul_berita ?></th>
-                      <th><?= $berita->tanggal ?></th>
-                      <th><?= $berita->lokasi ?></th>
-                      <th><?= substr($berita->isi_berita, 0, 200); ?></th>
-                      <th><?= $berita->penulis ?></th>
-                      <th><?= $berita->id_dusun ?></th>
-                      <th><?= $berita->id_rw ?></th>
-                      <th><?= $berita->id_rt ?></th>
-                      <td>
-                        <img src="<?php echo base_url('assets/img/foto_berita/' . $berita->foto) ?>" width="64" />
-                      </td>
-                      <th>
-                        <a href="<?php echo site_url('admin/berita/edit/' . $berita->id_berita) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
-                        <a onclick="deleteConfirm" href="<?php echo site_url('admin/berita/delete/' . $berita->id_berita) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
-                      </th>
-                    </tr>
+                    <?php foreach ($wisata as $wisata) : ?>
+                      <tr>
+                        <th><?= $wisata->id_kategori ?></th>
+                        <th><?= $wisata->nama_wisata ?></th>
+                        <th><?= substr($wisata->deskripsi, 0, 200); ?></th>
+                        <th><?= $wisata->lokasi ?></th>
+                        <th><?= $wisata->id_dusun ?></th>
+                        <td>
+                          <img src="<?php echo base_url('assets/img/foto_wisata/' . $wisata->foto) ?>" width="64" />
+                        </td>
+                        <th>
+                          <a href="<?php echo site_url('admin/wisata/edit/' . $wisata->id_wisata) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
+                          <a onclick="deleteConfirm" href="<?php echo site_url('admin/wisata/delete/' . $wisata->id_wisata) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
+                        </th>
+                      </tr>
                     <?php endforeach; ?>
                   </tbody>
                 </table>
