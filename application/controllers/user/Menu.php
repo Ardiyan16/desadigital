@@ -14,6 +14,7 @@ class Menu extends CI_Controller
         $this->load->model('M_event');
         $this->load->model('M_wisata');
         $this->load->model('M_oleh');
+        $this->load->model('M_kerajinan');
     }
 
     public function index()

@@ -136,7 +136,7 @@ class M_kerajinan extends CI_Model
         }
     }
 
-    public function ui_berita()
+    public function ui_kerajinan()
     {
         return $this->db->get($this->_table)->result();
     }

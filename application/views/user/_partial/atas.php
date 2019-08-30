@@ -48,15 +48,15 @@
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class=""><a href="<?= site_url('user/Homeuser'); ?>">Home</a></li>
-                    <li class="menu-has-children"><a href="">Informasi Desa</a>
+                    <li class="menu-has-children"><a href="#">Informasi Desa</a>
                         <ul>
                             <li><a href="<?= site_url('user/Homeuser/beritauser'); ?>">Berita Desa</a></li>
                             <li><a href="<?= site_url('user/Homeuser/eventuser'); ?>">Event Desa</a></li>
                         </ul>
                     </li>
-                    <li class="menu-has-children"><a href="">Hasil Desa</a>
+                    <li class="menu-has-children"><a href="#">Hasil Desa</a>
                         <ul>
-                            <li><a href="#">Kerajinan Desa</a></li>
+                            <li><a href="<?= site_url('user/Homeuser/kerajinanuser'); ?>">Kerajinan Desa</a></li>
                             <li><a href="<?= site_url('user/Homeuser/oleholehuser'); ?>">Oleh oleh Khas Desa</a></li>
                         </ul>
                     </li>
@@ -68,7 +68,7 @@
                             <li><a href="#">Data Pemenerima Bantuan</a></li>
                         </ul>
                     </li>
-                    <li class="menu-has-children"><a href="" style="color: white;"><?= $this->session->userdata('username'); ?> <img class="img-circle ml-3" src="<?= base_url('assets/img/foto_profil/') . $pengguna['foto']; ?>" width="30" height="30"></a>
+                    <li class="menu-has-children"><a href="#" style="color: white;"><?= $this->session->userdata('username'); ?> <img class="img-circle ml-3" src="<?= base_url('assets/img/foto_profil/') . $pengguna['foto']; ?>" width="30" height="30"></a>
                         <ul>
                             <li><a href="Homeuser/editprofile">Edit Profile</a></li>
                         </ul>

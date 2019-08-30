@@ -1,4 +1,4 @@
-<?php $this->load->view("user/_partial/head.php"); ?>
+<?php $this->load->view("user/_partial/atas.php"); ?>
 
 <section id="portfolio" class="section-bg">
     <div class="container">
@@ -36,4 +36,4 @@
     </div>
 </section>
 
-<?php $this->load->view("user/_partial/foot.php"); ?>
+<?php $this->load->view("user/_partial/bawah.php"); ?>
