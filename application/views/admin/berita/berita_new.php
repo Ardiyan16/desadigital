@@ -15,6 +15,9 @@
         <div class="content-wrapper">
             <section class="content">
                 <div class="row">
+                    <div class="link" style="margin-top: 20px; margin-left: 12px; margin-bottom: 10px;">
+                        <a href="<?= site_url('admin/berita'); ?>" class="btn btn-primary">View Berita</a>
+                    </div>
                     <div class="col-md-12">
                         <div class="box box-info">
                             <div class="box-header">
