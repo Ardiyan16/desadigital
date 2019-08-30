@@ -42,11 +42,9 @@ class M_surat extends CI_Model
 
     public function getUserId()
     {
-        $post = $this->input->post();
-        if (isset($_POST['id_surat'])) { }
-        $ceknik = $post["nik"];
 
-        $query = $this->db->query("SELECT * FROM surat where nik = $ceknik ");
+
+        $query = $this->db->query("SELECT * FROM v_surat");
         return $query->result();
     }
 
@@ -157,10 +155,10 @@ class M_surat extends CI_Model
     // }
 
 
-    public function delete($id_wisata)
+    public function delete($id_surat)
     {
-        $this->_deleteImage($id_wisata);
-        return $this->db->delete($this->_table, array("id_wisata" => $id_wisata));
+        $this->_deleteImage($id_surat);
+        return $this->db->delete($this->_table, array("id_surat" => $id_surat));
     }
 
 

@@ -71,42 +71,42 @@ class Surat extends CI_Controller
 
 
 
-    public function edit($id_wisata = null)
+    public function edit($id_surat = null)
     {
-        if (!isset($id_wisata)) redirect('admin/wisata/');
+        if (!isset($id_surat)) redirect('admin/surat/');
 
-        $wisata = $this->M_wisata;
+        $surat = $this->M_surat;
         $validation = $this->form_validation;
-        $validation->set_rules($wisata->rules());
+        $validation->set_rules($surat->rules());
 
         if ($validation->run()) {
-            $wisata->update();
+            $surat->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $data["wisata"] = $wisata->getById($id_wisata);
-        if (!$data["wisata"]) show_404();
+        $data["surat"] = $surat->getById($id_surat);
+        if (!$data["surat"]) show_404();
 
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
         $this->session->userdata('username')])->row_array();
 
-        $this->load->view("admin/wisata/edit", $data);
+        $this->load->view("user/surat", $data);
     }
 
     public function editan()
     {
-        $wisata = $this->M_wisata;
-        $wisata->update();
+        $surat = $this->M_surat;
+        $surat->update();
         $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Diubah :)</div>');
-        redirect('admin/wisata/');
+        redirect('admin/surat/');
     }
 
-    public function delete($id_wisata = null)
+    public function delete($id_surat = null)
     {
-        if (!isset($id_wisata)) show_404();
+        if (!isset($id_surat)) show_404();
 
-        if ($this->M_wisata->delete($id_wisata)) {
-            redirect(site_url('admin/Wisata/'));
+        if ($this->M_surat->delete($id_surat)) {
+            redirect(site_url('admin/Surat/'));
         }
     }
 }
