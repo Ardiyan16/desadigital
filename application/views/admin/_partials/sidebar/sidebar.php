@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li>
-                <a href="Datauser">
+                <a href="<?= site_url('admin/Datauser'); ?>">
                     <i class="fa fa-file-text-o"></i> <span>Data User</span>
                     <span class="pull-right-container">
                         <i class="glyphicon glyphicon-list-alt"></i>
