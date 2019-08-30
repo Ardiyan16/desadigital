@@ -13,6 +13,7 @@ class Homeuser extends CI_Controller
         $this->load->helper('form');
         $this->load->model('M_berita');
         $this->load->model('M_event');
+        $this->load->model('M_registrasi');
     }
 
     public function index()
@@ -82,5 +83,11 @@ class Homeuser extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('user/pendaftaranpajak', $data);
+    }
+
+    public function loading2()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('user/akses/loading2', $data);
     }
 }

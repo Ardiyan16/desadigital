@@ -217,7 +217,11 @@
                         <div class="validation"></div>
                     </div>
                     <div class="form-group">
-                    <select class="form-control" name="jenis_kelamin">
+                        <input type="email" class="form-control" name="email" id="subject" placeholder="Email..." />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                    <select class="form-control" name="jenis_pajak">
                         <option>Jenis Pajak</option>
                         <option value="pajak tanah">Pajak Tanah</option>
                         <option value="pajak sawah">Pajak Sawah</option>
