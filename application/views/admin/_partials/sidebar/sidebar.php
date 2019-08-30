@@ -30,6 +30,14 @@
                     </span>
                 </a>
             </li>
+            <li>
+                <a href="<?= site_url('admin/Dashboard/pajak'); ?>">
+                    <i class="fa fa-dashboard"></i> <span>Pendaftaran Pajak</span>
+                    <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-dashboard"></i>
+                    </span>
+                </a>
+            </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-newspaper-o"></i> <span>Berita</span>

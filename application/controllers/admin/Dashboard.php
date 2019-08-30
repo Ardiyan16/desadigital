@@ -11,6 +11,7 @@ class Dashboard extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->model('M_registrasi');
+        $this->load->model('M_pajak');
         $this->load->helper('form');
     }
 
@@ -20,6 +21,36 @@ class Dashboard extends CI_Controller
         $data['judul'] = 'Dashboard';
         $data['jumlah'] = $this->M_registrasi->jumlahuser();
         $this->load->view('admin/dashboard.php', $data);
+    }
+
+    public function pajak()
+    {
+
+        $data['judul'] = 'Admin - Pendaftaran Pajak';
+
+
+
+
+
+        $email = $this->db->get_where('pengguna', ['username' =>
+        $this->session->userdata('username')]);
+        $role_id = $this->db->get_where('pengguna', ['role_id' =>
+        $this->session->userdata('role_id')]);
+
+        $cek_id_akses2 = $this->M_pajak->cek_akses_2($email, $role_id);
+        if ($cek_id_akses2 == 1) {
+            $data['pajak'] = $this->M_pajak->getUserId();
+            $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
+            $this->session->userdata('username')])->row_array();
+            $this->load->view("admin/pajak/list", $data);
+        } else {
+            $this->session->unset_userdata('email');
+            $this->session->unset_userdata('username');
+            $this->session->unset_userdata('role_id');
+
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kesalahan Tidak Di Ketahui</div>');
+            redirect('user/Login');
+        }
     }
 
     public function editprofile()

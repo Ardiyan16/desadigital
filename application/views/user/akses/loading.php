@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <button type="button" class="btn btn-default btn-lrg ajax" title="Ajax Request">
-                        <i class="fa fa-spin fa-refresh"></i>&nbsp; silahkan cek email anda
+                        <i class="fa fa-spin fa-refresh"></i>&nbsp; silahkan cek kotak masuk dan SPAM di email anda
                     </button>
                 </div>
             </div>
