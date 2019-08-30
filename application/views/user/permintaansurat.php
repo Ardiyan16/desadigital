@@ -9,7 +9,7 @@
         </div>
 
         <div class="form">
-            <form action="<?= site_url('user/Homeuser/pajakadd'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?= site_url('user/Surat/add'); ?>" method="post" enctype="multipart/form-data">
                 <h3><?= $this->session->flashdata('success'); ?></h3>
                 <h4><?= $this->session->flashdata('success2'); ?></h4>
                 <div class="form-row">
