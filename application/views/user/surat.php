@@ -7,7 +7,7 @@
     <title> Cara Membikin Surat </title>
 </head>
 
-<?php foreach ($berita as $ber) : ?>
+<?php foreach ($surat as $surat) : ?>
 
     <body onload="window.print();">
         <div class="wrapper">
@@ -59,7 +59,7 @@
                             <font face="Arial" color="black" size="4">
                                 <p>
                                     &nbsp;&nbsp;&nbsp;&nbsp;Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->nama ?><br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;Tempat, Tanggal Lahir &nbsp;&nbsp;: <?php echo $surat->ttl ?>><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Tempat, Tanggal Lahir &nbsp;&nbsp;: <?php echo $surat->ttl ?><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;Jenis Kelamin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->jk ?><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;Pekerjaan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->pekerjaan ?><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;Agama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->agama ?><br>
@@ -104,7 +104,6 @@
                 </div>
             </section>
         </div>
-    </body>
-<?php endforeach; ?>
+    <?php endforeach; ?>
 
 </html>

@@ -43,7 +43,7 @@
 
 
                         <th>
-                          <a href="<?php echo site_url('user/surat/edit/' . $surat->id_surat) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Print</a>
+                          <a href="<?php echo site_url('user/Surat/surat/' . $surat->id_surat) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Print</a>
                           <a onclick="deleteConfirm" href="<?php echo site_url('user/surat/delete/' . $surat->id_surat) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                         </th>
                       </tr>

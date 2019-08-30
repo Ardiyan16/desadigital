@@ -21,6 +21,14 @@ class Surat extends CI_Controller
         $this->load->view('user/permintaansurat', $data);
     }
 
+    public function surat()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data['judul'] = 'Permintaan Surat';
+        $data['surat'] = $this->M_surat->getUserId();
+        $this->load->view('user/surat', $data);
+    }
+
 
 
 
