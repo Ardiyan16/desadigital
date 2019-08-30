@@ -11,6 +11,7 @@ class Berita extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->model('M_berita');
+        $this->load->model('M_surat');
         $this->load->helper('form');
     }
 
@@ -100,6 +101,33 @@ class Berita extends CI_Controller
 
         if ($this->M_berita->delete($id_berita)) {
             redirect(site_url('admin/Berita/'));
+        }
+    }
+
+    public function surat()
+    {
+
+        $data['judul'] = 'Admin - Surat';
+
+
+        $email = $this->db->get_where('pengguna', ['username' =>
+        $this->session->userdata('username')]);
+        $role_id = $this->db->get_where('pengguna', ['role_id' =>
+        $this->session->userdata('role_id')]);
+
+        $cek_id_akses2 = $this->M_surat->cek_akses_2($email, $role_id);
+        if ($cek_id_akses2 == 1) {
+            $data['surat'] = $this->M_surat->getUserId();
+            $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
+            $this->session->userdata('username')])->row_array();
+            $this->load->view("admin/surat/list", $data);
+        } else {
+            $this->session->unset_userdata('email');
+            $this->session->unset_userdata('username');
+            $this->session->unset_userdata('role_id');
+
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kesalahan Tidak Di Ketahui</div>');
+            redirect('user/Login');
         }
     }
 }

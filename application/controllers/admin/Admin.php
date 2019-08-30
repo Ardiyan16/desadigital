@@ -11,6 +11,7 @@ class Admin extends CI_Controller
             redirect('admin/login');
         }
         $this->load->model("M_admin");
+        $this->load->model("M_surat");
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->helper('form');
