@@ -164,7 +164,7 @@ class M_wisata extends CI_Model
         }
     }
 
-    public function ui_berita()
+    public function ui_wisata()
     {
         return $this->db->get($this->_table)->result();
     }

@@ -14,6 +14,7 @@ class Homeuser extends CI_Controller
         $this->load->model('M_berita');
         $this->load->model('M_event');
         $this->load->model('M_registrasi');
+        $this->load->model('M_wisata');
     }
 
     public function index()
@@ -21,6 +22,7 @@ class Homeuser extends CI_Controller
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $data["berita"] = $this->M_berita->ui_berita();
         $data["event"] = $this->M_event->ui();
+        $data['judul'] = 'home';
         $this->load->view('user/home1', $data);
     }
 
@@ -69,6 +71,7 @@ class Homeuser extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $data["berita"] = $this->M_berita->ui_berita();
+        $data['judul'] = 'berita';
         $this->load->view('user/berita1', $data);
     }
 
@@ -76,18 +79,44 @@ class Homeuser extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $data["event"] = $this->M_event->ui();
+        $data['judul'] = 'event';
         $this->load->view('user/event1', $data);
     }
 
     public function pendaftaranpjk()
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data['judul'] = 'pendaftaran pajak';
         $this->load->view('user/pendaftaranpajak', $data);
     }
 
     public function loading2()
     {
-        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data['pengguna'] = $this->db->get_awhere('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('user/akses/loading2', $data);
+    }
+
+    public function wisatauser()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data["wisata"] = $this->M_wisata->ui_wisata();
+        $data['judul'] = 'wisata';
+        $this->load->view('user/wisata1', $data);
+    }
+
+    public function fpberitauser()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data["berita"] = $this->M_berita->ui_berita();
+        $data['judul'] = 'fp';
+        $this->load->view('user/fp_berita1', $data);
+    }
+
+    public function fpeventuser()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data["event"] = $this->M_event->ui();
+        $data['judul'] = 'fp';
+        $this->load->view('user/fpevent1', $data);
     }
 }

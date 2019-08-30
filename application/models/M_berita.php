@@ -153,4 +153,14 @@ class M_berita extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
+
+    public function fberita($read = FALSE)
+    {
+        if ($read === FALSE) {
+            $query = $this->db->query('SELECT * FROM berita');
+            return $query->result_array();
+        }
+        $query = $this->db->get_where('berita', array('slug' => $read));
+        return $query->row_array();
+    }
 }

@@ -18,6 +18,7 @@ class Home extends CI_Controller
     {
         $data["event"] = $this->M_event->ui();
         $data["berita"] = $this->M_berita->ui_berita();
+        $data['judul'] = 'home';
         $this->load->view('user/home', $data);
     }
 

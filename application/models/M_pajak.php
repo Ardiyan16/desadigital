@@ -23,3 +23,4 @@ class M_pajak extends CI_Model
 
         ];
     }
+}
