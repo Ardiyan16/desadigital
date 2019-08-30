@@ -40,7 +40,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo site_url('admin/Berita/add') ?>"><i class="fa fa-pencil-square-o"></i>Tambah Berita</a></li>
                     <li><a href="<?php echo site_url('admin/Berita/') ?>"><i class="fa fa-table "></i>Data Berita</a></li>
-             
+
                 </ul>
             </li>
             <li class="active treeview">
@@ -53,7 +53,20 @@
                 <ul class="treeview-menu">
                     <li><a href="<?= site_url('admin/Event/'); ?>"><i class="fa fa-pencil-square-o"></i>Tambah Event</a></li>
                     <li><a href="<?= site_url('admin/Event/dataevent'); ?>"><i class="fa fa-table "></i>Data Event</a></li>
-           
+
+                </ul>
+            </li>
+            <li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-calendar"></i> <span>Wisata</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= site_url('admin/Wisata/add'); ?>"><i class="fa fa-pencil-square-o"></i>Tambah Wisata</a></li>
+                    <li><a href="<?= site_url('admin/Wisata/'); ?>"><i class="fa fa-table "></i>Data Wisata</a></li>
+
                 </ul>
             </li>
         </ul>
