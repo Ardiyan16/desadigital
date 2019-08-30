@@ -57,7 +57,7 @@
                     <li class="menu-has-children"><a href="">Hasil Desa</a>
                         <ul>
                             <li><a href="#">Kerajinan Desa</a></li>
-                            <li><a href="">Oleh oleh Khas Desa</a></li>
+                            <li><a href="<?= site_url('user/Homeuser/oleholehuser'); ?>">Oleh oleh Khas Desa</a></li>
                         </ul>
                     </li>
                     <li><a href="<?= site_url('user/Homeuser/wisatauser'); ?>">Wisata Desa</a></li>

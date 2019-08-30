@@ -13,6 +13,7 @@ class Menu extends CI_Controller
         $this->load->model('M_berita');
         $this->load->model('M_event');
         $this->load->model('M_wisata');
+        $this->load->model('M_oleh');
     }
 
     public function index()
@@ -53,5 +54,19 @@ class Menu extends CI_Controller
         $data["wisata"] = $this->M_wisata->ui_wisata();
         $data['judul'] = 'fp wisata';
         $this->load->view('user/fpwisata', $data);
+    }
+
+    public function oleholeh()
+    {
+        $data["oleholeh"] = $this->M_oleh->ui_oleh();
+        $data['judul'] = 'oleh-oleh';
+        $this->load->view('user/oleholeh.php', $data);
+    }
+
+    public function kerajinan()
+    {
+        $data["kerajinan"] = $this->M_kerajinan->ui_kerajinan();
+        $data['judul'] = 'kerajinan';
+        $this->load->view('user/kerajinan', $data);
     }
 }

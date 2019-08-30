@@ -15,6 +15,7 @@ class Homeuser extends CI_Controller
         $this->load->model('M_event');
         $this->load->model('M_registrasi');
         $this->load->model('M_wisata');
+        $this->load->model('M_oleh');
     }
 
     public function index()
@@ -127,5 +128,13 @@ class Homeuser extends CI_Controller
         $data["wisata"] = $this->M_wisata->ui_wisata();
         $data['judul'] = 'fp wisata';
         $this->load->view('user/fpwisata1', $data);
+    }
+
+    public function oleholehuser()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data["oleholeh"] = $this->M_oleh->ui_oleh();
+        $data['judul'] = 'oleh oleh';
+        $this->load->view('user/oleholeh2', $data);
     }
 }

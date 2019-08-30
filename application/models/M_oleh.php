@@ -140,4 +140,9 @@ class M_oleh extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
+
+    public function ui_oleh()
+    {
+        return $this->db->get($this->_table)->result();
+    }
 }
