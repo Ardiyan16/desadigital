@@ -41,6 +41,11 @@
 
             <form method="post" action="<?= base_url('user/Registrasi'); ?>">
                 <div class="form-group has-feedback">
+                    <input type="text" class="form-control" name="nik" placeholder="Nomor Induk Kependudukan (NIK)">
+                    <span class="fa fa-address-card form-control-feedback"></span>
+                    <?php echo form_error('nik', '<small class="text-danger-pl-3">', '</small>'); ?>
+                </div>
+                <div class="form-group has-feedback">
                     <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     <?php echo form_error('nama_lengkap', '<small class="text-danger-pl-3">', '</small>'); ?>
@@ -54,6 +59,22 @@
                     <input type="date" class="form-control" name="tanggal_lahir" placeholder="Tanggal Lahir">
                     <span class="fa fa-calendar form-control-feedback"></span>
                     <?php echo form_error('tanggal_lahir', '<small class="text-danger-pl-3">', '</small>'); ?>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" name="pekerjaan" placeholder="Pekerjaan">
+                    <span class="fa fa-briefcase form-control-feedback"></span>
+                    <?php echo form_error('pekerjaan', '<small class="text-danger-pl-3">', '</small>'); ?>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="agama">
+                        <option>Agama</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Katolik">Katolik</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Budha">Budha</option>
+                        <option value="Protestan">Protestan</option>
+                        <option value="Konghucu">Konghucu</option>
+                    </select>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" name="alamat" placeholder="Alamat">

@@ -3,6 +3,7 @@
 class M_surat extends CI_Model
 {
     private $_table = "surat";
+    private $tabel = "v_surat";
 
     public $id_surat;
     public $nama;
@@ -33,6 +34,11 @@ class M_surat extends CI_Model
     {
         $dataadmin = $this->db->query("SELECT * FROM wisata WHERE role_id = 2")->result();
         return $dataadmin;
+    }
+
+    public function uisurat()
+    {
+        return $this->db->get($this->tabel)->result();
     }
 
     public function getById($id_surat)

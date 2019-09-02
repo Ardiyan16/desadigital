@@ -5,7 +5,7 @@ class M_registrasi extends CI_Model
 {
     private $_table = "pengguna";
 
-    public $id_pengguna;
+    public $nik;
     public $nama_lengkap;
     public $tempat_lahir;
     public $tanggal_lahir;
@@ -18,8 +18,8 @@ class M_registrasi extends CI_Model
     {
         return [
             [
-                'field' => 'id_pengguna',
-                'label' => 'id pengguna',
+                'field' => 'nik',
+                'label' => 'nik',
                 'rules' => 'required'
             ],
 
@@ -71,14 +71,14 @@ class M_registrasi extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
-    public function getById($id_pengguna)
+    public function getById($nik)
     {
-        return $this->db->get_where($this->_table, ["id_pengguna" => $id_pengguna])->row();
+        return $this->db->get_where($this->_table, ["nik" => $nik])->row();
     }
     public function save()
     {
         $post = $this->input->post();
-        $this->id_pengguna = $post["id_pengguna"];
+        $this->nik = $post["nik"];
         $this->nama_lengkap = $post["nama_lengkap"];
         $this->tempat_lahir = $post["tempat_lahir"];
         $this->tanggal_lahir = $post["tanggal_lahir"];
@@ -92,7 +92,7 @@ class M_registrasi extends CI_Model
 
     public function jumlahuser()
     {
-        $user = "SELECT count(id_pengguna) as count FROM pengguna WHERE role_id=1 ";
+        $user = "SELECT count(nik) as count FROM pengguna WHERE role_id=1 ";
         $result = $this->db->query($user);
         return $result->row()->count;
     }

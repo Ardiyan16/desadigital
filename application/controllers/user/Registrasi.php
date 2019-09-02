@@ -14,6 +14,7 @@ class Registrasi extends CI_Controller
 
     public function index()
     {
+        $this->form_validation->set_rules('nik', 'NIK', 'required|trim');
         $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|trim');
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required|trim');
@@ -37,9 +38,12 @@ class Registrasi extends CI_Controller
     {
         $email = $this->input->post('email', true);
         $data = [
+            'nik' => $this->input->post('nik'),
             'nama_lengkap' => $this->input->post('nama_lengkap'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+            'pekerjaan' => $this->input->post('pekerjaan'),
+            'agama' => $this->input->post('agama'),
             'alamat' => $this->input->post('alamat'),
             'no_telepon' => $this->input->post('no_telepon'),
             'jenis_kelamin' => $this->input->post('jenis_kelamin'),
@@ -62,8 +66,8 @@ class Registrasi extends CI_Controller
 
         $this->db->insert('pengguna', $data);
         $this->db->insert('token', $user_token);
-
         $this->kirimemail($token, 'verify');
+
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Anda berhasil di simpan</div>');
         redirect('user/Loading');
     }
