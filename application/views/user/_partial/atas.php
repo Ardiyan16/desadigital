@@ -64,7 +64,7 @@
                     <li class="menu-has-children"><a href="">Kependudukan</a>
                         <ul>
                             <li><a href="<?= site_url('user/Surat'); ?>">Permintaan surat</a></li>
-                            <li><a href="<?= site_url('user/Homeuser/pendaftaranpjk'); ?>">Pendaftaran Perpajakan</a></li>>
+                            <li><a href="<?= site_url('user/Homeuser/pendaftaranpjk'); ?>">Pendaftaran Perpajakan</a></li>
                         </ul>
                     </li>
                     <li class="menu-has-children"><a href="#" style="color: white;"><?= $this->session->userdata('username'); ?> <img class="img-circle ml-3" src="<?= base_url('assets/img/foto_profil/') . $pengguna['foto']; ?>" width="30" height="30"></a>

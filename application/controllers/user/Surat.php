@@ -12,6 +12,7 @@ class Surat extends CI_Controller
         $this->load->helper('url');
         $this->load->model('M_surat');
         $this->load->helper('form');
+        $this->load->model('M_registrasi');
     }
 
     public function index()
@@ -116,5 +117,14 @@ class Surat extends CI_Controller
         if ($this->M_surat->delete($id_surat)) {
             redirect(site_url('admin/Surat/'));
         }
+    }
+
+    public function prosessurat()
+    {
+        $nik = $this->input->post('nik');
+        $data['surat'] = $this->db->get_where('pengguna', ['nik' => $nik])->row_array();
+        $data['surat'] = $this->M_surat->uisurat();
+        $data['judul'] = 'surat';
+        $this->load->view('user/surat', $data);
     }
 }

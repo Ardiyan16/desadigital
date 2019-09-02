@@ -24,6 +24,7 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
+                                            <th>NIK</th>
                                             <th>Nama Lengkap</th>
                                             <th>Tempat Lahir</th>
                                             <th>Tanggal Lahir</th>
@@ -37,6 +38,7 @@
                                     <tbody>
                                         <?php foreach ($user as $pengguna) : ?>
                                             <tr>
+                                                <th><?= $pengguna->nik ?></th>
                                                 <th><?= $pengguna->nama_lengkap ?></th>
                                                 <th><?= $pengguna->tempat_lahir ?></th>
                                                 <th><?= $pengguna->tanggal_lahir ?></th>

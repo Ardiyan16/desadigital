@@ -3,7 +3,7 @@
 class M_surat extends CI_Model
 {
     private $_table = "surat";
-    private $tabel = "v_surat";
+    private $tabel = "pengguna";
 
     public $id_surat;
     public $nama;

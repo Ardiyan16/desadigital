@@ -53,9 +53,9 @@
             </font>
             <font face="Arial" color="black" size="4">
                 <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->nama ?><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Tempat, Tanggal Lahir &nbsp;&nbsp;: <?php echo $surat->ttl ?><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Jenis Kelamin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->jk ?><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->nama_lengkap ?><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Tempat, Tanggal Lahir &nbsp;&nbsp;: <?php echo $surat->tempat_lahir ?>, <?= $surat->tanggal_lahir ?><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Jenis Kelamin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->jenis_kelamin ?><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Pekerjaan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->pekerjaan ?><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Agama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->agama ?><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Status Perkawinan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $surat->status ?><br>
@@ -65,7 +65,7 @@
             </font>
             <font face="Arial" color="black" size="4">
                 <p>
-                    Dengan ini menyatakan bahwa orang yang bersangkutan <?php echo $surat->text ?>
+                    Dengan ini menyatakan bahwa yang besangkutan berdomisili di Desa Genteng Kulon Kecamatan Genteng Kabupaten Banyuwangi
                 </p>
             </font>
 

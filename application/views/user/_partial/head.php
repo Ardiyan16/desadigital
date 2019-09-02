@@ -52,7 +52,6 @@
                         <ul>
                             <li><a href="<?= site_url('user/Menu'); ?>">Berita Desa</a></li>
                             <li><a href="<?= site_url('user/Menu/event'); ?>">Event Desa</a></li>
-                            <li><a href="#">Kegiatan Desa</a></li>
                         </ul>
                     </li>
                     <li class="menu-has-children"><a href="">Hasil Desa</a>
@@ -66,7 +65,6 @@
                         <ul>
                             <li><a href="#">Permintaan surat</a></li>
                             <li><a href="<?= site_url('user/Homeuser/pendaftaranpjk'); ?>">Pendaftaran PP</a></li>
-                            <li><a href="#">Data Pemenerima Bantuan</a></li>
                         </ul>
                     </li>
                 </ul>
