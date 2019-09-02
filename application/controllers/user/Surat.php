@@ -123,7 +123,6 @@ class Surat extends CI_Controller
     {
         $nik = $this->input->post('nik');
         $data['surat'] = $this->db->get_where('pengguna', ['nik' => $nik])->row_array();
-        $data['surat'] = $this->M_surat->uisurat();
         $data['judul'] = 'surat';
         $this->load->view('user/surat', $data);
     }

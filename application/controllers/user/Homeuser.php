@@ -21,9 +21,9 @@ class Homeuser extends CI_Controller
     public function index()
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
-        $data["berita"] = $this->M_berita->ui_berita();
-        $data["event"] = $this->M_event->ui();
-        $data["wisata"] = $this->M_wisata->ui_wisata();
+        $data["berita"] = $this->M_berita->ui_beritahome();
+        $data["event"] = $this->M_event->uihome();
+        $data["wisata"] = $this->M_wisata->ui_wisatahome();
         $data['judul'] = 'home';
         $this->load->view('user/home1', $data);
     }
@@ -127,26 +127,26 @@ class Homeuser extends CI_Controller
         $this->load->view('user/wisata1', $data);
     }
 
-    public function fpberitauser()
+    public function fpberitauser($id_berita)
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
-        $data["berita"] = $this->M_berita->ui_berita();
+        $data['berita'] = $this->db->get_where('berita', ['id_berita' => $id_berita])->row_array();
         $data['judul'] = 'fp';
         $this->load->view('user/fp_berita1', $data);
     }
 
-    public function fpeventuser()
+    public function fpeventuser($id_event)
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
-        $data["event"] = $this->M_event->ui();
+        $data['event'] = $this->db->get_where('event_desa', ['id_event' => $id_event])->row_array();
         $data['judul'] = 'fp';
         $this->load->view('user/fpevent1', $data);
     }
 
-    public function fpwisatauser()
+    public function fpwisatauser($id_wisata)
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
-        $data["wisata"] = $this->M_wisata->ui_wisata();
+        $data['wisata'] = $this->db->get_where('wisata', ['id_wisata' => $id_wisata])->row_array();
         $data['judul'] = 'fp wisata';
         $this->load->view('user/fpwisata1', $data);
     }

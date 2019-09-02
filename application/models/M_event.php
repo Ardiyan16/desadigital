@@ -100,6 +100,13 @@ class M_event extends CI_Model
 
     public function ui()
     {
-        return $this->db->get($this->_table)->result();
+        $dataevent = $this->db->query("SELECT * FROM event_desa order by id_event")->result();
+        return $dataevent;
+    }
+
+    public function uihome()
+    {
+        $dataevent = $this->db->query("SELECT * FROM event_desa order by id_event desc limit 1")->result();
+        return $dataevent;
     }
 }

@@ -151,16 +151,18 @@ class M_berita extends CI_Model
 
     public function ui_berita()
     {
-        return $this->db->get($this->_table)->result();
+        $databerita = $this->db->query("SELECT * FROM Berita order by id_berita")->result();
+        return $databerita;
     }
 
-    public function fberita($read = FALSE)
+    public function ui_beritahome()
     {
-        if ($read === FALSE) {
-            $query = $this->db->query('SELECT * FROM berita');
-            return $query->result_array();
-        }
-        $query = $this->db->get_where('berita', array('slug' => $read));
-        return $query->row_array();
+        $databerita = $this->db->query("SELECT * FROM Berita order by id_berita desc limit 1")->result();
+        return $databerita;
+    }
+
+    public function readberita($id_berita)
+    {
+        return $this->db->get_where($this->_table, ["id_berita" => $id_berita])->row();
     }
 }

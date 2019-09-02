@@ -80,33 +80,31 @@
             <div class="row">
                 <!-- Main Column -->
                 <div class="col-md-8 mt-5">
-                    <?php foreach ($wisata as $wis) : ?>
-                        <article class="article article-post">
-                            <div class="article-main-img">
-                                <img src="<?php echo base_url('assets/img/foto_wisata/' . $wis->foto) ?>" alt="">
-                            </div>
-                            <div class="article-body">
-                                <ul class="article-info">
-                                    <li class="article-category"><a href="berita.php">Berita</a></li>
-                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
-                                </ul>
-                                <h3 class="article-title"><?= $wis->nama_wisata ?></h3>
-                                <p>
-                                    <?= $wis->deskripsi ?>
-                                </p>
-                                <div class="row mb-3 mt-5">
-                                    <div class="col">
-                                        <div class="card" style="width: 18rem;">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Lokasi</h5>
-                                                <p class="card-text"><?= $wis->lokasi ?> </p>
-                                            </div>
+                    <article class="article article-post">
+                        <div class="article-main-img">
+                            <img src="<?php echo base_url('assets/img/foto_wisata/' . $wisata['foto']); ?>" alt="">
+                        </div>
+                        <div class="article-body">
+                            <ul class="article-info">
+                                <li class="article-category"><a href="#">wisata</a></li>
+                                <li class="article-type"><i class="fa fa-file-text"></i></li>
+                            </ul>
+                            <h3 class="article-title"><?= $wisata['nama_wisata'] ?></h3>
+                            <p>
+                                <?= $wisata['deskripsi']; ?>
+                            </p>
+                            <div class="row mb-3 mt-5">
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Lokasi</h5>
+                                            <p class="card-text"><?= $wisata['lokasi'] ?> </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </article>
-                    <?php endforeach; ?>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>

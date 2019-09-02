@@ -37,22 +37,22 @@ class Menu extends CI_Controller
         $data['judul'] = 'wisata';
         $this->load->view('user/wisata', $data);
     }
-    public function fpberita()
+    public function fpberita($id_berita)
     {
-        $data["berita"] = $this->M_berita->ui_berita();
+        $data['berita'] = $this->db->get_where('berita', ['id_berita' => $id_berita])->row_array();
         $data['judul'] = 'fp';
         $this->load->view('user/fpberita', $data);
     }
-    public function fpevent()
+    public function fpevent($id_event)
     {
-        $data["event"] = $this->M_event->ui();
+        $data['event'] = $this->db->get_where('event_desa', ['id_event' => $id_event])->row_array();
         $data['judul'] = 'fp event';
         $this->load->view('user/fpevent', $data);
     }
 
-    public function fpwisata()
+    public function fpwisata($id_wisata)
     {
-        $data["wisata"] = $this->M_wisata->ui_wisata();
+        $data['wisata'] = $this->db->get_where('wisata', ['id_wisata' => $id_wisata])->row_array();
         $data['judul'] = 'fp wisata';
         $this->load->view('user/fpwisata', $data);
     }

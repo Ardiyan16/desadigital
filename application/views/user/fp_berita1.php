@@ -85,36 +85,34 @@
             <div class="row">
                 <!-- Main Column -->
                 <div class="col-md-8 mt-5">
-                    <?php foreach ($berita as $ber) : ?>
-                        <article class="article article-post">
-                            <div class="article-main-img">
-                                <img src="<?php echo base_url('assets/img/foto_berita/' . $ber->foto) ?>" alt="">
-                            </div>
-                            <div class="article-body">
-                                <ul class="article-info">
-                                    <li class="article-category"><a href="berita.php">Berita</a></li>
-                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
-                                </ul>
-                                <h3 class="article-title"><?= $ber->judul_berita ?></h3>
-                                <ul class="article-meta">
-                                    <li><i class="fa fa-clock-o"></i> <?= $ber->tanggal ?></li>
-                                </ul>
-                                <p>
-                                    <?= $ber->isi_berita ?>
-                                </p>
-                                <div class="row mb-3 mt-5">
-                                    <div class="col">
-                                        <div class="card" style="width: 18rem;">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Lokasi</h5>
-                                                <p class="card-text"><?= $ber->lokasi ?> </p>
-                                            </div>
+                    <article class="article article-post">
+                        <div class="article-main-img">
+                            <img src="<?php echo base_url('assets/img/foto_berita/' . $berita['foto']) ?>" alt="">
+                        </div>
+                        <div class="article-body">
+                            <ul class="article-info">
+                                <li class="article-category"><a href="berita.php">Berita</a></li>
+                                <li class="article-type"><i class="fa fa-file-text"></i></li>
+                            </ul>
+                            <h3 class="article-title"><?= $berita['judul_berita'] ?></h3>
+                            <ul class="article-meta">
+                                <li><i class="fa fa-clock-o"></i> <?= $berita['tanggal'] ?></li>
+                            </ul>
+                            <p>
+                                <?= $berita['isi_berita'] ?>
+                            </p>
+                            <div class="row mb-3 mt-5">
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Lokasi</h5>
+                                            <p class="card-text"><?= $berita['lokasi'] ?> </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </article>
-                    <?php endforeach; ?>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>

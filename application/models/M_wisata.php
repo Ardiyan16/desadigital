@@ -166,6 +166,13 @@ class M_wisata extends CI_Model
 
     public function ui_wisata()
     {
-        return $this->db->get($this->_table)->result();
+        $datawisata = $this->db->query("SELECT * FROM wisata order by id_wisata desc")->result();
+        return $datawisata;
+    }
+
+    public function ui_wisatahome()
+    {
+        $datawisata = $this->db->query("SELECT * FROM wisata order by id_wisata desc limit 1")->result();
+        return $datawisata;
     }
 }

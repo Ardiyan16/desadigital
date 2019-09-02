@@ -80,33 +80,31 @@
             <div class="row">
                 <!-- Main Column -->
                 <div class="col-md-8 mt-5">
-                    <?php foreach ($event as $ev) : ?>
-                        <article class="article article-post">
-                            <div class="article-main-img">
-                                <img src="<?php echo base_url('assets/img/foto_event/' . $ev->foto) ?>" alt="">
-                            </div>
-                            <div class="article-body">
-                                <ul class="article-info">
-                                    <li class="article-category"><a href="berita.php">Berita</a></li>
-                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
-                                </ul>
-                                <h3 class="article-title"><?= $ev->judul_event ?></h3>
-                                <ul class="article-meta">
-                                    <li><i class="fa fa-clock-o"></i> <?= $ev->tanggal_mulai ?></li>
-                                    <li><i class="fa fa-clock-o"></i> <?= $ev->tanggal_selesai ?></li>
-                                </ul>
-                                <p>
-                                    <?= $ev->isi_event ?>
-                                </p>
-                                <div class="row mb-3 mt-5">
-                                    <div class="col">
-                                        <div class="card" style="width: 18rem;">
-                                        </div>
+                    <article class="article article-post">
+                        <div class="article-main-img">
+                            <img src="<?php echo base_url('assets/img/foto_event/' . $event['foto']); ?>" alt="">
+                        </div>
+                        <div class="article-body">
+                            <ul class="article-info">
+                                <li class="article-category"><a href="berita.php">Berita</a></li>
+                                <li class="article-type"><i class="fa fa-file-text"></i></li>
+                            </ul>
+                            <h3 class="article-title"><?= $event['judul_event']; ?></h3>
+                            <ul class="article-meta">
+                                <li><i class="fa fa-clock-o"></i> <?= $event['tanggal_mulai']; ?></li>
+                                <li><i class="fa fa-clock-o"></i> <?= $event['tanggal_selesai']; ?></li>
+                            </ul>
+                            <p>
+                                <?= $event['isi_event']; ?>
+                            </p>
+                            <div class="row mb-3 mt-5">
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
                                     </div>
                                 </div>
                             </div>
-                        </article>
-                    <?php endforeach; ?>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
