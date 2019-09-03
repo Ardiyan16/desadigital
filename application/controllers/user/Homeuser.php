@@ -156,6 +156,7 @@ class Homeuser extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $data['apbd'] = $this->M_apbd->getAll();
+        $data['aapbd'] = $this->M_apbd->aapbd();
         $data['judul'] = 'apb desa';
         $this->load->view('user/apbdesa', $data);
     }
