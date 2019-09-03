@@ -1,8 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class M_admin extends CI_Model
+class M_apbd extends CI_Model
 {
     private $_table = "apbdesa";
+    private $table = "anggaran_apbdesa";
+
 
     public $kodeapbd;
     public $alokasi_dana;

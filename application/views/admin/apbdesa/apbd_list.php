@@ -16,7 +16,7 @@
             <section class="content">
                 <div class="row">
                     <div class="link" style="margin-top: 20px; margin-left: 12px; margin-bottom: 10px;">
-                        <a href="<?= site_url('admin/Berita/add'); ?>" class="btn btn-primary">Tambah Berita</a>
+                        <a href="<?= site_url('admin/Apbdesa/add'); ?>" class="btn btn-primary">Tambah Apbdesa</a>
                     </div>
                     <div class="col-xs-12">
                         <div class="box">

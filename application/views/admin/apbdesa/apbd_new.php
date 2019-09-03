@@ -16,7 +16,7 @@
             <section class="content">
                 <div class="row">
                     <div class="link" style="margin-top: 20px; margin-left: 12px; margin-bottom: 10px;">
-                        <a href="<?= site_url(''); ?>" class="btn btn-primary">Data APB Desa</a>
+                        <a href="<?= site_url('admin/Apbdesa/'); ?>" class="btn btn-primary">Data APB Desa</a>
                     </div>
                     <div class="col-md-12">
                         <div class="box box-info">
@@ -47,7 +47,7 @@
                                             Petugas Alokasi<input type="text" class="form-control" name="petugas_alokasi" placeholder="Petugas Alokasi...">
                                         </div>
                                         <div class="form-group">
-                                            Foto Alokasi<input type="text" class="form-control" name="foto_alokasi" placeholder="Foto...">
+                                            Foto Alokasi<input type="file" class="form-control" name="foto_alokasi" placeholder="Foto...">
                                         </div>
                                         <button type="submit" value="save" class="btn btn-primary">Simpan</button>
                                     </form>

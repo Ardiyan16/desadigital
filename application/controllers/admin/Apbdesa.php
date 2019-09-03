@@ -26,7 +26,7 @@ class Apbdesa extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' =>
         $this->session->userdata('username')])->row_array();
-        $data['judul'] = 'Tambah Berita';
+        $data['judul'] = 'Tambah Apbd';
 
 
         $apbdesa = $this->M_apbd;

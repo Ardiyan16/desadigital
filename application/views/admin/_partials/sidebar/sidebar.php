@@ -112,8 +112,8 @@
                 </a>
                 <ul class="treeview-menu">
 
-                    <li><a href="<?= site_url('admin/Berita/surat'); ?>"><i class="fa fa-table "></i>Tambah Data APB Desa</a></li>
-                    <li><a href="<?= site_url('admin/Berita/surat'); ?>"><i class="fa fa-table "></i>Data APB Desa</a></li>
+                    <li><a href="<?= site_url('admin/Apbdesa/add'); ?>"><i class="fa fa-table "></i>Tambah Data APB Desa</a></li>
+                    <li><a href="<?= site_url('admin/Apbdesa/'); ?>"><i class="fa fa-table "></i>Data APB Desa</a></li>
 
 
                 </ul>
