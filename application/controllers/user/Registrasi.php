@@ -66,6 +66,8 @@ class Registrasi extends CI_Controller
 
         $this->db->insert('pengguna', $data);
         $this->db->insert('token', $user_token);
+
+
         $this->kirimemail($token, 'verify');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Anda berhasil di simpan</div>');

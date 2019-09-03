@@ -16,6 +16,7 @@ class Homeuser extends CI_Controller
         $this->load->model('M_registrasi');
         $this->load->model('M_wisata');
         $this->load->model('M_pajak');
+        $this->load->model('M_apbd');
     }
 
     public function index()
@@ -149,5 +150,13 @@ class Homeuser extends CI_Controller
         $data['wisata'] = $this->db->get_where('wisata', ['id_wisata' => $id_wisata])->row_array();
         $data['judul'] = 'fp wisata';
         $this->load->view('user/fpwisata1', $data);
+    }
+
+    public function apbd()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data['apbd'] = $this->M_apbd->getAll();
+        $data['judul'] = 'apb desa';
+        $this->load->view('user/apbdesa', $data);
     }
 }

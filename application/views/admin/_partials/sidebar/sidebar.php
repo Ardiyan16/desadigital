@@ -105,14 +105,16 @@
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-calendar"></i> <span>Permohonan Surat</span>
+                    <i class="fa fa-calendar"></i> <span>Data APB Desa</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
 
-                    <li><a href="<?= site_url('admin/Berita/surat'); ?>"><i class="fa fa-table "></i>Data Permohonan Surat</a></li>
+                    <li><a href="<?= site_url('admin/Berita/surat'); ?>"><i class="fa fa-table "></i>Tambah Data APB Desa</a></li>
+                    <li><a href="<?= site_url('admin/Berita/surat'); ?>"><i class="fa fa-table "></i>Data APB Desa</a></li>
+
 
                 </ul>
             </li>

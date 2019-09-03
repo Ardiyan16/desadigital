@@ -1,4 +1,4 @@
-<?php $this->load->view("user/_partial/head.php"); ?>
+<?php $this->load->view("user/_partial/atas.php"); ?>
 
 <section class="Berita">
     <div class="container">
@@ -9,16 +9,13 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>nomor</th>
-                            <th>Tempat Lahir</th>
-                            <th>Tanggal Lahir</th>
-                            <th>No Telepon</th>
-                            <th>Alamat</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Status</th>
-                            <th>Email</th>
-                            <th>Foto</th>
-                            <th>Opsi</th>
+                            <th>Kode APBDesa</th>
+                            <th>Alokasi Anggaran</th>
+                            <th>anggaran dana</th>
+                            <th>biaya alokasi</th>
+                            <th>sisa alokasi</th>
+                            <th>petugas alokasi</th>
+                            <th>Foto alokasi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,4 +29,4 @@
 </section>
 
 
-<?php $this->load->view("user/_partial/foot.php"); ?>
+<?php $this->load->view("user/_partial/bawah.php"); ?>
