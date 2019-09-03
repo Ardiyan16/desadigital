@@ -130,6 +130,14 @@
                     <li><a href="<?= site_url('admin/Apbdesa/pemasukan'); ?>"><i class="fa fa-table "></i>Data Pemasukan APB</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="<?= site_url('admin/Apbdesa/kritik'); ?>">
+                    <i class="fa fa-dashboard"></i> <span>Kritik Dan Saran</span>
+                    <span class="pull-right-container">
+                        <i class="glyphicon glyphicon-dashboard"></i>
+                    </span>
+                </a>
+            </li>
         </ul>
     </section>
 </aside>

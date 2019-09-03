@@ -13,6 +13,7 @@ class Apbdesa extends CI_Controller
         $this->load->helper('form');
         $this->load->model('M_apbd');
         $this->load->model('M_pemasukan');
+        $this->load->model('M_kritik');
     }
 
     public function index()
@@ -155,6 +156,25 @@ class Apbdesa extends CI_Controller
 
         if ($this->M_pemasukan->delete($id)) {
             redirect(site_url('admin/Apbdesa/pemasukan'));
+        }
+    }
+
+
+    //------------------------------------- CONTROLLER KRITIK DAN SARAN------------ -----------------------------------
+    public function kritik()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data['kritik'] = $this->M_kritik->getUserId();
+        $data['judul'] = 'Data Kritik Dan Saran';
+        $this->load->view('admin/kritik/list', $data);
+    }
+
+    public function kritikdelete($id = null)
+    {
+        if (!isset($id)) show_404();
+
+        if ($this->M_kritik->delete($id)) {
+            redirect(site_url('admin/Apbdesa/kritik'));
         }
     }
 }

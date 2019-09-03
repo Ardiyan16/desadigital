@@ -36,11 +36,11 @@
             <br />
         </div>
         <h3 class="mt-6" style="margin-top: 100px;">Kritik, Saran, dan Masukan dalam pembangunan desa</h3>
-        <form action="<?= site_url(''); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= site_url('user/Homeuser/kritikadd'); ?>" method="post" enctype="multipart/form-data">
             <h3><?= $this->session->flashdata('success'); ?></h3>
             <h4><?= $this->session->flashdata('success2'); ?></h4>
             <div class="form-group">
-                <input type="text" name="nik" class="form-control" id="nik" placeholder="NIK..." />
+                <input type="text" name="nik" class="form-control" readonly value="<?= $pengguna['nik']; ?>" id="nik" placeholder="NIK..." />
                 <div class="validation"></div>
             </div>
             <div class="form-group">

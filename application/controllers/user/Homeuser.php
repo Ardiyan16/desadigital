@@ -17,6 +17,7 @@ class Homeuser extends CI_Controller
         $this->load->model('M_wisata');
         $this->load->model('M_pajak');
         $this->load->model('M_apbd');
+        $this->load->model('M_kritik');
     }
 
     public function index()
@@ -155,8 +156,27 @@ class Homeuser extends CI_Controller
     public function apbd()
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data['nik'] = $this->db->get_where('pengguna', ['nik' => $this->session->userdata('nik')])->row_array();
         $data['apbd'] = $this->M_apbd->getAll();
         $data['judul'] = 'apb desa';
+        $this->load->view('user/apbdesa', $data);
+    }
+    public function kritikadd()
+    {
+        $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
+        $data['apbd'] = $this->M_apbd->getAll();
+        $data['judul'] = 'apb desa';
+
+
+        $kritik = $this->M_kritik;
+        $validation = $this->form_validation;
+        $validation->set_rules($kritik->rules());
+
+        if ($validation->run()) {
+            $kritik->save();
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan :)</div>');
+            redirect('user/Homeuser/apbd');
+        }
         $this->load->view('user/apbdesa', $data);
     }
 }
