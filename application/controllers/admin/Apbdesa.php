@@ -160,7 +160,7 @@ class Apbdesa extends CI_Controller
     }
 
 
-    //------------------------------------- CONTROLLER KRITIK DAN SARAN------------ -----------------------------------
+    //------------------------------------- CONTROLLER KRITIK DAN SARAN ------------ -----------------------------------
     public function kritik()
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
