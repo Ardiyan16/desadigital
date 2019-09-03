@@ -52,6 +52,7 @@
                         <ul>
                             <li><a href="<?= site_url('user/Menu'); ?>">Berita Desa</a></li>
                             <li><a href="<?= site_url('user/Menu/event'); ?>">Event Desa</a></li>
+                            <li><a href="<?= site_url(''); ?>">Informasi APB Desa</a></li>
                         </ul>
                     </li>
                     <li class="menu-has-children"><a href="">Hasil Desa</a>
