@@ -3,7 +3,7 @@
 class M_apbd extends CI_Model
 {
     private $_table = "apbdesa";
-    private $table = "anggaran_apbdesa";
+    private $tabel = "anggaran_apbdesa";
 
 
     public $kodeapbd;
@@ -102,5 +102,9 @@ class M_apbd extends CI_Model
             $filename = explode(".", $pegawai->foto)[0];
             return array_map('unlink', glob(FCPATH . "upload/profil/$filename.*"));
         }
+    }
+    public function aapbd()
+    {
+        return $this->db->get($this->tabel)->result();
     }
 }

@@ -3,7 +3,10 @@
 <section class="Berita">
     <div class="container">
         <h3 class="mt-4">Data penggunaan APB Desa</h3>
-
+        <br />
+        <?php foreach ($aapbd as $a) : ?>
+            <h5>Anggaran Tahun <?= $a->tahun ?> = <?= $a->jumlah_anggaran ?></h5>
+        <?php endforeach; ?>
         <div class="row">
             <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -18,17 +21,19 @@
                             <th>Foto alokasi</th>
                         </tr>
                     </thead>
-                    <tbody <?php foreach ($apbd as $a) : ?> <tr>
-                        <th><?= $a->kodeapbd ?></th>
-                        <th><?= $a->alokasi_dana ?></th>
-                        <th><?= $a->anggaran_dana ?></th>
-                        <th><?= $a->biaya_alokasi ?></th>
-                        <th><?= $a->sisa_alokasi ?></th>
-                        <th><?= $a->petugas_alokasi ?></th>
-                        <td>
-                            <img src="<?php echo base_url('assets/img/' . $a->foto_alokasi) ?>" width="64" />
-                        </td>
-                    <?php endforeach; ?>
+                    <tbody>
+                        <?php foreach ($apbd as $a) : ?>
+                            <tr>
+                                <th><?= $a->kodeapbd ?></th>
+                                <th><?= $a->alokasi_dana ?></th>
+                                <th><?= $a->anggaran_dana ?></th>
+                                <th><?= $a->biaya_alokasi ?></th>
+                                <th><?= $a->sisa_alokasi ?></th>
+                                <th><?= $a->petugas_alokasi ?></th>
+                                <td>
+                                    <img src="<?php echo base_url('assets/img/foto_apbd/' . $a->foto_alokasi) ?>" width="200" />
+                                </td>
+                            <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

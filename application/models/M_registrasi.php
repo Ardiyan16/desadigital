@@ -96,4 +96,24 @@ class M_registrasi extends CI_Model
         $result = $this->db->query($user);
         return $result->row()->count;
     }
+
+    public function jumlahberita()
+    {
+        $user = "SELECT count(id_berita) as count FROM berita";
+        $result = $this->db->query($user);
+        return $result->row()->count;
+    }
+
+    public function jumlahevent()
+    {
+        $user = "SELECT count(id_event) as count FROM event_desa";
+        $result = $this->db->query($user);
+        return $result->row()->count;
+    }
+    public function jumlahwisata()
+    {
+        $user = "SELECT count(id_wisata) as count FROM wisata";
+        $result = $this->db->query($user);
+        return $result->row()->count;
+    }
 }
