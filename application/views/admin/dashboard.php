@@ -22,12 +22,48 @@
 						<!-- small box -->
 						<div class="small-box bg-yellow">
 							<div class="inner">
-								<h3><?= $jumlah ?></h3>
+								<h3><?= $jumlahuser ?></h3>
 
 								<p>jumlah data user</p>
 							</div>
 							<div class="icon">
 								<i class="ion ion-person"></i>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-6" style="margin-top: 20px;">
+						<div class="small-box bg-green">
+							<div class="inner">
+								<h3><?= $jumlahberita ?></h3>
+
+								<p>jumlah data berita</p>
+							</div>
+							<div class="icon">
+								<i class="fa fa-newspaper-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-6" style="margin-top: 20px;">
+						<div class="small-box bg-red">
+							<div class="inner">
+								<h3><?= $jumlahevent ?></h3>
+
+								<p>jumlah data event</p>
+							</div>
+							<div class="icon">
+								<i class="fa fa-newspaper-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-6 mr-2" style="margin-top: 20px;">
+						<div class="small-box bg-blue">
+							<div class="inner">
+								<h3><?= $jumlahwisata ?></h3>
+
+								<p>jumlah data wisata</p>
+							</div>
+							<div class="icon">
+								<i class="fa fa-bus"></i>
 							</div>
 						</div>
 					</div>

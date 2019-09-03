@@ -20,7 +20,10 @@ class Dashboard extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $data['judul'] = 'Dashboard';
-        $data['jumlah'] = $this->M_registrasi->jumlahuser();
+        $data['jumlahuser'] = $this->M_registrasi->jumlahuser();
+        $data['jumlahberita'] = $this->M_registrasi->jumlahberita();
+        $data['jumlahevent'] = $this->M_registrasi->jumlahevent();
+        $data['jumlahwisata'] = $this->M_registrasi->jumlahwisata();
         $this->load->view('admin/dashboard.php', $data);
     }
 
