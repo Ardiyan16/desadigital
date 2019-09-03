@@ -48,7 +48,7 @@
                                                 <th><?= $a->sisa_alokasi ?></th>
                                                 <th><?= $a->petugas_alokasi ?></th>
                                                 <td>
-                                                    <img src="<?php echo base_url('assets/img/foto_apbd' . $a->foto_alokasi) ?>" width="64" />
+                                                    <img src="<?php echo base_url('assets/img/foto_apbd/' . $a->foto_alokasi) ?>" width="64" />
                                                 </td>
                                                 <th>
                                                     <a href="<?php echo site_url('admin/Apbdesa/edit/' . $a->kodeapbd) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
