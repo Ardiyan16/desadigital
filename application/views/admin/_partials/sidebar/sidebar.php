@@ -114,8 +114,20 @@
 
                     <li><a href="<?= site_url('admin/Apbdesa/add'); ?>"><i class="fa fa-table "></i>Tambah Data APB Desa</a></li>
                     <li><a href="<?= site_url('admin/Apbdesa/'); ?>"><i class="fa fa-table "></i>Data APB Desa</a></li>
+                </ul>
+            </li>
 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-calendar"></i> <span>Pemasukan APB</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
 
+                    <li><a href="<?= site_url('admin/Apbdesa/pemasukanadd'); ?>"><i class="fa fa-table "></i>Tambah Pemasukan APB</a></li>
+                    <li><a href="<?= site_url('admin/Apbdesa/pemasukan'); ?>"><i class="fa fa-table "></i>Data Pemasukan APB</a></li>
                 </ul>
             </li>
         </ul>

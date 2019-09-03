@@ -47,7 +47,7 @@
                                             Petugas Alokasi<input type="text" class="form-control" name="petugas_alokasi" placeholder="Petugas Alokasi...">
                                         </div>
                                         <div class="form-group">
-                                            Foto Alokasi<input type="file" class="form-control" name="foto_alokasi" placeholder="Foto...">
+                                            Foto Alokasi<input type="file" class="form-control" name="foto" placeholder="Foto...">
                                         </div>
                                         <button type="submit" value="save" class="btn btn-primary">Simpan</button>
                                     </form>
