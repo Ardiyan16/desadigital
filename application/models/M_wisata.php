@@ -9,6 +9,7 @@ class M_wisata extends CI_Model
     public $nama_wisata;
     public $deskripsi;
     public $lokasi;
+    public $longlat;
     public $id_dusun;
 
     public $foto = "default.jpg";
@@ -75,11 +76,12 @@ class M_wisata extends CI_Model
         if (isset($_POST['id_wisata'])) { }
 
 
-        $this->id_wisata = uniqid(15);
+
         $this->id_kategori = $post["id_kategori"];
         $this->nama_wisata = $post["nama_wisata"];
         $this->deskripsi = $post["deskripsi"];
         $this->lokasi = $post["lokasi"];
+        $this->longlat = $post["longlat"];
         $this->id_dusun = $post["id_dusun"];
         $this->foto = $this->_uploadImage();
 
@@ -114,6 +116,7 @@ class M_wisata extends CI_Model
         $this->nama_wisata = $post["nama_wisata"];
         $this->deskripsi = $post["deskripsi"];
         $this->lokasi = $post["lokasi"];
+        $this->longlat = $post["longlat"];
         $this->id_dusun = $post["id_dusun"];
         if (!empty($_FILES["foto"]["name"])) {
             $this->foto = $this->_uploadImage();

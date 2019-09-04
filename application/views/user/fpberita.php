@@ -34,52 +34,6 @@
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
   ======================================================= -->
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-        #map {
-            top: 10px;
-
-            height: 300px;
-            width: 750px;
-        }
-
-        /* Optional: Makes the sample page fill the window. */
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #floating-panel {
-            position: absolute;
-            top: 10px;
-            left: 25%;
-            z-index: 5;
-            background-color: #ffff;
-            padding: 5px;
-            border: 1px solid #9999;
-            text-align: center;
-            font-family: 'Roboto', 'sans-serif';
-            line-height: 30px;
-            padding-left: 10px;
-        }
-
-        #floating-panel {
-            position: absolute;
-            top: 5px;
-            left: 50%;
-            margin-left: -180px;
-            width: 350px;
-            z-index: 5;
-            background-color: #fff;
-            padding: 5px;
-            border: 1px solid #999;
-        }
-
-        #latlng {}
-    </style>
 </head>
 
 <body class="hold-transition skin-blue layout-top-nav">
@@ -128,25 +82,27 @@
                 <div class="col-md-8 mt-5">
                     <article class="article article-post">
                         <div class="article-main-img">
-                            <img src="<?php echo base_url('assets/img/foto_wisata/' . $wisata['foto']); ?>" alt="">
+                            <img src="<?php echo base_url('assets/img/foto_berita/' . $berita['foto']) ?>" alt="">
                         </div>
                         <div class="article-body">
                             <ul class="article-info">
-                                <li class="article-category"><a href="#">wisata</a></li>
+                                <li class="article-category"><a href="berita.php">Berita</a></li>
                                 <li class="article-type"><i class="fa fa-file-text"></i></li>
                             </ul>
-                            <h3 class="article-title"><?= $wisata['nama_wisata'] ?></h3>
+                            <h3 class="article-title"><?= $berita['judul_berita'] ?></h3>
+                            <ul class="article-meta">
+                                <li><i class="fa fa-clock-o"></i> <?= $berita['tanggal'] ?></li>
+                            </ul>
                             <p>
-                                <?= $wisata['deskripsi']; ?>
+                                <?= $berita['isi_berita'] ?>
                             </p>
                             <div class="row mb-3 mt-5">
                                 <div class="col">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <h5 class="card-title">Lokasi</h5>
-                                            <p class="card-text"><?= $wisata['lokasi'] ?> </p>
+                                            <p class="card-text"><?= $berita['lokasi'] ?> </p>
                                         </div>
-                                        <div class="mt-5" id="map"></div>
                                     </div>
                                 </div>
                             </div>
@@ -226,90 +182,6 @@
 
     <!-- Template Main Javascript File -->
     <script src="<?= base_url('assets/biz/js/main.js'); ?>"></script>
-    <script>
-        function initAutocomplete() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: -8.2230043,
-                    lng: 114.3653102
-                },
-                zoom: 13,
-                mapTypeId: 'roadmap'
-            });
-
-            // Membuat Kotak pencarian terhubung dengan tampilan map
-            var input = document.getElementById('pac-input');
-            var searchBox = new google.maps.places.SearchBox(input);
-
-
-            var markers = [];
-            // Mengaktifkan detail pada suatu tempat ketika pengguna
-            // memilih salah satu dari daftar prediksi tempat 
-            searchBox.addListener('places_changed', function() {
-                var places = searchBox.getPlaces();
-
-                if (places.length == 0) {
-                    return;
-                }
-
-                // menghilangkan marker tempat sebelumnya
-                markers.forEach(function(marker) {
-                    marker.setMap(null);
-                });
-                markers = [];
-
-                // Untuk setiap tempat, dapatkan icon, nama dan tempat.
-                var bounds = new google.maps.LatLngBounds();
-                places.forEach(function(place) {
-                    if (!place.geometry) {
-                        console.log("Returned place contains no geometry");
-                        return;
-                    }
-                    var icon = {
-                        url: place.icon,
-                        size: new google.maps.Size(71, 71),
-                        origin: new google.maps.Point(0, 0),
-                        anchor: new google.maps.Point(17, 34),
-                        scaledSize: new google.maps.Size(25, 25)
-                    };
-
-
-
-                    // Membuat Marker untuk setiap tempat
-                    markers.push(new google.maps.Marker({
-
-                        map: map,
-                        icon: icon,
-                        title: place.name,
-                        position: place.geometry.location,
-                        drag: true
-
-                    }));
-                    var lat = place.geometry.location.lat();
-                    var lng = place.geometry.location.lng();
-
-                    if (place.geometry.viewport) {
-                        bounds.union(place.geometry.viewport);
-                        <?php foreach ($map as $m) : ?>
-                            document.getElementById("latlong").value = <?= $m->longlat ?>;
-                        <?php endforeach; ?>
-                        //document.getElementById('lng').value=lng; 
-                    } else {
-                        bounds.extend(place.geometry.location);
-
-                    }
-                });
-                map.fitBounds(bounds);
-            });
-            google.maps.event.addListener(marker, 'drag', function() {
-                // ketika marker di drag, otomatis nilai latitude dan longitude
-                //menyesuaikan dengan posisi marker 
-                updateMarkerPosition(marker.getPosition());
-            });
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-DSoxPXjj8RRkqy2Do0VKCo0f57K0nwk&libraries=places&callback=initAutocomplete" async defer></script>
-
 </body>
 
 </html>

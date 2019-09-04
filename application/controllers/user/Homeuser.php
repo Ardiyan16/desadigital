@@ -149,6 +149,7 @@ class Homeuser extends CI_Controller
     {
         $data['pengguna'] = $this->db->get_where('pengguna', ['username' => $this->session->userdata('username')])->row_array();
         $data['wisata'] = $this->db->get_where('wisata', ['id_wisata' => $id_wisata])->row_array();
+        $data['map'] = $this->db->get('wisata')->result();
         $data['judul'] = 'fp wisata';
         $this->load->view('user/fpwisata1', $data);
     }
