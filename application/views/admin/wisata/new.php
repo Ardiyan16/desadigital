@@ -53,8 +53,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            lokasi<input type="text" class="form-control" id="pac-input" name="lokasi" placeholder="Lokasi">
-                                            <input type="text" name="longlat" id="latlong" hidden="">
+                                            lokasi<input type="text" class="form-control" id="pac-input" name="address" placeholder="Lokasi">
+                                            <input type="text" name="longlat" id="latlong">
                                             <div id="map"></div>
                                         </div>
 

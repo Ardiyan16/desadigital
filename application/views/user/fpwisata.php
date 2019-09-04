@@ -144,9 +144,9 @@
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
                                             <h5 class="card-title">Lokasi</h5>
-                                            <p class="card-text"><?= $wisata['lokasi'] ?> </p>
+                                            <p class="card-text"><?= $wisata['address'] ?> </p>
                                         </div>
-                                        <div class="mt-5" id="map"></div>
+                                        <div id="map"></div>
                                     </div>
                                 </div>
                             </div>
@@ -291,7 +291,7 @@
                     if (place.geometry.viewport) {
                         bounds.union(place.geometry.viewport);
                         <?php foreach ($map as $m) : ?>
-                            document.getElementById("latlong").value = <?= $m->longlat ?>;
+                            document.getElementById("latlong").value = lat + ',' + lng;
                         <?php endforeach; ?>
                         //document.getElementById('lng').value=lng; 
                     } else {

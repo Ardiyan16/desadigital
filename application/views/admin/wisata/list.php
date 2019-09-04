@@ -43,7 +43,7 @@
                         <th><?= $wisata->id_kategori ?></th>
                         <th><?= $wisata->nama_wisata ?></th>
                         <th><?= substr($wisata->deskripsi, 0, 200); ?></th>
-                        <th><?= $wisata->lokasi ?></th>
+                        <th><?= $wisata->address ?></th>
                         <th><?= $wisata->id_dusun ?></th>
                         <td>
                           <img src="<?php echo base_url('assets/img/foto_wisata/' . $wisata->foto) ?>" width="64" />
